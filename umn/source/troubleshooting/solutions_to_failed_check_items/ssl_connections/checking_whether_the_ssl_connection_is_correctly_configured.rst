@@ -1,0 +1,57 @@
+:original_name: drs_11_0017.html
+
+.. _drs_11_0017:
+
+Checking Whether the SSL Connection Is Correctly Configured
+===========================================================
+
+MySQL
+-----
+
+.. table:: **Table 1** Checking whether the SSL connection is correctly configured
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Check Item                            | Whether the SSL connection is correctly configured                                                                                                                                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Description                           | Check whether the SSL connection is correctly configured for the source database.                                                                                                                        |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Failure Cause and Handling Suggestion | Failure cause: This item cannot be checked because the source database fails to be connected.                                                                                                            |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: Check whether the source database is connected.                                                                                                                                     |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: Insufficient user permissions                                                                                                                                                             |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: Check whether the database user permissions meet the migration requirements.                                                                                                        |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: The database is unavailable.                                                                                                                                                              |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: Contact technical support.                                                                                                                                                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Item to be confirmed: The source database user must have the REQUIRE SSL permission when using the SSL connection.                                                                                       |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: This alarm does not affect the migration process. If you require the SSL connection, you are advised to grant the REQUIRE SSL permission to the source database user.               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Item to be confirmed: The destination database user must have the REQUIRE SSL permission when using the SSL connection.                                                                                  |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: This alarm does not affect the migration process. If you require the SSL connection, you are advised to grant the REQUIRE SSL permission to the destination database user.          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: The source database user has the REQUIRE SSL permission but did not upload the encryption certificate. The SSL connection cannot be used.                                                 |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: On the **Configure Source and Destination Databases** page, enable the SSL connection and upload the certificate, or change the source database user.                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: The destination database user has the REQUIRE SSL permission but did not upload the encryption certificate. The SSL connection cannot be used.                                            |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: On the **Configure Source and Destination Databases** page, enable the SSL connection and upload the certificate, or change the destination database user.                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Item to be confirmed: Currently, the SSL connection is not enabled. DRS must ensure that the source database account allows non-SSL connections to the source database.                                  |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: Manually check whether the source database account allows non-SSL connections, or try to perform a migration. (By default, the source database account allows non-SSL connections.) |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: An internal error occurs.                                                                                                                                                                 |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: Contact technical support.                                                                                                                                                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: The SSL connection is enabled for the source database but no certificate has been uploaded.                                                                                               |
+   |                                       |                                                                                                                                                                                                          |
+   |                                       | Handling suggestion: On the **Configure Source and Destination Databases** page, upload a certificate or disable the SSL connection for the source database.                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

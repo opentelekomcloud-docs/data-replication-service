@@ -1,0 +1,33 @@
+:original_name: drs_11_0055.html
+
+.. _drs_11_0055:
+
+Checking Whether the MAX_REPLICATION_SLOTS Value in the Source Database Is Correct
+==================================================================================
+
+PostgreSQL Synchronization
+--------------------------
+
+.. table:: **Table 1** Checking whether the MAX_REPLICATION_SLOTS value in the source database is correct
+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Check Item                            | Whether the **MAX_REPLICATION_SLOTS** value in the source database is correct                                                                                                                                                                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Description                           | The **max_replication_slots** value of the source database must be greater than the number of used replication slots. Otherwise, the synchronization may fail.                                                                                                  |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Failure Cause and Handling Suggestion | Failure cause: The **max_replication_slots** value of the source database is less than or equal to the number of used replication slots.                                                                                                                        |
+   |                                       |                                                                                                                                                                                                                                                                 |
+   |                                       | Handling suggestion: Set **max_replication_slots** to a value greater than the number of used replication slots and restart the database to apply the changes. Run the following command to query the number of used replication slots in the current database: |
+   |                                       |                                                                                                                                                                                                                                                                 |
+   |                                       | .. code:: text                                                                                                                                                                                                                                                  |
+   |                                       |                                                                                                                                                                                                                                                                 |
+   |                                       |    select count(1) from pg_replication_slots;                                                                                                                                                                                                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: Insufficient user permissions                                                                                                                                                                                                                    |
+   |                                       |                                                                                                                                                                                                                                                                 |
+   |                                       | Handling suggestion: Check whether the database user permissions meet the synchronization requirements.                                                                                                                                                         |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: An internal error occurs.                                                                                                                                                                                                                        |
+   |                                       |                                                                                                                                                                                                                                                                 |
+   |                                       | Handling suggestion: Contact technical support.                                                                                                                                                                                                                 |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
