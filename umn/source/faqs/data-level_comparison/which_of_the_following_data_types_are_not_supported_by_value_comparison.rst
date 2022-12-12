@@ -1,0 +1,36 @@
+:original_name: drs_16_1130.html
+
+.. _drs_16_1130:
+
+Which of the Following Data Types Are Not Supported By Value Comparison?
+========================================================================
+
+DRS's data comparison allows you to check whether the data in the source database is the same as that in the destination database.
+
+DRS does not support value comparison for the data types shown here. During value comparison, these data types are automatically ignored.
+
+.. table:: **Table 1** Data types that do not support value comparison
+
+   +------------------------+----------------------------------------------------------------------------+
+   | Source DB Type         | Data Type                                                                  |
+   +========================+============================================================================+
+   | MySQL                  | TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB, TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT |
+   +------------------------+----------------------------------------------------------------------------+
+   | GaussDB(for openGauss) | TEXT, CLOB, BLOB, BYTEA, INTERVAL DAY TO SECOND, INTERVAL                  |
+   +------------------------+----------------------------------------------------------------------------+
+   | MongoDB                | \_id is of the bindata type.                                               |
+   +------------------------+----------------------------------------------------------------------------+
+
+DRS does not support value comparison for the following primary key types. During value comparison, the following primary key types are grouped into a specified table that does not support comparison.
+
+.. table:: **Table 2** Primary key type that does not support value comparison.
+
+   +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Source DB Type         | Data Type                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +========================+================================================================================================================================================================================================================================================================================================================================================================================================================+
+   | MySQL                  | TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB, TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT, FLOAT                                                                                                                                                                                                                                                                                                                              |
+   +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | GaussDB(for openGauss) | TEXT, CLOB, BLOB, BYTEA, INTERVAL DAY TO SECOND, INTERVAL, REAL, DOUBLE PRECISION, BOOL, TIME, TIMETZ, TIMESTAMP, TIMESTAMPTZ, DATE                                                                                                                                                                                                                                                                            |
+   +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | PostgreSQL             | REAL, DOUBLE PRECISION, MONEY, TEXT, BYTEA, TIMESTAMP WITHOUT TIME ZONE, TIMESTAMP WITH TIME ZONE, DATE, TIME WITHOUT TIME ZONE, TIME WITH TIME ZONE, INTERVAL, BOOLEAN, ENUMERATED TYPES, POINT, LINE, LSEG, BOX, PATH, POLYGON, CIRCLE, CIDR, INET, MACADDR, MACADDR8, BIT, BIT VARYING, TSVECTOR, TSQUERY, XML, JSON, ARRAY, COMPOSITE TYPES, INT4RANGE, INT8RANGE, NUMRANGE, TSRANGE, TSTZRANGE, DATERANGE |
+   +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
