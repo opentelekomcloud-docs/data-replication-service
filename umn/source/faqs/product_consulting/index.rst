@@ -22,7 +22,7 @@ Product Consulting
    what_is_drs
    can_drs_migrate_rds_primary_standby_instances
    does_drs_support_resumable_uploads
-   what_are_the_differences_between_real-time_migration,_real-time_dr,_and_real-time_synchronization
+   what_are_the_differences_between_real-time_migration_real-time_dr_and_real-time_synchronization
    how_do_i_solve_the_table_bloat_issue
    why_cannot_i_select_rds_read_replicas_on_the_drs_console
    how_does_drs_affect_the_source_and_destination_databases
