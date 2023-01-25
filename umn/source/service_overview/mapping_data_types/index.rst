@@ -16,5 +16,5 @@ This section provides mappings between different data types for your reference.
    :maxdepth: 1
    :hidden: 
 
-   mysql->gaussdbfor_opengauss
-   gaussdbfor_opengauss->mysql
+   mysql-gaussdbfor_opengauss
+   gaussdbfor_opengauss-mysql
