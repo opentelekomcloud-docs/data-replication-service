@@ -93,7 +93,7 @@ Actions
 
    Operation:
 
-   **GRANT** *privileges* **ON **\ *databasename.tablename* **TO** '*username*'@'*host*' **WITH GRANT OPTION**;
+   **GRANT** *privileges* **ON** *databasename.tablename* **TO** '*username*'@'*host*' **WITH GRANT OPTION**;
 
    **flush privileges;**
 
