@@ -28,6 +28,15 @@ project = 'Data Replication Service'
 otcdocs_repo_name = 'opentelekomcloud-docs/data-replication-service'
 # Those variables are required for edit/bug links
 
+# Those variables are needed for indexing into OpenSearch
+otcdocs_doc_environment = 'public'
+otcdocs_doc_link = '/data-replication-service/api-ref/'
+otcdocs_doc_title = 'API Reference'
+otcdocs_doc_type = 'api-ref'
+otcdocs_service_category = 'database'
+otcdocs_service_title = 'Data Replication Service'
+otcdocs_service_type = 'drs'
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
