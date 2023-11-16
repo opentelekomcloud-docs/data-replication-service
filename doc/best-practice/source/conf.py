@@ -30,9 +30,9 @@ otcdocs_repo_name = 'opentelekomcloud-docs/data-replication-service'
 
 # Those variables are needed for indexing into OpenSearch
 otcdocs_doc_environment = 'public'
-otcdocs_doc_link = '/data-replication-service/api-ref/'
-otcdocs_doc_title = 'API Reference'
-otcdocs_doc_type = 'api-ref'
+otcdocs_doc_link = '/data-replication-service/best-practice/'
+otcdocs_doc_title = 'Best Practice'
+otcdocs_doc_type = 'best-practice'
 otcdocs_service_category = 'database'
 otcdocs_service_title = 'Data Replication Service'
 otcdocs_service_type = 'drs'
@@ -92,7 +92,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "Data Replication Service - API Reference"
+html_title = "Data Replication Service - Best Practice"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -106,7 +106,7 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'drs-api-ref.tex',
-     u'Data Replication Service - API Reference',
+     'drs-best-practice.tex',
+     u'Data Replication Service - Best Practice',
      u'OpenTelekomCloud', 'manual'),
 ]
