@@ -14,42 +14,51 @@ DRS supports real-time synchronization between databases of various types, and m
 
 .. table:: **Table 1** Database types
 
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | Synchronization Direction | Data Flow                                   | Source DB                          | Destination DB                     | Destination DB Type            |
-   +===========================+=============================================+====================================+====================================+================================+
-   | To the cloud              | MySQL->MySQL                                | -  On-premises databases           | RDS MySQL DB instances             | -  Single DB instance          |
-   |                           |                                             | -  ECS databases                   |                                    | -  Primary/Standby DB instance |
-   |                           |                                             | -  Databases on other clouds       |                                    |                                |
-   |                           |                                             | -  RDS MySQL DB instances          |                                    |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | To the cloud              | MySQL-> GaussDB(for openGauss) distributed  | -  On-premises databases           | GaussDB(for openGauss) distributed | -  Cluster                     |
-   |                           |                                             | -  ECS databases                   |                                    |                                |
-   |                           |                                             | -  Databases on other clouds       |                                    |                                |
-   |                           |                                             | -  RDS MySQL DB instances          |                                    |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | -  On-premises databases           | GaussDB(for MySQL) primary/standby | -  Primary/Standby DB instance |
-   |                           |                                             | -  ECS databases                   |                                    |                                |
-   |                           |                                             | -  Databases on other clouds       |                                    |                                |
-   |                           |                                             | -  RDS MySQL DB instances          |                                    |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | To the cloud              | PostgreSQL->PostgreSQL                      | -  On-premises databases           | RDS PostgreSQL DB instances        | -  Single DB instance          |
-   |                           |                                             | -  ECS databases                   |                                    | -  Primary/Standby DB instance |
-   |                           |                                             | -  Databases on other clouds       |                                    |                                |
-   |                           |                                             | -  RDS PostgreSQL DB instances     |                                    |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | From the cloud            | MySQL->MySQL                                | RDS MySQL DB instances             | -  On-premises databases           | ``-``                          |
-   |                           |                                             |                                    | -  ECS databases                   |                                |
-   |                           |                                             |                                    | -  Databases on other clouds       |                                |
-   |                           |                                             |                                    | -  RDS MySQL DB instances          |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | From the cloud            | GaussDB(for openGauss) distributed -> MySQL | GaussDB(for openGauss) distributed | -  On-premises databases           | ``-``                          |
-   |                           |                                             |                                    | -  ECS databases                   |                                |
-   |                           |                                             |                                    | -  Databases on other clouds       |                                |
-   |                           |                                             |                                    | -  RDS MySQL instances             |                                |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
-   | Self-built -> Self-built  | MySQL->MySQL                                | -  On-premises databases           | -  On-premises databases           | -  Single DB instance          |
-   |                           |                                             | -  ECS databases                   | -  ECS databases                   | -  Primary/Standby DB instance |
-   +---------------------------+---------------------------------------------+------------------------------------+------------------------------------+--------------------------------+
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | Synchronization Direction | Data Flow                                   | Source DB                      | Destination DB                     | Destination DB Type            |
+   +===========================+=============================================+================================+====================================+================================+
+   | To the cloud              | MySQL->MySQL                                | -  On-premises databases       | RDS MySQL DB instances             | -  Single DB instance          |
+   |                           |                                             | -  ECS databases               |                                    | -  Primary/Standby DB instance |
+   |                           |                                             | -  Databases on other clouds   |                                    |                                |
+   |                           |                                             | -  RDS MySQL DB instances      |                                    |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | To the cloud              | MySQL-> GaussDB distributed                 | -  On-premises databases       | GaussDB distributed                | -  Cluster                     |
+   |                           |                                             | -  ECS databases               |                                    |                                |
+   |                           |                                             | -  Databases on other clouds   |                                    |                                |
+   |                           |                                             | -  RDS MySQL DB instances      |                                    |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | -  On-premises databases       | GaussDB(for MySQL) primary/standby | -  Primary/Standby DB instance |
+   |                           |                                             | -  ECS databases               |                                    |                                |
+   |                           |                                             | -  Databases on other clouds   |                                    |                                |
+   |                           |                                             | -  RDS MySQL DB instances      |                                    |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | To the cloud              | PostgreSQL->PostgreSQL                      | -  On-premises databases       | RDS PostgreSQL DB instances        | -  Single DB instance          |
+   |                           |                                             | -  ECS databases               |                                    | -  Primary/Standby DB instance |
+   |                           |                                             | -  Databases on other clouds   |                                    |                                |
+   |                           |                                             | -  RDS PostgreSQL DB instances |                                    |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | To the cloud              | Oracle->PostgreSQL                          | -  On-premises databases       | RDS PostgreSQL DB instances        | -  Single DB instance          |
+   |                           |                                             | -  ECS databases               |                                    | -  Primary/Standby DB instance |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | From the cloud            | MySQL->MySQL                                | RDS MySQL DB instances         | -  On-premises databases           | ``-``                          |
+   |                           |                                             |                                | -  ECS databases                   |                                |
+   |                           |                                             |                                | -  Databases on other clouds       |                                |
+   |                           |                                             |                                | -  RDS MySQL DB instances          |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | From the cloud            | MySQL->Kafka                                | RDS MySQL DB instances         | -  Kafka                           | -  Cluster                     |
+   |                           |                                             |                                | -  DMS for Kafka                   | -  Single node                 |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | From the cloud            | GaussDB distributed -> MySQL                | GaussDB distributed            | -  On-premises databases           | ``-``                          |
+   |                           |                                             |                                | -  ECS databases                   |                                |
+   |                           |                                             |                                | -  Databases on other clouds       |                                |
+   |                           |                                             |                                | -  RDS MySQL instances             |                                |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | Self-built -> Self-built  | MySQL->MySQL                                | -  On-premises databases       | -  On-premises databases           | -  Single DB instance          |
+   |                           |                                             | -  ECS databases               | -  ECS databases                   | -  Primary/Standby DB instance |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
+   | Self-built -> Self-built  | MySQL->Kafka                                | -  On-premises databases       | -  Kafka                           | -  Cluster                     |
+   |                           |                                             | -  ECS databases               | -  DMS for Kafka                   | -  Single node                 |
+   +---------------------------+---------------------------------------------+--------------------------------+------------------------------------+--------------------------------+
 
 Synchronization Methods
 -----------------------
@@ -69,17 +78,23 @@ Full+Incremental synchronization: DRS allows you to synchronize data in real tim
    +===========================+=============================================+===============+===============+==================+======================+
    | To the cloud              | MySQL->MySQL                                | Supported     | Not supported | Supported        | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
-   | To the cloud              | MySQL-> GaussDB(for openGauss) distributed  | Not supported | Not supported | Supported        | One-way sync         |
+   | To the cloud              | MySQL-> GaussDB distributed                 | Not supported | Not supported | Supported        | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
    | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | Supported     | Not supported | Supported        | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
    | To the cloud              | PostgreSQL->PostgreSQL                      | Supported     | Supported     | Supported        | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
+   | To the cloud              | Oracle->PostgreSQL                          | Not supported | Supported     | Supported        | One-way sync         |
+   +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
    | From the cloud            | MySQL->MySQL                                | Supported     | Not supported | Supported        | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
-   | From the cloud            | GaussDB(for openGauss) distributed -> MySQL | Supported     | Not supported | Not supported    | One-way sync         |
+   | From the cloud            | MySQL->Kafka                                | Supported     | Not supported | Not supported    | One-way sync         |
+   +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
+   | From the cloud            | GaussDB distributed -> MySQL                | Supported     | Not supported | Not supported    | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
    | Self-built -> Self-built  | MySQL->MySQL                                | Supported     | Not supported | Supported        | One-way sync         |
+   +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
+   | Self-built -> Self-built  | MySQL->Kafka                                | Supported     | Not supported | Not supported    | One-way sync         |
    +---------------------------+---------------------------------------------+---------------+---------------+------------------+----------------------+
 
 Database Versions
@@ -91,48 +106,58 @@ Database Versions
 
 .. table:: **Table 3** Database versions
 
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | Synchronization Direction | Data Flow                                   | Source Database Version                                                                                   | Destination DB Version                   |
-   +===========================+=============================================+===========================================================================================================+==========================================+
-   | To the cloud              | MySQL->MySQL                                | -  MySQL 5.5.x                                                                                            | -  MySQL 5.6.x                           |
-   |                           |                                             | -  MySQL 5.6.x                                                                                            | -  MySQL 5.7.x                           |
-   |                           |                                             | -  MySQL 5.7.x                                                                                            | -  MySQL 8.0.x                           |
-   |                           |                                             | -  MySQL 8.0.x                                                                                            |                                          |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | To the cloud              | MySQL-> GaussDB(for openGauss) distributed  | -  MySQL 5.5.x                                                                                            | -  GaussDB(for openGauss) 1.0.0 or later |
-   |                           |                                             | -  MySQL 5.6.x                                                                                            |                                          |
-   |                           |                                             | -  MySQL 5.7.x                                                                                            |                                          |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | -  MySQL 5.5.x                                                                                            | GaussDB(for MySQL)-MySQL 8.0             |
-   |                           |                                             | -  MySQL 5.6.x                                                                                            |                                          |
-   |                           |                                             | -  MySQL 5.7.x                                                                                            |                                          |
-   |                           |                                             | -  MySQL 8.0.x                                                                                            |                                          |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | To the cloud              | PostgreSQL->PostgreSQL                      | -  PostgreSQL 9.4.x                                                                                       | -  PostgreSQL 9.5.x                      |
-   |                           |                                             | -  PostgreSQL 9.5.x                                                                                       | -  PostgreSQL 9.6.x                      |
-   |                           |                                             | -  PostgreSQL 9.6.x                                                                                       | -  PostgreSQL 10.x                       |
-   |                           |                                             | -  PostgreSQL 10.x                                                                                        | -  PostgreSQL 11.x                       |
-   |                           |                                             | -  PostgreSQL 11.x                                                                                        | -  PostgreSQL 12.x                       |
-   |                           |                                             | -  PostgreSQL 12.x                                                                                        | -  PostgreSQL 13.x                       |
-   |                           |                                             | -  PostgreSQL 13.x                                                                                        |                                          |
-   |                           |                                             |                                                                                                           |                                          |
-   |                           |                                             |    .. note::                                                                                              |                                          |
-   |                           |                                             |                                                                                                           |                                          |
-   |                           |                                             |       If the source DB type is RDS PostgreSQL Enhanced Edition, the destination DB type must be the same. |                                          |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | From the cloud            | MySQL->MySQL                                | -  MySQL 5.6.x                                                                                            | -  MySQL 5.6.x                           |
-   |                           |                                             | -  MySQL 5.7.x                                                                                            | -  MySQL 5.7.x                           |
-   |                           |                                             | -  MySQL 8.0.x                                                                                            | -  MySQL 8.0.x                           |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | From the cloud            | GaussDB(for openGauss) distributed -> MySQL | GaussDB(for openGauss)1.3                                                                                 | -  MySQL 5.5.x                           |
-   |                           |                                             |                                                                                                           | -  MySQL 5.6.x                           |
-   |                           |                                             |                                                                                                           | -  MySQL 5.7.x                           |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
-   | Self-built -> Self-built  | MySQL->MySQL                                | -  MySQL 5.5.x                                                                                            | -  MySQL 5.6.x                           |
-   |                           |                                             | -  MySQL 5.6.x                                                                                            | -  MySQL 5.7.x                           |
-   |                           |                                             | -  MySQL 5.7.x                                                                                            | -  MySQL 8.0.x                           |
-   |                           |                                             | -  MySQL 8.0.x                                                                                            |                                          |
-   +---------------------------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+------------------------------------------+
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | Synchronization Direction | Data Flow                                   | Source Database Version | Destination DB Version       |
+   +===========================+=============================================+=========================+==============================+
+   | To the cloud              | MySQL->MySQL                                | -  MySQL 5.5.x          | -  MySQL 5.6.x               |
+   |                           |                                             | -  MySQL 5.6.x          | -  MySQL 5.7.x               |
+   |                           |                                             | -  MySQL 5.7.x          | -  MySQL 8.0.x               |
+   |                           |                                             | -  MySQL 8.0.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | To the cloud              | MySQL-> GaussDB distributed                 | -  MySQL 5.5.x          | -  GaussDB 1.0.0 or later    |
+   |                           |                                             | -  MySQL 5.6.x          |                              |
+   |                           |                                             | -  MySQL 5.7.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | -  MySQL 5.5.x          | GaussDB(for MySQL)-MySQL 8.0 |
+   |                           |                                             | -  MySQL 5.6.x          |                              |
+   |                           |                                             | -  MySQL 5.7.x          |                              |
+   |                           |                                             | -  MySQL 8.0.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | To the cloud              | PostgreSQL->PostgreSQL                      | -  PostgreSQL 9.4.x     | -  PostgreSQL 9.5.x          |
+   |                           |                                             | -  PostgreSQL 9.5.x     | -  PostgreSQL 9.6.x          |
+   |                           |                                             | -  PostgreSQL 9.6.x     | -  PostgreSQL 10.x           |
+   |                           |                                             | -  PostgreSQL 10.x      | -  PostgreSQL 11.x           |
+   |                           |                                             | -  PostgreSQL 11.x      | -  PostgreSQL 12.x           |
+   |                           |                                             | -  PostgreSQL 12.x      | -  PostgreSQL 13.x           |
+   |                           |                                             | -  PostgreSQL 13.x      |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | To the cloud              | Oracle->PostgreSQL                          | -  Oracle 10g           | -  PostgreSQL 9.5.x          |
+   |                           |                                             | -  Oracle 11g           | -  PostgreSQL 9.6.x          |
+   |                           |                                             | -  Oracle 12c           | -  PostgreSQL 10.x           |
+   |                           |                                             | -  Oracle 18c           | -  PostgreSQL 11.x           |
+   |                           |                                             | -  Oracle 19c           | -  PostgreSQL 12.x           |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | From the cloud            | MySQL->MySQL                                | -  MySQL 5.6.x          | -  MySQL 5.6.x               |
+   |                           |                                             | -  MySQL 5.7.x          | -  MySQL 5.7.x               |
+   |                           |                                             | -  MySQL 8.0.x          | -  MySQL 8.0.x               |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | From the cloud            | MySQL->Kafka                                | -  MySQL 5.6.x          | Kafka 0.11 or later          |
+   |                           |                                             | -  MySQL 5.7.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | From the cloud            | GaussDB distributed -> MySQL                | GaussDB 1.3             | -  MySQL 5.5.x               |
+   |                           |                                             |                         | -  MySQL 5.6.x               |
+   |                           |                                             |                         | -  MySQL 5.7.x               |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | Self-built -> Self-built  | MySQL->MySQL                                | -  MySQL 5.5.x          | -  MySQL 5.6.x               |
+   |                           |                                             | -  MySQL 5.6.x          | -  MySQL 5.7.x               |
+   |                           |                                             | -  MySQL 5.7.x          | -  MySQL 8.0.x               |
+   |                           |                                             | -  MySQL 8.0.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
+   | Self-built -> Self-built  | MySQL->Kafka                                | -  MySQL 5.5.x          | Kafka 0.11 or later          |
+   |                           |                                             | -  MySQL 5.6.x          |                              |
+   |                           |                                             | -  MySQL 5.7.x          |                              |
+   |                           |                                             | -  MySQL 8.0.x          |                              |
+   +---------------------------+---------------------------------------------+-------------------------+------------------------------+
 
 Network Types
 -------------
@@ -179,17 +204,23 @@ DRS supports real-time synchronization through a Virtual Private Cloud (VPC), Vi
    +===========================+=============================================+===============+================+=======================+
    | To the cloud              | MySQL->MySQL                                | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | To the cloud              | MySQL-> GaussDB(for openGauss) distributed  | Supported     | Supported      | Supported             |
+   | To the cloud              | MySQL-> GaussDB distributed                 | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
    | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
    | To the cloud              | PostgreSQL->PostgreSQL                      | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | To the cloud              | Oracle->PostgreSQL                          | Supported     | Supported      | Supported             |
+   +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
    | From the cloud            | MySQL->MySQL                                | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | From the cloud            | GaussDB(for openGauss) distributed -> MySQL | Not supported | Supported      | Supported             |
+   | From the cloud            | MySQL->Kafka                                | Supported     | Supported      | Supported             |
+   +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | From the cloud            | GaussDB distributed -> MySQL                | Not supported | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
    | Self-built -> Self-built  | MySQL->MySQL                                | Not supported | Supported      | Supported             |
+   +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | Self-built -> Self-built  | MySQL->Kafka                                | Supported     | Supported      | Supported             |
    +---------------------------+---------------------------------------------+---------------+----------------+-----------------------+
 
 Supported Synchronization Objects
@@ -204,17 +235,23 @@ DRS allows you to synchronize different objects. The following table lists the s
    +===========================+=============================================+=============+================+==========================+
    | To the cloud              | MySQL->MySQL                                | Supported   | Supported      | Supported                |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
-   | To the cloud              | MySQL-> GaussDB(for openGauss) distributed  | Supported   | Not supported  | Not supported            |
+   | To the cloud              | MySQL-> GaussDB distributed                 | Supported   | Not supported  | Not supported            |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
    | To the cloud              | MySQL -> GaussDB(for MySQL) primary/standby | Supported   | Supported      | Supported                |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
    | To the cloud              | PostgreSQL->PostgreSQL                      | Supported   | Supported      | Supported                |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
+   | To the cloud              | Oracle->PostgreSQL                          | Supported   | Not supported  | Supported                |
+   +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
    | From the cloud            | MySQL->MySQL                                | Supported   | Supported      | Not supported            |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
-   | From the cloud            | GaussDB(for openGauss) distributed -> MySQL | Supported   | Not supported  | Not supported            |
+   | From the cloud            | MySQL->Kafka                                | Supported   | Supported      | Supported                |
+   +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
+   | From the cloud            | GaussDB distributed -> MySQL                | Supported   | Not supported  | Not supported            |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
    | Self-built -> Self-built  | MySQL->MySQL                                | Supported   | Supported      | Not supported            |
+   +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
+   | Self-built -> Self-built  | MySQL->Kafka                                | Supported   | Supported      | Supported                |
    +---------------------------+---------------------------------------------+-------------+----------------+--------------------------+
 
 Advanced Features

@@ -40,11 +40,11 @@ Migration from MongoDB to DDS
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    | Check Item                            | Whether the source database version is supported                                                                          |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | Description                           | Check whether the source database version is MongoDB 3.2.x, 3.4.x, or 4.0.x.                                              |
+   | Description                           | Check whether the source database version is MongoDB 3.2.x, 3.4.x, 3.6.x, 4.0.x, 4.2.x, or 4.4.x.                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    | Failure Cause and Handling Suggestion | Failure cause: The source database version is not supported.                                                              |
    |                                       |                                                                                                                           |
-   |                                       | Handling suggestion: Check whether the source database version is MongoDB 3.2x, 3.4.x, and 4.0.x.                         |
+   |                                       | Handling suggestion: Check whether the source database version is MongoDB 3.2x, 3.4.x, 3.6.x, 4.0.x, 4.2.x, or 4.4.x.     |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    |                                       | Failure cause: This item cannot be checked because the source database fails to be connected.                             |
    |                                       |                                                                                                                           |
@@ -58,3 +58,18 @@ Migration from MongoDB to DDS
    |                                       |                                                                                                                           |
    |                                       | Handling suggestion: Contact technical support.                                                                           |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+Oracle Synchronization
+----------------------
+
+.. table:: **Table 3** Checking whether source database version is supported
+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Check Item                            | Whether the source database version is supported                                                                                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Description                           | Check whether the source database version is Oracle 10g, 11g, 12c, 18c, or 19c.                                                                |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Failure Cause and Handling Suggestion | Failure cause: The source database version is not supported.                                                                                   |
+   |                                       |                                                                                                                                                |
+   |                                       | Handling suggestion: Check whether the source database version is supported. Currently, only Oracle 10g, 11g, 12c, 18c, and 19c are supported. |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+

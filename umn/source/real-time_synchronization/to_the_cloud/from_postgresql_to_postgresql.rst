@@ -335,7 +335,7 @@ This section uses synchronization from PostgreSQL to PostgreSQL as an example to
          |                                   | .. note::                                                                                                                                                                                                                                         |
          |                                   |                                                                                                                                                                                                                                                   |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                               |
-         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                               |
+         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                               |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
       .. note::
@@ -469,4 +469,4 @@ This section uses synchronization from PostgreSQL to PostgreSQL as an example to
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_06_0004>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341414140.png
+.. |image1| image:: /_static/images/en-us_image_0000001758549405.png

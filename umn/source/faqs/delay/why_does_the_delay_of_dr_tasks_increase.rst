@@ -16,8 +16,8 @@ Recovery Time Objective (RTO) is duration of time within which transactions on t
 #. Frequently executed operations are performed on hot tables in the service database. The DR instance combines the transactions of the hot table and then replays the transactions, reducing frequent operations on the destination database.
 #. The access to the DR database is abnormal. As a result, the incremental data cannot be replayed.
 
-Handling Suggestion
--------------------
+Handling Suggestion for an Increase in RTO
+------------------------------------------
 
 #. On the **Disaster Recovery Management** page, click the target DR task in the **Task Name/ID** column.
 #. On the **Basic Information** page, click the **Disaster Recovery Monitoring** tab to view the changes of RTO.
@@ -40,9 +40,8 @@ Recovery Point Objective (RPO) refers to the time that passes from when a transa
 #. The network between the service database and the DRS DR instance is unstable. Reading changes in logs from the service database is slow.
 #. The service database cannot be accessed. As a result, incremental data cannot be extracted.
 
-
-Handling Suggestion
--------------------
+Handling Suggestion for an Increase in RPO
+------------------------------------------
 
 #. On the **Disaster Recovery Management** page, click the target DR task in the **Task Name/ID** column.
 #. On the **Basic Information** page, click the **Disaster Recovery Monitoring** tab to view the changes of RPO.

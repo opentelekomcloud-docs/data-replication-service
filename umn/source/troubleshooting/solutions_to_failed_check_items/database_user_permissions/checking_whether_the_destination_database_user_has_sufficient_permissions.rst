@@ -145,3 +145,24 @@ MongoDB Migration
    |                                       |                                                                                                                                                                                                                          |
    |                                       | Handling suggestion: Contact technical support.                                                                                                                                                                          |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Oracle -> PostgreSQL Synchronization
+------------------------------------
+
+.. table:: **Table 4** Checking whether the destination database user has sufficient permissions
+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Check Item                            | Whether the destination database user has sufficient permissions                                                                                                      |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Description                           | Check whether the destination database user permissions meet the migration requirements. If the permissions are insufficient, the migration will fail.                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Failure Cause and Handling Suggestion | Failure cause: The destination database user does not have sufficient permissions.                                                                                    |
+   |                                       |                                                                                                                                                                       |
+   |                                       | Handling suggestions: Run the following command to grant the permissions of creating databases and tables on the destination database. Then, perform the check again. |
+   |                                       |                                                                                                                                                                       |
+   |                                       | .. code:: text                                                                                                                                                        |
+   |                                       |                                                                                                                                                                       |
+   |                                       |    ALTER ROLE targetUser WITH CREATEDB;                                                                                                                               |
+   |                                       |                                                                                                                                                                       |
+   |                                       | In the preceding command, **targetUser** indicates the current user of the destination database.                                                                      |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+

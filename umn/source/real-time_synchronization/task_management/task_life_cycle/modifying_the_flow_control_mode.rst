@@ -11,6 +11,7 @@ You can choose whether to control the flow. DRS allows you to change the flow co
 
    -  MySQL->MySQL
    -  MySQL -> GaussDB(for MySQL) primary/standby
+   -  Oracle->PostgreSQL
    -  PostgreSQL->PostgreSQL
 
 -  Out of the cloud

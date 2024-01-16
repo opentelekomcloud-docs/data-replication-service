@@ -18,7 +18,7 @@ Process
 The following flowchart shows the basic processes for disaster recovery.
 
 
-.. figure:: /_static/images/en-us_image_0000001391693933.png
+.. figure:: /_static/images/en-us_image_0000001710471004.png
    :alt: **Figure 1** Disaster recovery process
 
    **Figure 1** Disaster recovery process
@@ -230,8 +230,9 @@ Procedure
       |                                   |                                                                                                                                                                                                                                                                                                                                                                       |
       |                                   |    The flow rate must be set based on the service scenario and cannot exceed 9,999 MB/s.                                                                                                                                                                                                                                                                              |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                       |
+      |                                   |    .. _drs_02_0027__drs_04_0122_en-us_topic_0135097933_fig218884774210:                                                                                                                                                                                                                                                                                               |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                       |
-      |                                   |    .. figure:: /_static/images/en-us_image_0000001341574056.png                                                                                                                                                                                                                                                                                                       |
+      |                                   |    .. figure:: /_static/images/en-us_image_0000001710630288.png                                                                                                                                                                                                                                                                                                       |
       |                                   |       :alt: **Figure 2** Flow control                                                                                                                                                                                                                                                                                                                                 |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                       |
       |                                   |       **Figure 2** Flow control                                                                                                                                                                                                                                                                                                                                       |
@@ -283,4 +284,4 @@ Procedure
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_02_0025>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341414072.png
+.. |image1| image:: /_static/images/en-us_image_0000001710630300.png

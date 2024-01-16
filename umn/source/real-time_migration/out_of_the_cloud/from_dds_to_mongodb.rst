@@ -10,17 +10,17 @@ Supported Source and Destination Databases
 
 .. table:: **Table 1** Supported Databases
 
-   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | Source DB                                        | Destination DB                                                                                        |
-   +==================================================+=======================================================================================================+
-   | -  DDS DB instances (versions 3.2, 3.4, and 4.0) | -  On-premises Mongo database (versions 3.2, 3.4, and 4.0)                                            |
-   |                                                  | -  Self-built MongoDB on ECS (versions 3.2, 3.4, and 4.0)                                             |
-   |                                                  | -  MongoDB 3.2, 3.4, and 4.0 on other clouds                                                          |
-   |                                                  |                                                                                                       |
-   |                                                  |    .. note::                                                                                          |
-   |                                                  |                                                                                                       |
-   |                                                  |       The destination database version must be the same as or later than the source database version. |
-   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | Source DB                                                  | Destination DB                                                                                        |
+   +============================================================+=======================================================================================================+
+   | -  DDS DB instances (versions 3.2, 3.4, 4.0, 4.2, and 4.4) | -  On-premises MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4)                                    |
+   |                                                            | -  ECS-hosted MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4)                                     |
+   |                                                            | -  Other cloud MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4)                                    |
+   |                                                            |                                                                                                       |
+   |                                                            |    .. note::                                                                                          |
+   |                                                            |                                                                                                       |
+   |                                                            |       The destination database version must be the same as or later than the source database version. |
+   +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Supported Migration Objects
 ---------------------------
@@ -45,6 +45,7 @@ Different types of migration tasks support different migration objects. For deta
    |                                   |    -  The statement for creating a view cannot contain a regular expression.                                                                                                                                    |
    |                                   |    -  Collections that contain the **\_id** field without indexes are not supported.                                                                                                                            |
    |                                   |    -  The first parameter of **BinData()** cannot be **2**.                                                                                                                                                     |
+   |                                   |    -  Do not store non-UTF-8 character strings in the String field of the source database collection. Otherwise, data will be inconsistent before and after the migration.                                      |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Database Account Permission Requirements
@@ -291,7 +292,7 @@ This section describes how to migrate from a DDS instance to an on-premises Mong
       |                                   | .. note::                                                                                                                                                                                                                                                                   |
       |                                   |                                                                                                                                                                                                                                                                             |
       |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                                                         |
-      |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                                                         |
+      |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                                                         |
       +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. note::
@@ -373,5 +374,5 @@ This section describes how to migrate from a DDS instance to an on-premises Mong
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001391534285.png
-.. |image2| image:: /_static/images/en-us_image_0000001391694113.png
+.. |image1| image:: /_static/images/en-us_image_0000001758549869.png
+.. |image2| image:: /_static/images/en-us_image_0000001758429809.png

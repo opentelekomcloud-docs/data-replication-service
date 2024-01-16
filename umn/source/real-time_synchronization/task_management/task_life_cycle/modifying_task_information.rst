@@ -45,6 +45,6 @@ Procedure
 
 #. View the change result on the **Basic Information** tab.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341094684.png
-.. |image2| image:: /_static/images/en-us_image_0000001391534301.png
-.. |image3| image:: /_static/images/en-us_image_0000001391853989.png
+.. |image1| image:: /_static/images/en-us_image_0000001758550585.png
+.. |image2| image:: /_static/images/en-us_image_0000001710470992.png
+.. |image3| image:: /_static/images/en-us_image_0000001710470984.png

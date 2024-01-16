@@ -20,7 +20,7 @@ Cross-Cloud Real-Time Migration
 
       Enable public accessibility for the source database.
 
-      For details, see related documents provided by Alibaba Cloud.
+      For details, see related documents provided by other Cloud.
 
    -  Destination database network settings:
 

@@ -16,10 +16,16 @@ You can reset the following DRS tasks:
 
    -  MySQL->MySQL
    -  PostgreSQL->PostgreSQL
+   -  Oracle->PostgreSQL
 
 -  From the cloud
 
    -  MySQL->MySQL
+   -  MySQL->Kafka
+
+-  Self-built -> Self-built
+
+   -  MySQL->Kafka
 
 .. note::
 
