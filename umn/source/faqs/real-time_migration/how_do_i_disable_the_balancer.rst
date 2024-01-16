@@ -32,7 +32,7 @@ Procedure
    -  If the command output is **waiting**, the balancer is migrating chunks. In this case, do not disable the balancer. Otherwise, data inconsistency may occur.
 
 
-      .. figure:: /_static/images/en-us_image_0000001391694037.png
+      .. figure:: /_static/images/en-us_image_0000001710470892.png
          :alt: **Figure 1** Viewing the command output
 
          **Figure 1** Viewing the command output

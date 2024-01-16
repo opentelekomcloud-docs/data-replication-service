@@ -122,5 +122,5 @@ Method 2
 #. On the displayed page, click **edit this task** to go to the **Configure Source and Destination Databases** page.
 #. Perform steps :ref:`2 <drs_03_0002__li105671010104417>` to :ref:`6 <drs_03_0002__li620112563620>`.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341254308.png
-.. |image2| image:: /_static/images/en-us_image_0000001391693937.png
+.. |image1| image:: /_static/images/en-us_image_0000001710470728.png
+.. |image2| image:: /_static/images/en-us_image_0000001758429493.png

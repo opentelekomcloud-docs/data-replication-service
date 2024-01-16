@@ -8,7 +8,29 @@ Change History
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | Released On                       | Description                                                                                                         |
 +===================================+=====================================================================================================================+
-| 2022-10-30                        | This issue is the seventh official release, which incorporates the following change:                                |
+| 2023-11-17                        | This issue is the twelfth official release, which incorporates the following changes:                               |
+|                                   |                                                                                                                     |
+|                                   | -  Supported real-time migration of DDS 4.4.                                                                        |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| 2023-10-17                        | This issue is the eleventh official release, which incorporates the following changes:                              |
+|                                   |                                                                                                                     |
+|                                   | -  Supported real-time migration from MySQL to GaussDB(for MySQL).                                                  |
+|                                   | -  Supported periodic comparison.                                                                                   |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| 2023-05-23                        | This issue is the tenth official release, which incorporates the following changes:                                 |
+|                                   |                                                                                                                     |
+|                                   | -  Added DMS for Kafka as the Destination DB.                                                                       |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| 2023-02-10                        | This issue is the ninth official release, which incorporates the following changes:                                 |
+|                                   |                                                                                                                     |
+|                                   | -  Added the procedure for real-time synchronization from Oracle to PostgreSQL.                                     |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| 2022-12-06                        | This issue is the eighth official release, which incorporates the following changes:                                |
+|                                   |                                                                                                                     |
+|                                   | -  Supported real-time synchronization from Oracle to PostgreSQL.                                                   |
+|                                   | -  Supported real-time synchronization from MySQL to Kafka.                                                         |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| 2022-08-30                        | This issue is the seventh official release, which incorporates the following change:                                |
 |                                   |                                                                                                                     |
 |                                   | -  Supported real-time synchronization from PostgreSQL to PostgreSQL.                                               |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -28,11 +50,11 @@ Change History
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | 2020-11-13                        | This issue is the third official release, which incorporates the following change:                                  |
 |                                   |                                                                                                                     |
-|                                   | Supported two-way synchronization between MySQL and GaussDB(for openGauss).                                         |
+|                                   | Supported two-way synchronization between MySQL and GaussDB.                                                        |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | 2020-07-31                        | This issue is the second official release, which incorporates the following changes:                                |
 |                                   |                                                                                                                     |
-|                                   | -  Supported synchronization from MySQL to GaussDB(for openGauss).                                                  |
+|                                   | -  Supported synchronization from MySQL to GaussDB.                                                                 |
 |                                   | -  Supported Cassandra disaster recovery.                                                                           |
 |                                   | -  Supported disaster recovery from MySQL to GaussDB(for MySQL).                                                    |
 +-----------------------------------+---------------------------------------------------------------------------------------------------------------------+

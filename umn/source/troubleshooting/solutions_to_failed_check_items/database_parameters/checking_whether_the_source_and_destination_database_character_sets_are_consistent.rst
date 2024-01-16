@@ -54,5 +54,5 @@ MySQL Migration
    |                                       | Handling suggestion: Contact technical support.                                                                |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: /_static/images/en-us_image_0000001391534273.png
-.. |image2| image:: /_static/images/en-us_image_0000001341254040.png
+.. |image1| image:: /_static/images/en-us_image_0000001758549597.png
+.. |image2| image:: /_static/images/en-us_image_0000001758429769.png

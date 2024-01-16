@@ -6,6 +6,7 @@ To the Cloud
 ============
 
 -  :ref:`From MySQL to MySQL <drs_04_0088>`
+-  :ref:`From MySQL to GaussDB(for MySQL) Primary/Standby <drs_04_0090>`
 -  :ref:`From MongoDB to DDS <drs_04_0095>`
 
 .. toctree::
@@ -13,4 +14,5 @@ To the Cloud
    :hidden: 
 
    from_mysql_to_mysql
+   from_mysql_to_gaussdbfor_mysql_primary_standby
    from_mongodb_to_dds

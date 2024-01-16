@@ -81,5 +81,5 @@ Procedure
 
          You can also view comparison details of canceled comparison tasks.
 
-.. |image1| image:: /_static/images/en-us_image_0000001391853909.png
-.. |image2| image:: /_static/images/en-us_image_0000001341573876.png
+.. |image1| image:: /_static/images/en-us_image_0000001758549857.png
+.. |image2| image:: /_static/images/en-us_image_0000001758430021.png

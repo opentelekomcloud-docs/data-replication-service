@@ -10,15 +10,15 @@ Supported Source and Destination Databases
 
 .. table:: **Table 1** Supported databases
 
-   +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | Source DB                                                  | Destination DB                                                                                        |
-   +============================================================+=======================================================================================================+
-   | -  On-premises Mongo database (versions 3.2, 3.4, and 4.0) | -  DDS DB instance (versions 3.4, 4.0, and 4.2)                                                       |
-   | -  Self-built MongoDB on ECS (versions 3.2, 3.4, and 4.0)  |                                                                                                       |
-   | -  MongoDB 3.2, 3.4, and 4.0 on other clouds               |    .. note::                                                                                          |
-   | -  DDS DB instances (versions 3.4 and 4.0)                 |                                                                                                       |
-   |                                                            |       The destination database version must be the same as or later than the source database version. |
-   +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   +--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | Source DB                                                          | Destination DB                                                                                        |
+   +====================================================================+=======================================================================================================+
+   | -  On-premises MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4) | -  DDS DB instances (versions 3.4, 4.0, 4.2, and 4.4)                                                 |
+   | -  ECS-hosted MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4)  |                                                                                                       |
+   | -  Other Cloud MongoDB 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4            |    .. note::                                                                                          |
+   | -  DDS DB instances (versions 3.2, 3.4, 4.0, 4.2, and 4.4)         |                                                                                                       |
+   |                                                                    |       The destination database version must be the same as or later than the source database version. |
+   +--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Supported Migration Objects
 ---------------------------
@@ -44,6 +44,9 @@ Different types of migration tasks support different migration objects. For deta
    |                                   |    -  Collections that contain the **\_id** field without indexes are not supported.                                                                                                                                                                                                                                       |
    |                                   |    -  The first parameter of **BinData()** cannot be **2**.                                                                                                                                                                                                                                                                |
    |                                   |    -  If ranged sharding is used, **maxKey** cannot be used as the primary key.                                                                                                                                                                                                                                            |
+   |                                   |    -  Do not store non-UTF-8 character strings in the String field of the source database collection. Otherwise, data will be inconsistent before and after the migration.                                                                                                                                                 |
+   |                                   |    -  If the source is a cluster instance of version 4.4, composite hash indexes and composite hash shard keys are not supported.                                                                                                                                                                                          |
+   |                                   |    -  If the source is a replica set instance of version 4.4, composite hash indexes are not supported.                                                                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                                                                                                            |
    |                                   |    .. note::                                                                                                                                                                                                                                                                                                               |
    |                                   |                                                                                                                                                                                                                                                                                                                            |
@@ -370,7 +373,7 @@ This section uses MongoDB sharded clusters as an example to describe how to conf
          |                                   | .. note::                                                                                                                                                                                                                                                                          |
          |                                   |                                                                                                                                                                                                                                                                                    |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                                                                |
-         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                                                                |
+         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                                                                |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
          | Sharded Database                  | Enter the information about the sharded databases in the source database.                                                                                                                                                                                                          |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -479,5 +482,5 @@ This section uses MongoDB sharded clusters as an example to describe how to conf
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001391693901.png
-.. |image2| image:: /_static/images/en-us_image_0000001391694113.png
+.. |image1| image:: /_static/images/en-us_image_0000001710470416.png
+.. |image2| image:: /_static/images/en-us_image_0000001758429809.png

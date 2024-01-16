@@ -41,12 +41,12 @@ Supported network types during migration to GaussDB(for MySQL) on the current cl
 -  Direct Connect
 -  Public network
 
-GaussDB(for openGauss)
-----------------------
+GaussDB
+-------
 
-DRS can migrate data from your databases to GaussDB(for openGauss) on the current cloud. For more information about GaussDB(for openGauss), see GaussDB(for openGauss) User Guide.
+DRS can migrate data from your databases to GaussDB on the current cloud. For more information about GaussDB, see GaussDB User Guide.
 
-Supported network types during migration to GaussDB(for openGauss) on the current cloud:
+Supported network types during migration to GaussDB on the current cloud:
 
 -  VPC
 -  VPN

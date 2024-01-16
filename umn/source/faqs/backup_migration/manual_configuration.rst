@@ -41,7 +41,7 @@ Login account is an instance-level account of Microsoft SQL Server and is used t
    Execute the script in :ref:`1 <drs_04_0458__en-us_topic_0000001205509265_en-us_topic_0176256301_li165582910512>`:
 
 
-   .. figure:: /_static/images/en-us_image_0000001391854125.jpg
+   .. figure:: /_static/images/en-us_image_0000001710471044.jpg
       :alt: **Figure 1** Obtaining the script
 
       **Figure 1** Obtaining the script
@@ -89,7 +89,7 @@ SQL Server allows you to create database links to interact with databases on ext
 #. Connect the local DB instance and cloud DB instance through Microsoft SQL Server Management Studio. Choose **Server Objects** > **Linked Servers** and locate the DBLink of the current DB instance.
 
 
-   .. figure:: /_static/images/en-us_image_0000001391773997.jpg
+   .. figure:: /_static/images/en-us_image_0000001710630532.jpg
       :alt: **Figure 2** Viewing database links
 
       **Figure 2** Viewing database links
@@ -97,7 +97,7 @@ SQL Server allows you to create database links to interact with databases on ext
 #. Select the linked server and press **F7**. The **Object Explore** page is displayed. On this page, you can quickly create a script.
 
 
-   .. figure:: /_static/images/en-us_image_0000001341094552.jpg
+   .. figure:: /_static/images/en-us_image_0000001758430137.jpg
       :alt: **Figure 3** Creating the script
 
       **Figure 3** Creating the script
@@ -127,7 +127,7 @@ Agent Job is the agent service of Microsoft SQL Server. It helps you quickly cre
 #. Connect the local DB instance and cloud DB instance through Microsoft SQL Server Management Studio. Choose **SQL Server Agent** > **Jobs** and locate all the jobs of the current DB instance.
 
 
-   .. figure:: /_static/images/en-us_image_0000001341254212.jpg
+   .. figure:: /_static/images/en-us_image_0000001710630536.jpg
       :alt: **Figure 4** Viewing Jobs
 
       **Figure 4** Viewing Jobs
@@ -135,7 +135,7 @@ Agent Job is the agent service of Microsoft SQL Server. It helps you quickly cre
 #. Select a job and press **F7**. All jobs are displayed on the **Object Explore** page. Select all jobs and create a script in the new window.
 
 
-   .. figure:: /_static/images/en-us_image_0000001341574092.jpg
+   .. figure:: /_static/images/en-us_image_0000001710471040.jpg
       :alt: **Figure 5** Creating a script
 
       **Figure 5** Creating a script
@@ -191,7 +191,7 @@ After the database is restored to the RDS SQL Server DB instance, some local imp
       GO
 
 
-   .. figure:: /_static/images/en-us_image_0000001391694017.jpg
+   .. figure:: /_static/images/en-us_image_0000001710471048.jpg
       :alt: **Figure 6** Checking temporary files
 
       **Figure 6** Checking temporary files
@@ -217,7 +217,7 @@ After the database is restored to the RDS SQL Server DB instance, some local imp
    In **Object Explorer**, right-click a local server and select **Properties**. Click the **Advanced** node. In the **Max Degree of Parallelism** box, view the value of the local instance and change the **max degree of parallelism** value in the parameter group of the destination RDS SQL Server instance to the same.
 
 
-   .. figure:: /_static/images/en-us_image_0000001391534445.jpg
+   .. figure:: /_static/images/en-us_image_0000001758430141.jpg
       :alt: **Figure 7** Max Degree of Parallelism
 
       **Figure 7** Max Degree of Parallelism
@@ -225,7 +225,7 @@ After the database is restored to the RDS SQL Server DB instance, some local imp
    Log in to the RDS console. On the **Instance Management** page, click the target DB instance name. Choose **Parameters**, search for the **max degree of parallelism** parameter, and change its value.
 
 
-   .. figure:: /_static/images/en-us_image_0000001341414112.png
+   .. figure:: /_static/images/en-us_image_0000001758549965.png
       :alt: **Figure 8** max degree of parallelism
 
       **Figure 8** max degree of parallelism
@@ -235,7 +235,7 @@ After the database is restored to the RDS SQL Server DB instance, some local imp
    Right-click the database and choose **Properties** from the shortcut menu. In the displayed page, select **Options**. Then, verify that **Recovery Model** is set to **Full**. Ensure that the database is highly available and the backup policy is executable.
 
 
-   .. figure:: /_static/images/en-us_image_0000001391854129.png
+   .. figure:: /_static/images/en-us_image_0000001758430133.png
       :alt: **Figure 9** Checking the database recovery model
 
       **Figure 9** Checking the database recovery model

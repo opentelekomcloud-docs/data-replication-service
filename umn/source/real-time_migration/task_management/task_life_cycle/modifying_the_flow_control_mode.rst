@@ -10,10 +10,12 @@ You can choose whether to control the flow. DRS allows you to change the flow co
 -  To the cloud
 
    -  MySQL->MySQL
+   -  MongoDB->DDS
 
 -  From of the cloud
 
    -  MySQL->MySQL
+   -  DDS->MongoDB
 
 .. note::
 

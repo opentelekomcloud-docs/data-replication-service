@@ -14,7 +14,7 @@ To ensure that all services on the database are stopped, perform the following s
       show processlist;
 
 
-   .. figure:: /_static/images/en-us_image_0000001391694041.png
+   .. figure:: /_static/images/en-us_image_0000001758429757.png
       :alt: **Figure 1** Checking active connections
 
       **Figure 1** Checking active connections
@@ -28,7 +28,7 @@ To ensure that all services on the database are stopped, perform the following s
       show master status;
 
 
-   .. figure:: /_static/images/en-us_image_0000001341414136.png
+   .. figure:: /_static/images/en-us_image_0000001758549585.png
       :alt: **Figure 2** Viewing the binlog position
 
       **Figure 2** Viewing the binlog position

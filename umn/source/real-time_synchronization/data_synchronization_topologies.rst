@@ -32,6 +32,6 @@ Many-to-One Real-Time Synchronization
 
 You need to create multiple synchronization tasks to implement many-to-one real-time synchronization. For example, to synchronize data from instances B, C, and D to instance A, you need to create three synchronization tasks. Multiple tables can be synchronized to one table.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341094628.png
-.. |image2| image:: /_static/images/en-us_image_0000001341414188.png
-.. |image3| image:: /_static/images/en-us_image_0000001391774069.png
+.. |image1| image:: /_static/images/en-us_image_0000001710629888.png
+.. |image2| image:: /_static/images/en-us_image_0000001758549321.png
+.. |image3| image:: /_static/images/en-us_image_0000001710470404.png

@@ -2,20 +2,20 @@
 
 .. _drs_03_1131:
 
-Forcibly Stopping Synchronization of GaussDB(for openGauss) Distributed
-=======================================================================
+Forcibly Stopping Synchronization of GaussDB Distributed
+========================================================
 
-This section describes how to clear the streaming replication slots of the source GaussDB(for openGauss) distributed database after the incremental or full+incremental synchronization task is forcibly stopped.
+This section describes how to clear the streaming replication slots of the source GaussDB distributed database after the incremental or full+incremental synchronization task is forcibly stopped.
 
 Prerequisites
 -------------
 
-Common users do not have the permission to perform the execute direct operation. To delete streaming replication slots, contact GaussDB(for openGauss) O&M personnel.
+Common users do not have the permission to perform the execute direct operation. To delete streaming replication slots, contact GaussDB O&M personnel.
 
 Procedure
 ---------
 
-#. Log in to each primary DN node of GaussDB(for openGauss) distributed instance as the user used when you tested the connectivity between the DRS instance and the GaussDB(for openGauss) distributed instance.
+#. Log in to each primary DN node of GaussDB distributed instance as the user used when you tested the connectivity between the DRS instance and the GaussDB distributed instance.
 
 #. .. _drs_03_1131__li4276143622720:
 

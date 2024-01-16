@@ -56,6 +56,6 @@ MySQL Migration
    |                                       | -  If the source is an RDS instance, enable binlog by referring to the RDS official documentation.                                                    |
    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. |image1| image:: /_static/images/en-us_image_0000001341254208.png
-.. |image2| image:: /_static/images/en-us_image_0000001391534441.png
-.. |image3| image:: /_static/images/en-us_image_0000001391773989.jpg
+.. |image1| image:: /_static/images/en-us_image_0000001710629852.png
+.. |image2| image:: /_static/images/en-us_image_0000001758549285.png
+.. |image3| image:: /_static/images/en-us_image_0000001710470364.jpg

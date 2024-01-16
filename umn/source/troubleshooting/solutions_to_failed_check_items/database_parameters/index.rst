@@ -34,10 +34,14 @@ Database Parameters
 -  :ref:`Checking Whether log_bin_trust_function_creators Is Set to On in Both the Source and Destination Databases <drs_11_0227>`
 -  :ref:`Checking Whether log_bin_trust_function_creators Is Set to On in the Destination Database <drs_11_0225>`
 -  :ref:`Checking Whether the max_allowed_packet Value of the Destination Database Is too Small <drs_15_0017>`
+-  :ref:`Checking Whether the Source Database Character Set Is Supported <drs_03_043>`
 -  :ref:`Checking Whether the Databases and Tables Exist <drs_03_045>`
 -  :ref:`Checking Whether session_replication_role of the Destination Database Is correctly Set <drs_03_1130>`
 -  :ref:`Checking Whether the MongoDB Instance Type Matches the Migration Mode <drs_11_0066>`
+-  :ref:`Checking the Physical Standby Database <drs_11_0465>`
 -  :ref:`Checking Whether the Values of group_concat_max_len Are Consistent <drs_11_0469>`
+-  :ref:`Checking Whether the Character Sets Are Compatible <drs_11_0471>`
+-  :ref:`Checking Whether the Source Database Contains Unsupported Table Field Types <drs_11_0481>`
 -  :ref:`Checking Replication Attribute of Primary Key Columns <drs_11_0482>`
 
 .. toctree::
@@ -73,8 +77,12 @@ Database Parameters
    checking_whether_log_bin_trust_function_creators_is_set_to_on_in_both_the_source_and_destination_databases
    checking_whether_log_bin_trust_function_creators_is_set_to_on_in_the_destination_database
    checking_whether_the_max_allowed_packet_value_of_the_destination_database_is_too_small
+   checking_whether_the_source_database_character_set_is_supported
    checking_whether_the_databases_and_tables_exist
    checking_whether_session_replication_role_of_the_destination_database_is_correctly_set
    checking_whether_the_mongodb_instance_type_matches_the_migration_mode
+   checking_the_physical_standby_database
    checking_whether_the_values_of_group_concat_max_len_are_consistent
+   checking_whether_the_character_sets_are_compatible
+   checking_whether_the_source_database_contains_unsupported_table_field_types
    checking_replication_attribute_of_primary_key_columns

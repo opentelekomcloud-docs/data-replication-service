@@ -62,4 +62,4 @@ Method 2
 #. On the displayed page, click **edit this task** to go to the **Configure Source and Destination Databases** page.
 #. Perform :ref:`2 <drs_03_0026__li105671010104417>` through :ref:`5 <drs_03_0026__li34303618172657>` in method 1.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341414072.png
+.. |image1| image:: /_static/images/en-us_image_0000001710630300.png

@@ -331,7 +331,7 @@ This section uses the migration from MySQL to RDS MySQL in a VPC as an example t
          |                                   | .. note::                                                                                                                                                                                                                                         |
          |                                   |                                                                                                                                                                                                                                                   |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                               |
-         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                               |
+         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                               |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
       .. note::
@@ -503,5 +503,5 @@ This section uses the migration from MySQL to RDS MySQL in a VPC as an example t
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341254308.png
-.. |image2| image:: /_static/images/en-us_image_0000001391694113.png
+.. |image1| image:: /_static/images/en-us_image_0000001710470728.png
+.. |image2| image:: /_static/images/en-us_image_0000001758429809.png

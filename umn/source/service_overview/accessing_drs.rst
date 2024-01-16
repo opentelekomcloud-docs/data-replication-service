@@ -19,4 +19,4 @@ Procedure
 #. Click |image1| in the upper left corner and select a region and project.
 #. Log in to the management console, click **Data Replication Service** under **Databases** to go to the DRS console.
 
-.. |image1| image:: /_static/images/en-us_image_0000001391854173.png
+.. |image1| image:: /_static/images/en-us_image_0000001710630116.png

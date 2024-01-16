@@ -47,7 +47,7 @@ Impact on the Destination Database
 
       .. code-block:: text
 
-         insert into xxx (id,name,msg) valus (xxx);
+         insert into xxx (id,name,msg) values (xxx);
 
    -  Fewer than eight sessions are used to create indexes. Example:
 

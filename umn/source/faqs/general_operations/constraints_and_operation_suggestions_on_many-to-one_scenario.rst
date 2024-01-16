@@ -21,7 +21,7 @@ Many-to-One Data Migration
 Data migration aims to migrate the entire database. Multiple databases can be migrated at the instance level. Databases with the same name in the source system cannot be migrated and database name mapping is not supported.
 
 
-.. figure:: /_static/images/en-us_image_0000001341094500.png
+.. figure:: /_static/images/en-us_image_0000001758549529.png
    :alt: **Figure 1** Many-to-one data migration
 
    **Figure 1** Many-to-one data migration
@@ -32,7 +32,7 @@ Flow Chart
 When creating a task, ensure that the second task is created after the first task has entered the full migration state.
 
 
-.. figure:: /_static/images/en-us_image_0000001391693965.png
+.. figure:: /_static/images/en-us_image_0000001710470616.png
    :alt: **Figure 2** Flow chart
 
    **Figure 2** Flow chart

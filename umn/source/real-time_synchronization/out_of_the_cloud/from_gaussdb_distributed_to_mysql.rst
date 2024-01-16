@@ -2,22 +2,22 @@
 
 .. _drs_04_0121:
 
-From GaussDB(for openGauss) Distributed to MySQL
-================================================
+From GaussDB Distributed to MySQL
+=================================
 
 Supported Source and Destination Databases
 ------------------------------------------
 
 .. table:: **Table 1** Supported databases
 
-   +---------------------------------------+------------------------------------------------------+
-   | Source DB                             | Destination DB                                       |
-   +=======================================+======================================================+
-   | -  GaussDB(for openGauss) distributed | -  RDS for MySQL 5.6 and 5.7                         |
-   |                                       | -  On-premises MySQL 5.5, 5.6, and 5.7 databases     |
-   |                                       | -  MySQL 5.5, 5.6, and 5.7 databases on an ECS       |
-   |                                       | -  MySQL 5.5, 5.6, and 5.7 databases on other clouds |
-   +---------------------------------------+------------------------------------------------------+
+   +-----------------------------------+------------------------------------------------------+
+   | Source DB                         | Destination DB                                       |
+   +===================================+======================================================+
+   | -  GaussDB distributed            | -  RDS for MySQL 5.6 and 5.7                         |
+   |                                   | -  On-premises MySQL 5.5, 5.6, and 5.7 databases     |
+   |                                   | -  MySQL 5.5, 5.6, and 5.7 databases on an ECS       |
+   |                                   | -  MySQL 5.5, 5.6, and 5.7 databases on other clouds |
+   +-----------------------------------+------------------------------------------------------+
 
 Supported Synchronization Objects
 ---------------------------------
@@ -126,7 +126,7 @@ DRS incremental synchronization consists of three phases: task start, incrementa
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Incremental synchronization       | -  Do not change the port of the source and destination databases, or change or delete the passwords and permissions of the source and destination database users. Otherwise, the task may fail.                                                                       |
    |                                   | -  Before a task enters the incremental synchronization phase, ensure that long-running transactions are not started in the source database. Starting the long transaction will block the creation of the logical replication slot and cause the task to fail.         |
-   |                                   | -  Do not execute any DDL statement in the source database. Restricted by the GaussDB(for openGauss) logical replication function, DDL statements cannot be synchronized. If you synchronize DDL statements, data may be inconsistent or the task may fail.            |
+   |                                   | -  Do not execute any DDL statement in the source database. Restricted by the GaussDB logical replication function, DDL statements cannot be synchronized. If you synchronize DDL statements, data may be inconsistent or the task may fail.                           |
    |                                   | -  Do not change the REPLICA IDENTITY value of a table in the source database. Otherwise, incremental data may be inconsistent or the task may fail.                                                                                                                   |
    |                                   | -  Do not write data to the destination database. Otherwise, data may be inconsistent.                                                                                                                                                                                 |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,7 +140,7 @@ DRS incremental synchronization consists of three phases: task start, incrementa
    |                                   |                                                                                                                                                                                                                                                                        |
    |                                   | **Forcibly stop a task.**                                                                                                                                                                                                                                              |
    |                                   |                                                                                                                                                                                                                                                                        |
-   |                                   | -  To forcibly stop a synchronization task, you need to manually delete the replication slots that may remain in the source database. For details, see :ref:`Forcibly Stopping Synchronization of GaussDB(for openGauss) Distributed <drs_03_1131>`.                   |
+   |                                   | -  To forcibly stop a synchronization task, you need to manually delete the replication slots that may remain in the source database. For details, see :ref:`Forcibly Stopping Synchronization of GaussDB Distributed <drs_03_1131>`.                                  |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Prerequisites
@@ -179,13 +179,13 @@ Procedure
       +===================================+=================================================================================================================================================+
       | Data Flow                         | Select **Out of the cloud**.                                                                                                                    |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Source DB Engine                  | Select **GaussDB(for openGauss) Distributed Edition**.                                                                                          |
+      | Source DB Engine                  | Select **GaussDB Distributed Edition**.                                                                                                         |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
       | Destination DB Engine             | Select **MySQL**.                                                                                                                               |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
       | Network Type                      | The public network is used as an example. Available options: **Public network** and **VPN or Direct Connect**                                   |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Source DB Instance                | The GaussDB(for openGauss) distributed instance you created.                                                                                    |
+      | Source DB Instance                | The GaussDB distributed instance you created.                                                                                                   |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
       | Synchronization Mode              | -  **Incremental**                                                                                                                              |
       |                                   |                                                                                                                                                 |
@@ -208,15 +208,15 @@ Procedure
 
    .. table:: **Table 7** Source database settings
 
-      +-------------------+----------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter         | Description                                                                                                                      |
-      +===================+==================================================================================================================================+
-      | DB Instance Name  | The GaussDB(for openGauss) distributed instance selected during synchronization task creation. This parameter cannot be changed. |
-      +-------------------+----------------------------------------------------------------------------------------------------------------------------------+
-      | Database Username | The username for accessing the source database.                                                                                  |
-      +-------------------+----------------------------------------------------------------------------------------------------------------------------------+
-      | Database Password | The password for the database username.                                                                                          |
-      +-------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      +-------------------+-------------------------------------------------------------------------------------------------------------------+
+      | Parameter         | Description                                                                                                       |
+      +===================+===================================================================================================================+
+      | DB Instance Name  | The GaussDB distributed instance selected during synchronization task creation. This parameter cannot be changed. |
+      +-------------------+-------------------------------------------------------------------------------------------------------------------+
+      | Database Username | The username for accessing the source database.                                                                   |
+      +-------------------+-------------------------------------------------------------------------------------------------------------------+
+      | Database Password | The password for the database username.                                                                           |
+      +-------------------+-------------------------------------------------------------------------------------------------------------------+
 
    .. note::
 
@@ -240,7 +240,7 @@ Procedure
       |                                   | .. note::                                                                                                                                                   |
       |                                   |                                                                                                                                                             |
       |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                         |
-      |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                         |
+      |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                         |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. note::
@@ -309,4 +309,4 @@ Procedure
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_06_0004>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341414140.png
+.. |image1| image:: /_static/images/en-us_image_0000001758549405.png

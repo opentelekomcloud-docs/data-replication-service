@@ -20,8 +20,9 @@ Supported Source and Destination Databases
    | -  Microsoft SQL Server 2008                                             | -  Microsoft SQL Server 2014      |
    | -  Microsoft SQL Server 2012                                             | -  Microsoft SQL Server 2016      |
    | -  Microsoft SQL Server 2014                                             | -  Microsoft SQL Server 2017      |
-   | -  Microsoft SQL Server 2016                                             |                                   |
+   | -  Microsoft SQL Server 2016                                             | -  Microsoft SQL Server 2019      |
    | -  Microsoft SQL Server 2017                                             |                                   |
+   | -  Microsoft SQL Server 2019                                             |                                   |
    +--------------------------------------------------------------------------+-----------------------------------+
 
 Prerequisites

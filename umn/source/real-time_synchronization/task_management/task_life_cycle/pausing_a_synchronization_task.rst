@@ -13,10 +13,16 @@ The following tasks can be paused during incremental synchronization:
 
    -  MySQL->MySQL
    -  PostgreSQL->PostgreSQL
+   -  Oracle->PostgreSQL
 
 -  From the cloud
 
    -  MySQL->MySQL
+   -  MySQL->Kafka
+
+-  Self-built -> Self-built
+
+   -  MySQL->Kafka
 
 In addition, the following tasks can be paused during full synchronization:
 

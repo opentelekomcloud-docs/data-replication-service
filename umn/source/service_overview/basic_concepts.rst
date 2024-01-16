@@ -67,7 +67,7 @@ A region and availability zone (AZ) identify the location of a data center. You 
 
 .. _drs_01_0005__en-us_topic_0000001205747781_en-us_topic_0000001102434640_en-us_topic_0171122769_fig2922183194716:
 
-.. figure:: /_static/images/en-us_image_0000001341254148.png
+.. figure:: /_static/images/en-us_image_0000001710470628.png
    :alt: **Figure 1** Region and AZ
 
    **Figure 1** Region and AZ
@@ -78,7 +78,7 @@ Project
 A project corresponds to a region. Projects group and isolate resources (including compute, storage, and network resources) across physical regions. Users can be granted permissions in a default project to access all resources in the region associated with the project. If you need more refined access control, create subprojects under a default project and create resources in subprojects. Then you can assign users the permissions required to access only the resources in the specific subprojects.
 
 
-.. figure:: /_static/images/en-us_image_0000001341094488.gif
+.. figure:: /_static/images/en-us_image_0000001710470624.gif
    :alt: **Figure 2** Project isolating model
 
    **Figure 2** Project isolating model

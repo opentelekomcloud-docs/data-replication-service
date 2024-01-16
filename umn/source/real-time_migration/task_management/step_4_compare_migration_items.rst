@@ -8,7 +8,7 @@ Step 4: Compare Migration Items
 This section describes how to compare migration items to check if there are any differences between source and destination databases. By comparing migration objects, you can determine the proper time for service migration to minimize the service downtime.
 
 
-.. figure:: /_static/images/en-us_image_0000001391773841.png
+.. figure:: /_static/images/en-us_image_0000001758549373.png
    :alt: **Figure 1** Comparison process
 
    **Figure 1** Comparison process
@@ -23,6 +23,9 @@ You can compare migration objects with different dimensions:
 
    -  Row comparison: It helps you compare the number of rows in the tables to be migrated. This comparison method is recommended because it is fast.
    -  Value comparison: It helps you check whether data in the migrated table is consistent. The comparison process is relatively slow.
+
+-  Account comparison: It compares usernames and permissions of the source and destination databases.
+-  Periodic comparison: DRS periodically compares the number of rows or objects in the source database table with those in the destination database table and displays the comparison results. To compare rows or objects periodically, enable :ref:`comparison policy <drs_02_0007__section1841019111454>`.
 
 When you check data consistency, compare the number of rows first. If the number of rows are inconsistent, you can then compare the data in the table to determine the inconsistent data.
 
@@ -101,6 +104,26 @@ You can follow the comparison process or select a comparison method based on you
 
       Generally, stopping a task can ensure the integrity of special objects because triggers and events are migrated when a task is being stopped. Only in some cases, such as network disconnections, a task may fail to be stopped. If a task fails to be stopped multiple times, you can select **Forcibly stop task** to reduce the waiting time. If you forcibly stop a task, triggers and events may not be completely migrated and you need to manually migrate them.
 
+.. _drs_02_0007__section1841019111454:
+
+Periodic Comparison
+-------------------
+
+Periodic comparison indicates that DRS periodically compares the number of rows or objects in the source database table with those in the destination database table and displays the comparison results.
+
+#. On the **Online Migration Management** page, click the target migration task name in the **Task Name/ID** column.
+#. Choose **Migration Comparison**.
+#. Click the **Periodic Comparison** tab and click **Modify Comparison Policy**.
+#. In the **Modify Comparison Policy** dialog box, enable periodic comparison, specify the comparison frequency, time interval, effective time and comparison type, and click **Yes**.
+
+   .. note::
+
+      -  After periodic comparison is enabled, DRS compares the number of rows or objects at the scheduled time. You can view the comparison results on the **Data-Level Comparison** or **Object-Level Comparison** tab.
+      -  After periodic comparison is disabled, only historical comparison results can be viewed.
+      -  Modifications to the comparison policy settings take effect from the next comparison and do not affect the on-going periodic comparison tasks.
+      -  During periodic comparison, the source and destination databases will be read. Perform the comparison during off-peak hours.
+      -  During periodic comparison, ultra-large tables (those with more than 100 million rows) are automatically filtered out. You can use data-level comparison to spot check such large tables. It is not recommended that these large tables be compared periodically.
+
 Quick Comparison
 ----------------
 
@@ -115,4 +138,4 @@ Viewing a Comparison Task
 #. On the **Online Migration Management** page, locate the target migration task and click **View** in the **Operation** column.
 #. On the **Migration Comparison** tab, view the data comparison result.
 
-.. |image1| image:: /_static/images/en-us_image_0000001391773845.png
+.. |image1| image:: /_static/images/en-us_image_0000001758429533.png

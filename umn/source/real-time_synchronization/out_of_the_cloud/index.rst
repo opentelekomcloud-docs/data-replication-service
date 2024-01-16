@@ -6,11 +6,13 @@ Out of the Cloud
 ================
 
 -  :ref:`From MySQL to MySQL <drs_04_0117>`
--  :ref:`From GaussDB(for openGauss) Distributed to MySQL <drs_04_0121>`
+-  :ref:`From MySQL to Kafka <drs_04_0118>`
+-  :ref:`From GaussDB Distributed to MySQL <drs_04_0121>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
    from_mysql_to_mysql
-   from_gaussdbfor_opengauss_distributed_to_mysql
+   from_mysql_to_kafka
+   from_gaussdb_distributed_to_mysql

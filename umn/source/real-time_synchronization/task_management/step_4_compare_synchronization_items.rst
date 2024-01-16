@@ -17,6 +17,7 @@ This section describes how to compare synchronization items to check if there ar
    -  Value comparison: It helps you check whether data in the synchronized table is consistent. The comparison process is relatively slow.
 
 -  Account comparison: It compares usernames and permissions of the source and destination databases.
+-  Periodic comparison: DRS periodically compares the number of rows in the source database table with those in the destination database table and displays the comparison results. To compare objects periodically, enable :ref:`comparison policy <drs_10_0012__section1569135114316>`.
 
 When you check data consistency, compare the number of rows first. If the number of rows are inconsistent, you can then compare the data in the table to determine the inconsistent data.
 
@@ -97,4 +98,24 @@ Creating a Comparison Task
 
       You can also view comparison details of canceled comparison tasks.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341094428.png
+.. _drs_10_0012__section1569135114316:
+
+Periodic Comparison
+-------------------
+
+Periodic comparison indicates that DRS periodically compares the number of rows in the source database table with those in the destination database table and displays the comparison results.
+
+#. On the **Data Synchronization Management** page, click the target synchronization task name in the **Task Name/ID** column.
+#. Click the **Synchronization Comparison** tab.
+#. Click the **Periodic Comparison** tab and click **Modify Comparison Policy** to modify the comparison policy.
+#. In the **Modify Comparison Policy** dialog box, enable periodic comparison, configure the comparison frequency and time, and click **Yes**.
+
+   .. note::
+
+      -  After periodic comparison is enabled, DRS compares the number of rows at the scheduled time. You can view the comparison results on the **Data-Level Comparison** tab.
+      -  After periodic comparison is disabled, only historical comparison results can be viewed.
+      -  Modifications to the comparison policy settings take effect from the next comparison and do not affect the on-going periodic comparison tasks.
+      -  During periodic comparison, the source and destination databases will be read. Perform the comparison during off-peak hours.
+      -  During periodic comparison, ultra-large tables (those with more than 100 million rows) are automatically filtered out. You can use data-level comparison to spot check such large tables. It is not recommended that these large tables be compared periodically.
+
+.. |image1| image:: /_static/images/en-us_image_0000001758429649.png

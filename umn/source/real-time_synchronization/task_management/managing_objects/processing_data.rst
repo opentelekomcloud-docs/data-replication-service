@@ -134,5 +134,5 @@ View Column Processing
 #. On the task management page, click the target task name in the **Task Name/ID** column.
 #. In the navigation pane on the left, choose **Synchronization Mapping**. In the upper right corner, and select **Columns** to view column mapping records. Click |image2| in the upper right corner to refresh the record list.
 
-.. |image1| image:: /_static/images/en-us_image_0000001341254064.png
-.. |image2| image:: /_static/images/en-us_image_0000001391773837.png
+.. |image1| image:: /_static/images/en-us_image_0000001758430197.png
+.. |image2| image:: /_static/images/en-us_image_0000001710630596.png

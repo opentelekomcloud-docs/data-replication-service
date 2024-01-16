@@ -14,64 +14,76 @@ DRS supports migration between different DB engines. The following table lists t
 
 .. table:: **Table 1** Database types
 
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
-   | Migration Direction      | Data Flow    | Source DB                    | Destination DB               | Destination DB Type            |
-   +==========================+==============+==============================+==============================+================================+
-   | To the cloud             | MySQL->MySQL | -  On-premises databases     | RDS MySQL DB instances       | -  Single DB instance          |
-   |                          |              | -  ECS databases             |                              | -  Primary/Standby DB instance |
-   |                          |              | -  Databases on other clouds |                              |                                |
-   |                          |              | -  RDS MySQL DB instances    |                              |                                |
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
-   | To the cloud             | MongoDB->DDS | -  On-premises databases     | DDS DB instances             | -  Cluster                     |
-   |                          |              | -  ECS databases             |                              | -  Replica set                 |
-   |                          |              | -  Databases on other clouds |                              | -  Single node                 |
-   |                          |              | -  DDS DB instances          |                              |                                |
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
-   | From the cloud           | MySQL->MySQL | RDS MySQL DB instances       | -  On-premises databases     | -  Single DB instance          |
-   |                          |              |                              | -  ECS databases             | -  Primary/Standby DB instance |
-   |                          |              |                              | -  Databases on other clouds |                                |
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
-   | From the cloud           | DDS->MongoDB | DDS DB instances             | -  On-premises databases     | -  Cluster                     |
-   |                          |              |                              | -  ECS databases             | -  Replica set                 |
-   |                          |              |                              | -  Databases on other clouds | -  Single node                 |
-   |                          |              |                              | -  DDS instances             |                                |
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
-   | Self-built -> Self-built | MySQL->MySQL | -  ECS databases             | -  ECS databases             | -  Single DB instance          |
-   |                          |              | -  On-premises databases     | -  On-premises databases     | -  Primary/Standby DB instance |
-   +--------------------------+--------------+------------------------------+------------------------------+--------------------------------+
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | Migration Direction      | Data Flow                                   | Source DB                       | Destination DB                     | Destination DB Type            |
+   +==========================+=============================================+=================================+====================================+================================+
+   | To the cloud             | MySQL->MySQL                                | -  On-premises databases        | RDS MySQL DB instances             | -  Single DB instance          |
+   |                          |                                             | -  ECS databases                |                                    | -  Primary/Standby DB instance |
+   |                          |                                             | -  Databases on other clouds    |                                    |                                |
+   |                          |                                             | -  RDS MySQL DB instances       |                                    |                                |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | To the cloud             | MySQL -> GaussDB(for MySQL) primary/standby | -  On-premises databases        | GaussDB(for MySQL) primary/standby | -  Primary/Standby DB instance |
+   |                          |                                             |                                 |                                    |                                |
+   |                          |                                             | -  ECS databases                |                                    |                                |
+   |                          |                                             | -  Databases on other clouds    |                                    |                                |
+   |                          |                                             | -  RDS MySQL DB instances       |                                    |                                |
+   |                          |                                             | -  GaussDB(for MySQL) instances |                                    |                                |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | To the cloud             | MongoDB->DDS                                | -  On-premises databases        | DDS DB instances                   | -  Cluster                     |
+   |                          |                                             | -  ECS databases                |                                    | -  Replica set                 |
+   |                          |                                             | -  Databases on other clouds    |                                    | -  Single node                 |
+   |                          |                                             | -  DDS DB instances             |                                    |                                |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | From the cloud           | MySQL->MySQL                                | RDS MySQL DB instances          | -  On-premises databases           | -  Single DB instance          |
+   |                          |                                             |                                 | -  ECS databases                   | -  Primary/Standby DB instance |
+   |                          |                                             |                                 | -  Databases on other clouds       |                                |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | From the cloud           | DDS->MongoDB                                | DDS DB instances                | -  On-premises databases           | -  Cluster                     |
+   |                          |                                             |                                 | -  ECS databases                   | -  Replica set                 |
+   |                          |                                             |                                 | -  Databases on other clouds       | -  Single node                 |
+   |                          |                                             |                                 | -  DDS instances                   |                                |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
+   | Self-built -> Self-built | MySQL->MySQL                                | -  ECS databases                | -  ECS databases                   | -  Single DB instance          |
+   |                          |                                             | -  On-premises databases        | -  On-premises databases           | -  Primary/Standby DB instance |
+   +--------------------------+---------------------------------------------+---------------------------------+------------------------------------+--------------------------------+
 
 .. table:: **Table 2** Database versions
 
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
-   | Migration Direction      | Data Flow       | Source DB Version | Destination DB Version                                                                                  |
-   +==========================+=================+===================+=========================================================================================================+
-   | To the cloud             | MySQL->MySQL    | -  MySQL 5.5.x    | -  MySQL 5.6.x                                                                                          |
-   |                          |                 | -  MySQL 5.6.x    | -  MySQL 5.7.x                                                                                          |
-   |                          |                 | -  MySQL 5.7.x    | -  MySQL 8.0.x                                                                                          |
-   |                          |                 | -  MySQL 8.0.x    |                                                                                                         |
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
-   | To the cloud             | MongoDB->DDS    | -  MongoDB 3.2.x  | -  DDS 3.2.x                                                                                            |
-   |                          |                 | -  MongoDB 3.4.x  | -  DDS 3.4.x                                                                                            |
-   |                          |                 | -  MongoDB 4.0.x  | -  DDS 4.0.x                                                                                            |
-   |                          |                 |                   | -  DDS 4.2.x                                                                                            |
-   |                          |                 |                   |                                                                                                         |
-   |                          |                 |                   |    .. note::                                                                                            |
-   |                          |                 |                   |                                                                                                         |
-   |                          |                 |                   |       If the destination database version is 4.2, the source database version cannot be later than 4.0. |
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
-   | From the cloud           | MySQL->MySQL    | -  MySQL 5.6.x    | -  MySQL 5.6.x                                                                                          |
-   |                          |                 | -  MySQL 5.7.x    | -  MySQL 5.7.x                                                                                          |
-   |                          |                 | -  MySQL 8.0.x    | -  MySQL 8.0.x                                                                                          |
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
-   | From the cloud           | DDS->MongoDB    | -  DDS 3.2.x      | -  MongoDB 3.2.x                                                                                        |
-   |                          |                 | -  DDS 3.4.x      | -  MongoDB 3.4.x                                                                                        |
-   |                          |                 | -  DDS 4.0.x      | -  MongoDB 4.0.x                                                                                        |
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
-   | Self-built -> Self-built | MySQL->MySQL    | -  MySQL 5.5.x    | -  MySQL 5.6.x                                                                                          |
-   |                          |                 | -  MySQL 5.6.x    | -  MySQL 5.7.x                                                                                          |
-   |                          |                 | -  MySQL 5.7.x    | -  MySQL 8.0.x                                                                                          |
-   |                          |                 | -  MySQL 8.0.x    |                                                                                                         |
-   +--------------------------+-----------------+-------------------+---------------------------------------------------------------------------------------------------------+
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | Migration Direction      | Data Flow                                   | Source DB Version | Destination DB Version       |
+   +==========================+=============================================+===================+==============================+
+   | To the cloud             | MySQL->MySQL                                | -  MySQL 5.5.x    | -  MySQL 5.6.x               |
+   |                          |                                             | -  MySQL 5.6.x    | -  MySQL 5.7.x               |
+   |                          |                                             | -  MySQL 5.7.x    | -  MySQL 8.0.x               |
+   |                          |                                             | -  MySQL 8.0.x    |                              |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | To the cloud             | MongoDB->DDS                                | -  MongoDB 3.2.x  | -  DDS 3.2.x                 |
+   |                          |                                             | -  MongoDB 3.4.x  | -  DDS 3.4.x                 |
+   |                          |                                             | -  MongoDB 3.6.x  | -  DDS 4.0.x                 |
+   |                          |                                             | -  MongoDB 4.0.x  | -  DDS 4.2.x                 |
+   |                          |                                             | -  MongoDB 4.2.x  | -  DDS 4.4.x                 |
+   |                          |                                             | -  MongoDB 4.4.x  |                              |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | To the cloud             | MySQL -> GaussDB(for MySQL) primary/standby | -  MySQL 5.6.x    | GaussDB(for MySQL)-MySQL 8.0 |
+   |                          |                                             | -  MySQL 5.7.x    |                              |
+   |                          |                                             | -  MySQL 8.0.x    |                              |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | From the cloud           | MySQL->MySQL                                | -  MySQL 5.6.x    | -  MySQL 5.6.x               |
+   |                          |                                             | -  MySQL 5.7.x    | -  MySQL 5.7.x               |
+   |                          |                                             | -  MySQL 8.0.x    | -  MySQL 8.0.x               |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | From the cloud           | DDS->MongoDB                                | -  DDS 3.2.x      | -  MongoDB 3.2.x             |
+   |                          |                                             | -  DDS 3.4.x      | -  MongoDB 3.4.x             |
+   |                          |                                             | -  DDS 4.0.x      | -  MongoDB 3.6.x             |
+   |                          |                                             | -  DDS 4.2.x      | -  MongoDB 4.0.x             |
+   |                          |                                             | -  DDS 4.4.x      | -  MongoDB 4.2.x             |
+   |                          |                                             |                   | -  MongoDB 4.4.x             |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
+   | Self-built -> Self-built | MySQL->MySQL                                | -  MySQL 5.5.x    | -  MySQL 5.6.x               |
+   |                          |                                             | -  MySQL 5.6.x    | -  MySQL 5.7.x               |
+   |                          |                                             | -  MySQL 5.7.x    | -  MySQL 8.0.x               |
+   |                          |                                             | -  MySQL 8.0.x    |                              |
+   +--------------------------+---------------------------------------------+-------------------+------------------------------+
 
 Supported Migration Types
 -------------------------
@@ -84,33 +96,34 @@ The full+incremental migration type allows you to migrate data without interrupt
 
 .. table:: **Table 3** Migration types
 
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | Migration Direction      | Data Flow       | Full Migration                | Full+Incremental Migration                                                                                                                  |
-   +==========================+=================+===============================+=============================================================================================================================================+
-   | To the cloud             | MySQL->MySQL    | Supported                     | Supported                                                                                                                                   |
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | To the cloud             | MongoDB->DDS    | -  Replica set -> Single node | -  Replica set -> Single node                                                                                                               |
-   |                          |                 | -  Replica set -> Replica set | -  Replica set -> Replica set                                                                                                               |
-   |                          |                 | -  Replica set -> Cluster     | -  Replica set -> Cluster                                                                                                                   |
-   |                          |                 | -  Single node -> Single node | -  Single node -> Single node                                                                                                               |
-   |                          |                 | -  Single node -> Replica set | -  Single node -> Replica set                                                                                                               |
-   |                          |                 | -  Single node -> Cluster     | -  Single node -> Cluster                                                                                                                   |
-   |                          |                 | -  Cluster -> Cluster         |                                                                                                                                             |
-   |                          |                 |                               | .. note::                                                                                                                                   |
-   |                          |                 |                               |                                                                                                                                             |
-   |                          |                 |                               |    -  If you need to perform an incremental migration for a single-node instance, the source database must be the DDS single-node instance. |
-   |                          |                 |                               |    -  The source database cannot be a GaussDB(for Mongo) instance.                                                                          |
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | From the cloud           | MySQL->MySQL    | Supported                     | Supported                                                                                                                                   |
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | From the cloud           | DDS->MongoDB    | Supported                     | Supported                                                                                                                                   |
-   |                          |                 |                               |                                                                                                                                             |
-   |                          |                 |                               | .. note::                                                                                                                                   |
-   |                          |                 |                               |                                                                                                                                             |
-   |                          |                 |                               |    If the source database is on a cluster instance, incremental migration is not supported.                                                 |
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | Self-built -> Self-built | MySQL->MySQL    | Supported                     | Supported                                                                                                                                   |
-   +--------------------------+-----------------+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | Migration Direction      | Data Flow                                   | Full Migration                | Full+Incremental Migration                                                                                                               |
+   +==========================+=============================================+===============================+==========================================================================================================================================+
+   | To the cloud             | MySQL->MySQL                                | Supported                     | Supported                                                                                                                                |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | To the cloud             | MySQL -> GaussDB(for MySQL) primary/standby | Supported                     | Supported                                                                                                                                |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | To the cloud             | MongoDB->DDS                                | -  Replica set -> Single node | -  Replica set -> Single node                                                                                                            |
+   |                          |                                             | -  Replica set -> Replica set | -  Replica set -> Replica set                                                                                                            |
+   |                          |                                             | -  Replica set -> Cluster     | -  Replica set -> Cluster                                                                                                                |
+   |                          |                                             | -  Single node -> Single node | -  Single node -> Single node                                                                                                            |
+   |                          |                                             | -  Single node -> Replica set | -  Single node -> Replica set                                                                                                            |
+   |                          |                                             | -  Single node -> Cluster     | -  Single node -> Cluster                                                                                                                |
+   |                          |                                             | -  Cluster -> Cluster         |                                                                                                                                          |
+   |                          |                                             |                               | .. note::                                                                                                                                |
+   |                          |                                             |                               |                                                                                                                                          |
+   |                          |                                             |                               |    If you need to perform an incremental migration for a single-node instance, the source database must be the DDS single-node instance. |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | From the cloud           | MySQL->MySQL                                | Supported                     | Supported                                                                                                                                |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | From the cloud           | DDS->MongoDB                                | Supported                     | Supported                                                                                                                                |
+   |                          |                                             |                               |                                                                                                                                          |
+   |                          |                                             |                               | .. note::                                                                                                                                |
+   |                          |                                             |                               |                                                                                                                                          |
+   |                          |                                             |                               |    If the source database is on a cluster instance, incremental migration is not supported.                                              |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | Self-built -> Self-built | MySQL->MySQL                                | Supported                     | Supported                                                                                                                                |
+   +--------------------------+---------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Supported Network Types
 -----------------------
@@ -154,19 +167,21 @@ DRS supports data migration through a Virtual Private Cloud (VPC), Virtual Priva
 
 .. table:: **Table 5** Supported network types
 
-   +--------------------------+--------------+---------------+----------------+-----------------------+
-   | Migration Direction      | Data Flow    | VPC           | Public Network | VPN or Direct Connect |
-   +==========================+==============+===============+================+=======================+
-   | To the cloud             | MySQL->MySQL | Supported     | Supported      | Supported             |
-   +--------------------------+--------------+---------------+----------------+-----------------------+
-   | To the cloud             | MongoDB->DDS | Supported     | Supported      | Supported             |
-   +--------------------------+--------------+---------------+----------------+-----------------------+
-   | From the cloud           | MySQL->MySQL | Supported     | Supported      | Supported             |
-   +--------------------------+--------------+---------------+----------------+-----------------------+
-   | From the cloud           | DDS->MongoDB | Supported     | Supported      | Supported             |
-   +--------------------------+--------------+---------------+----------------+-----------------------+
-   | Self-built -> Self-built | MySQL->MySQL | Not supported | Supported      | Supported             |
-   +--------------------------+--------------+---------------+----------------+-----------------------+
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | Migration Direction      | Data Flow                                   | VPC           | Public Network | VPN or Direct Connect |
+   +==========================+=============================================+===============+================+=======================+
+   | To the cloud             | MySQL->MySQL                                | Supported     | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | To the cloud             | MySQL -> GaussDB(for MySQL) primary/standby | Supported     | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | To the cloud             | MongoDB->DDS                                | Supported     | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | From the cloud           | MySQL->MySQL                                | Supported     | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | From the cloud           | DDS->MongoDB                                | Supported     | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   | Self-built -> Self-built | MySQL->MySQL                                | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
 
 Migration Objects
 -----------------
@@ -175,19 +190,21 @@ DRS allows you to migrate objects at different levels. The following table lists
 
 .. table:: **Table 6** Supported migration objects
 
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
-   | Migration Direction      | Data Flow    | Full Migration | Table-Level Migration | Database-Level Migration |
-   +==========================+==============+================+=======================+==========================+
-   | To the cloud             | MySQL->MySQL | Supported      | Supported             | Supported                |
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
-   | To the cloud             | MongoDB->DDS | Supported      | Supported             | Supported                |
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
-   | From the cloud           | MySQL->MySQL | Supported      | Supported             | Supported                |
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
-   | From the cloud           | DDS->MongoDB | Supported      | Supported             | Supported                |
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
-   | Self-built -> Self-built | MySQL->MySQL | Supported      | Supported             | Supported                |
-   +--------------------------+--------------+----------------+-----------------------+--------------------------+
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | Migration Direction      | Data Flow                                   | Full Migration | Table-Level Migration | Database-Level Migration |
+   +==========================+=============================================+================+=======================+==========================+
+   | To the cloud             | MySQL->MySQL                                | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | To the cloud             | MySQL -> GaussDB(for MySQL) primary/standby | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | To the cloud             | MongoDB->DDS                                | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | From the cloud           | MySQL->MySQL                                | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | From the cloud           | DDS->MongoDB                                | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
+   | Self-built -> Self-built | MySQL->MySQL                                | Supported      | Supported             | Supported                |
+   +--------------------------+---------------------------------------------+----------------+-----------------------+--------------------------+
 
 Advanced Features
 -----------------
