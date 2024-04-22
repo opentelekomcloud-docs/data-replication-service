@@ -33,7 +33,7 @@ Project
 A project corresponds to a region. Default projects are defined to group and physically isolate resources (including computing, storage, and network resources) across regions. You can grant users permissions in a default project to access all resources in the region associated with the project. If you need more refined access control, create subprojects under a default project and purchase resources in subprojects. Then you can assign users the permissions required to access only the resources in the specific subprojects.
 
 
-.. figure:: /_static/images/en-us_image_0000001073083136.gif
+.. figure:: /_static/images/en-us_image_0000001782191918.png
    :alt: **Figure 1** Project isolating model
 
    **Figure 1** Project isolating model
