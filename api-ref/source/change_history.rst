@@ -8,9 +8,13 @@ Change History
 +-----------------------------------+---------------------------------------------------------------------------------------------+
 | Released On                       | Description                                                                                 |
 +===================================+=============================================================================================+
-| 2022-10-30                        | This issue is the sixth official release, which incorporates the following change:          |
+| 2024-04-15                        | This issue is the seventh official release, which incorporates the following change:        |
 |                                   |                                                                                             |
-|                                   | -  Supported PostgreSQL synchronization tasks.                                              |
+|                                   | -  Modified the description of migration from MongoDB to DDS.                               |
++-----------------------------------+---------------------------------------------------------------------------------------------+
+| 2022-08-30                        | This issue is the sixth official release, which incorporates the following change:          |
+|                                   |                                                                                             |
+|                                   | -  Supported synchronization from PostgreSQL to PostgreSQL.                                 |
 +-----------------------------------+---------------------------------------------------------------------------------------------+
 | 2022-04-14                        | This issue is the fifth official release, which incorporates the following change:          |
 |                                   |                                                                                             |
@@ -18,7 +22,7 @@ Change History
 +-----------------------------------+---------------------------------------------------------------------------------------------+
 | 2022-01-24                        | This issue is the fourth official release, which incorporates the following changes:        |
 |                                   |                                                                                             |
-|                                   | -  Supported migration of MongoDB databases.                                                |
+|                                   | -  Supported migration from MongoDB to DDS.                                                 |
 |                                   | -  Added an API in :ref:`Testing Connections in Batches (Cluster Mode) <drs_03_0106>`.      |
 +-----------------------------------+---------------------------------------------------------------------------------------------+
 | 2022-01-11                        | This issue is the third official release, which incorporates the following change:          |
