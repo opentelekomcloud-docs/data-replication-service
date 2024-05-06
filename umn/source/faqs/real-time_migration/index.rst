@@ -12,7 +12,7 @@ Real-Time Migration
 -  :ref:`What Can I Do When Scheduled Task Failed to Start Leaving Message "can not get agency token" <drs_16_0123>`
 -  :ref:`What Can I Do If MyISAM Tables Are Not Supported by RDS for MySQL? <drs_04_0032>`
 -  :ref:`What Are the Precautions for Migrating Data from an Earlier Version MySQL to MySQL 8.0? <drs_04_0030>`
--  :ref:`What Can I Do When OOM Occurs During the Migration of MongoDB Databases? <drs_15_0100>`
+-  :ref:`What Can I Do When OOM Occurs During the Migration from MongoDB to DDS? <drs_15_0100>`
 -  :ref:`How Do I Disable the Balancer? <drs_16_0001>`
 -  :ref:`How Do I Export and Import Events and Triggers in Batches? <drs_14_0006>`
 -  :ref:`How Can I Migrate Databases or Tables Whose Names Contain Uppercase Letters? <drs_14_0002>`
@@ -29,7 +29,7 @@ Real-Time Migration
    what_can_i_do_when_scheduled_task_failed_to_start_leaving_message_can_not_get_agency_token
    what_can_i_do_if_myisam_tables_are_not_supported_by_rds_for_mysql
    what_are_the_precautions_for_migrating_data_from_an_earlier_version_mysql_to_mysql_8.0
-   what_can_i_do_when_oom_occurs_during_the_migration_of_mongodb_databases
+   what_can_i_do_when_oom_occurs_during_the_migration_from_mongodb_to_dds
    how_do_i_disable_the_balancer
    how_do_i_export_and_import_events_and_triggers_in_batches
    how_can_i_migrate_databases_or_tables_whose_names_contain_uppercase_letters

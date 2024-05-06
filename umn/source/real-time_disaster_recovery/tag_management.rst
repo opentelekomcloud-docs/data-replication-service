@@ -19,10 +19,10 @@ Adding a Tag
 
 #. On the **Disaster Recovery Management** page, click the target DR task in the **Task Name/ID** column.
 #. On the **Basic Information** tab, click the **Tags** tab.
-#. On the **Tags** tab, click **Add Tag**. In the displayed dialog box, enter a tag key and value, and click **OK**.
+#. On the **Tags** tab, click **Add/Edit Tag**. In the displayed dialog box, enter a tag key and value, click **Add**, and click **OK**.
 
-   -  The tag key must be unique and must consist of 1 to 36 characters. Only letters, digits, hyphens (-), sign (@), and underscores (_) are allowed.
-   -  The tag value can be empty or consist of 1 to 43 characters. Only letters, digits, hyphens (-), sign (@), and underscores (_) are allowed.
+   -  The tag key cannot be empty and must be unique. It cannot start or end with a space or start with \_sys_. It can contain 1 to 128 characters, including letters, numbers, spaces, and the following characters: \_ . : = + - @.
+   -  The tag value can be empty. It cannot start or end with a space and can contain 0 to 255 characters, including letters, numbers, spaces, and the following characters: \_ . : / = + - @.
    -  The key of a tag cannot be **\_sys_enterprise_project_id**. **\_sys_enterprise_project_id** is a fixed tag of the enterprise project system and cannot be manually added.
 
 #. After a tag has been added, you can view and manage it on the **Tags** page.

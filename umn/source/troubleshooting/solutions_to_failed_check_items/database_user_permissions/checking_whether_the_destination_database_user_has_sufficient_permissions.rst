@@ -87,8 +87,8 @@ PostgreSQL Synchronization
    |                                       |    grant create on database to username;                                                                                                                                                                                                           |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 3** Checking whether the destination database user has sufficient permissions
 

@@ -5,8 +5,8 @@
 Checking Whether the Source Database Collections Contain More Than 10 Indexes
 =============================================================================
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the source database collections contain more than 10 indexes
 

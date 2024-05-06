@@ -2,13 +2,13 @@
 
 .. _drs_15_0100:
 
-What Can I Do When OOM Occurs During the Migration of MongoDB Databases?
-========================================================================
+What Can I Do When OOM Occurs During the Migration from MongoDB to DDS?
+=======================================================================
 
 Scenarios
 ---------
 
-Out of memory (OOM) occurs during the migration of MongoDB databases, causing migration failures.
+Out of memory (OOM) occurs during the migration from MongoDB to DDS, causing migration failures.
 
 Possible Cause
 --------------
@@ -20,7 +20,7 @@ The possible causes are as follows:
 
    .. note::
 
-      By default, the memory used by the WiredTiger engine of mongod is calculated as follows: (Memory in GB-1) x 50% for version 3.2 or (Memory in GB-1) x 50% for version 3.4 and later.
+      By default, the memory used by the WiredTiger engine of mongod is calculated as follows: (Memory in GB-1) x 50% for version 3.2 or (Memory in GB-1) x 60% for version 3.4 and later.
 
 Solution
 --------

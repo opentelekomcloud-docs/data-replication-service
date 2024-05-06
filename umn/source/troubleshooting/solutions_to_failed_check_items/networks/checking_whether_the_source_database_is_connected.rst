@@ -103,8 +103,8 @@ PostgreSQL Synchronization
    |                                       | Handling suggestion: Create a postgres database.                                                                                                                                          |
    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 3** Checking whether the source database is connected
 

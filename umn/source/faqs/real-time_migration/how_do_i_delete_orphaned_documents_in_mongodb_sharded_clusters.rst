@@ -13,7 +13,7 @@ In a sharded cluster, orphaned documents are those documents on a shard that als
 Migration Impact
 ----------------
 
-During cluster migration, DRS extracts full data from shards. Normal documents and orphaned documents are on different shards and DRS will migrate them all. If the conflict policy of DRS for MongoDB migration is **Ignore**, documents that are first migrated to the destination are stored, resulting in data inconsistency.
+During cluster migration, DRS extracts full data from shards. Normal documents and orphaned documents are on different shards and DRS will migrate them all. If the conflict policy of DRS migration from MongoDB to DDS is **Ignore**, documents that are first migrated to the destination are stored, resulting in data inconsistency.
 
 Procedure
 ---------

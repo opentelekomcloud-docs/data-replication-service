@@ -15,7 +15,7 @@ Supported Source and Destination Databases
    +====================================================================+=======================================================================================================+
    | -  On-premises MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4) | -  DDS DB instances (versions 3.4, 4.0, 4.2, and 4.4)                                                 |
    | -  ECS-hosted MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4)  |                                                                                                       |
-   | -  Other Cloud MongoDB 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4            |    .. note::                                                                                          |
+   | -  Other Cloud MongoDB (versions 3.2, 3.4, 3.6, 4.0, 4.2, and 4.4) |    .. note::                                                                                          |
    | -  DDS DB instances (versions 3.2, 3.4, 4.0, 4.2, and 4.4)         |                                                                                                       |
    |                                                                    |       The destination database version must be the same as or later than the source database version. |
    +--------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+

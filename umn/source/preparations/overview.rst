@@ -1,0 +1,28 @@
+:original_name: drs_02_0471.html
+
+.. _drs_02_0471:
+
+Overview
+========
+
+Before creating a DRS task, make preparations given in the following table to meet the environment requirements.
+
+.. table:: **Table 1** Preparations
+
+   +-----------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Item                  | Description                                                                                  | Reference                                                                                                                                                                                      |
+   +=======================+==============================================================================================+================================================================================================================================================================================================+
+   | Account               | Prepare an account, create a user, and grant permissions to the user to use DRS.             | If you do not have an account, register an account on the official website. Then, create a user and grant permissions to the user by referring to :ref:`Permissions Management <drs_08_0010>`. |
+   +-----------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Database              | Prepare the source and destination databases with required user permissions.                 | Different data flow types require different databases and permissions. Select a specific data flow type and view the related notes in this document.                                           |
+   +-----------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Network               | Before the migration, learn about the application scenarios and the supported network types. | DRS supports migration through the public network, VPC, VPN, and Direct Connect.                                                                                                               |
+   |                       |                                                                                              |                                                                                                                                                                                                |
+   |                       |                                                                                              | -  VPC is suitable for migrations of cloud databases in the same region.                                                                                                                       |
+   |                       |                                                                                              |                                                                                                                                                                                                |
+   |                       |                                                                                              | -  VPN and Direct Connect are suitable for migrations from on-premises databases to cloud databases or between cloud databases across regions.                                                 |
+   |                       |                                                                                              |                                                                                                                                                                                                |
+   |                       |                                                                                              | -  Public network is suitable for migrations from on-premises databases or external cloud databases to destination databases.                                                                  |
+   |                       |                                                                                              |                                                                                                                                                                                                |
+   |                       |                                                                                              |    You need to configure network settings based on your service requirements.                                                                                                                  |
+   +-----------------------+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -14,7 +14,7 @@ Before using the DRS service to migrate collections between sharded clusters, yo
 Procedure
 ---------
 
-#. Log in to a database through mongo shell.
+#. Log in to a database through shell tools.
 
 #. Run the following command in the command window of the mongos node to switch to the config database:
 

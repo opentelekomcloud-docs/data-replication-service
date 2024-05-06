@@ -5,8 +5,8 @@
 Checking Whether the ChangeStream API of the source DB instance is available
 ============================================================================
 
-MongoDB-to-DDS Migration
-------------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the ChangeStream API of the source DB instance is available
 

@@ -5,8 +5,8 @@
 Checking Whether the Source and Destination Databases Are of the Same Type
 ==========================================================================
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the source and destination databases are of the same type
 

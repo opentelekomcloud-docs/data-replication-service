@@ -5,8 +5,8 @@
 Checking Whether the Shard Key Can Be Obtained from the Source Database
 =======================================================================
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the shard keys can be obtained from the source database
 
