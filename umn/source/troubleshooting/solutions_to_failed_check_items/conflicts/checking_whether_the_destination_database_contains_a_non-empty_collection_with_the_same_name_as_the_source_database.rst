@@ -5,8 +5,8 @@
 Checking Whether the Destination Database Contains a Non-Empty Collection with the Same Name As the Source Database
 ===================================================================================================================
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the destination database contains a non-empty collection with the same name as the source database
 

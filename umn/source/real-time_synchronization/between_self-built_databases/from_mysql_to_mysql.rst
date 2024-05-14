@@ -301,6 +301,11 @@ Procedure
       |                                   |    -  The name of the selected synchronization object cannot contain spaces.                                                                                                                                                                                                                                               |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+#. On the **Process Data** page, set the filtering rules for data processing.
+
+   -  If you do not need to set a processing rule, select **No processing** and click **Next**.
+   -  If you need to set data processing rules, configure related filtering rules by referring to :ref:`Processing Data <drs_03_0035>`.
+
 #. On the **Check Task** page, check the synchronization task.
 
    -  If any check fails, review the cause and rectify the fault. After the fault is rectified, click **Check Again**.

@@ -15,6 +15,7 @@ This chapter provides general information about Data Replication Service (DRS), 
 -  :ref:`Security Suggestions <drs_01_0012>`
 -  :ref:`Accessing DRS <drs_01_0021>`
 -  :ref:`Instructions <drs_01_0200>`
+-  :ref:`Permissions Management <drs_01_0201>`
 -  :ref:`Compliance Description <drs_01_0318>`
 -  :ref:`Related Services <drs_01_0004>`
 
@@ -30,5 +31,6 @@ This chapter provides general information about Data Replication Service (DRS), 
    security_suggestions
    accessing_drs
    instructions
+   permissions_management
    compliance_description
    related_services

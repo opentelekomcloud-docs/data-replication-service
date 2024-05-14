@@ -5,29 +5,7 @@
 Processing Data
 ===============
 
-DRS processes synchronized objects and allows you to add rules for selected objects. The processing rules supported by each data flow type are different.
-
-Adding Additional Columns
--------------------------
-
-#. On the **Processing Data** page, click **Additional Columns**, locate the table to be processed, and click **Add** in the **Operation** column.
-#. In the displayed **Add** dialog box, specify the column name, operation type, and field type. Click **OK**.
-
-   .. note::
-
-      -  In many-to-one mapping scenarios, additional columns for data processing are required to avoid data conflicts.
-      -  The following operation types are supported:
-
-         -  **Default**: Use the default value to fill in the new column.
-         -  Use the create_time column and update_time column as an example to fill the new column with the data creation time and data update time.
-         -  **Expression**: indicates that you need to fill the new column with an expression.
-         -  If you fill in the new column in **serverName@database@table** format, you need to enter a server name and then the database name and table name will be automatically filled in.
-         -  **Value**: Select a value, for example, synchronization time.
-
-      -  You can apply the additional column information of the first editable table to all editable tables in batches.
-      -  During MySQL to GaussDB(for MySQL) primary/standby synchronization, if the number of columns in a single table exceeds 500, the number of additional columns added to the table may exceed the upper limit. As a result, the task fails.
-
-#. Click **Next**.
+DRS processes synchronized objects and allows you to add rules for selected objects.
 
 Filtering Data
 --------------
@@ -102,37 +80,10 @@ If you need to query an association table, you can use the advanced settings of 
 
 #. Click **Next**.
 
-Processing Columns
-------------------
-
-#. On the **Process Data** page, select **Processing Columns**.
-#. In the **Object** area, select the objects to be processed.
-#. Click **Edit** to the right of the selected object.
-#. In the **Edit Column** dialog box, select the columns to be mapped and enter new column names.
-
-   .. note::
-
-      -  You can query or filter columns or create new column names.
-      -  After the column name is edited, the column name of the destination database is changed to the new name.
-      -  The new column name cannot be the same as the original column name or an existing column name.
-      -  The column name in the synchronized table cannot be modified.
-      -  Only the selected columns can be synchronized.
-      -  MySQL to MySQL and MySQL to GaussDB(for MySQL) primary/standby synchronizations do not support column mapping based on the partitioning column of a partitioned table.
-
-#. Click **Confirm**.
-#. Click **Next**.
-
 Viewing Data Filtering Results
 ------------------------------
 
 #. In the task list, click the task to be processed.
 #. Click the **Process Data** tab to view data filtering records. Click |image1| in the upper right corner to refresh the record list.
 
-View Column Processing
-----------------------
-
-#. On the task management page, click the target task name in the **Task Name/ID** column.
-#. In the navigation pane on the left, choose **Synchronization Mapping**. In the upper right corner, and select **Columns** to view column mapping records. Click |image2| in the upper right corner to refresh the record list.
-
 .. |image1| image:: /_static/images/en-us_image_0000001758430197.png
-.. |image2| image:: /_static/images/en-us_image_0000001710630596.png

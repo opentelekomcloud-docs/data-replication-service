@@ -5,8 +5,8 @@
 Checking Whether the MongoDB Instance Type Matches the Migration Mode
 =====================================================================
 
-MongoDB Migration
------------------
+Migration from MongoDB to DDS
+-----------------------------
 
 .. table:: **Table 1** Checking whether the MongoDB instance type matches the migration mode
 

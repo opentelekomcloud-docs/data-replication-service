@@ -129,13 +129,16 @@ Database Versions
    |                           |                                             | -  PostgreSQL 10.x      | -  PostgreSQL 11.x           |
    |                           |                                             | -  PostgreSQL 11.x      | -  PostgreSQL 12.x           |
    |                           |                                             | -  PostgreSQL 12.x      | -  PostgreSQL 13.x           |
-   |                           |                                             | -  PostgreSQL 13.x      |                              |
+   |                           |                                             | -  PostgreSQL 13.x      | -  PostgreSQL 14.x           |
+   |                           |                                             | -  PostgreSQL 14.x      |                              |
    +---------------------------+---------------------------------------------+-------------------------+------------------------------+
    | To the cloud              | Oracle->PostgreSQL                          | -  Oracle 10g           | -  PostgreSQL 9.5.x          |
    |                           |                                             | -  Oracle 11g           | -  PostgreSQL 9.6.x          |
    |                           |                                             | -  Oracle 12c           | -  PostgreSQL 10.x           |
    |                           |                                             | -  Oracle 18c           | -  PostgreSQL 11.x           |
    |                           |                                             | -  Oracle 19c           | -  PostgreSQL 12.x           |
+   |                           |                                             | -  Oracle 21c           | -  PostgreSQL 13.x           |
+   |                           |                                             |                         | -  PostgreSQL 14.x           |
    +---------------------------+---------------------------------------------+-------------------------+------------------------------+
    | From the cloud            | MySQL->MySQL                                | -  MySQL 5.6.x          | -  MySQL 5.6.x               |
    |                           |                                             | -  MySQL 5.7.x          | -  MySQL 5.7.x               |
