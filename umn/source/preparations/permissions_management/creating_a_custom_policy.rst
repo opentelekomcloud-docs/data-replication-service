@@ -17,19 +17,19 @@ For details about how to create a custom policy, see Identity and Access Managem
 Example Custom Policies
 -----------------------
 
--  Example 1: Allowing users to create DRS instances
+-  Example 1: Allowing users to create DRS migration instances
 
    .. code-block:: text
 
       {
           "Version": "1.1",
           "Statement": [{
-                      "Action": ["drs:instance:create"],
+              "Action": ["drs:migrationJob:create"],
               "Effect": "Allow"
           }]
       }
 
--  Example 2: Denying DRS instance deletion
+-  Example 2: Denying DRS migration instance deletion
 
    A policy with only "Deny" permissions must be used in conjunction with other policies to take effect. If the permissions assigned to a user contain both "Allow" and "Deny", the "Deny" permissions take precedence over the "Allow" permissions.
 
@@ -40,7 +40,7 @@ Example Custom Policies
       {
           "Version": "1.1",
           "Statement": [{
-              "Action": ["drs:instance:delete"],
+              "Action": ["drs:migrationJob:delete"],
               "Effect": "Deny"
           }]
       }

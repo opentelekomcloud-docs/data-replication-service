@@ -20,7 +20,7 @@ The possible causes are as follows:
 
    .. note::
 
-      By default, the memory used by the WiredTiger engine of mongod is calculated as follows: (Memory in GB-1) x 50% for version 3.2 or (Memory in GB-1) x 60% for version 3.4 and later.
+      By default, the memory used by the WiredTiger engine of mongod is calculated as follows: (Memory in GB-1 GB) x 50% for version 3.2 or (Memory in GB-1 GB) x 60% for version 3.4 and later.
 
 Solution
 --------
