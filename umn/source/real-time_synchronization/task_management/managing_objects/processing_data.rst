@@ -15,8 +15,7 @@ After a data filtering rule is added, update the source database to ensure data 
 -  The filter criteria are met after the update. You need to continue the synchronization and perform the same update operation on the destination database. If no data is matched, the operation will be ignored, causing data inconsistency.
 -  The filter criteria are not met after the update. You need to continue the synchronization and perform the same update operation on the destination database.
 
-#. On the **Processing Data** page, set **Processing Type** to **Data filtering**.
-#. In the **Object** area, select the table to be processed.
+#. In the **Object** area of the **Data filtering** page, select the table to be processed.
 #. In the **Filtering Criteria** area, enter the filter criteria (only the part after WHERE in the SQL statement, for example, id=1), and click **Verify**.
 
    .. note::
@@ -38,9 +37,7 @@ Advanced Settings for Data Filtering
 
 If you need to query an association table, you can use the advanced settings of data processing.
 
-#. On the **Processing Data** page, set **Processing Type** to **Data filtering**.
-
-#. In the **Object** area, select the table to be processed.
+#. In the **Object** area of the **Data filtering** page, select the table to be processed.
 
 #. .. _drs_03_0035__li86533923817:
 
@@ -62,17 +59,17 @@ If you need to query an association table, you can use the advanced settings of 
 
    In the **Advanced Settings** area, specify the configuration condition and rule for the association table to help you filter data.
 
-   a. In the **Configuration Condition** area, enter the association table information entered in :ref:`3 <drs_03_0035__li86533923817>`.
+   a. In the **Configuration Condition** area, enter the association table information entered in :ref:`2 <drs_03_0035__li86533923817>`.
 
       **Database Name**, **Table Name**, **Column Name**, **Primary Key**, **Index**, and **Filter Criteria** are mandatory. If the table does not have an index, enter its primary key.
 
-      **Filter Criteria** is the filter condition of the association table information entered in :ref:`3 <drs_03_0035__li86533923817>`.
+      **Filter Criteria** is the filter condition of the association table information entered in :ref:`2 <drs_03_0035__li86533923817>`.
 
    b. Then, click **Verify**.
 
    c. After the verification is successful, click **Generate Configuration Rule**. The rule is displayed in the **Configuration Rule** area.
 
-      To filter data in multiple association tables, repeat :ref:`5 <drs_03_0035__li12654292385>`.
+      To filter data in multiple association tables, repeat :ref:`4 <drs_03_0035__li12654292385>`.
 
       .. note::
 

@@ -11,7 +11,7 @@ Real-time synchronization supports the import of objects through files. After a 
 
    -  Only Windows Microsoft Excel 97-2003 (``*``.xls), 2007, and later (``*``.xlsx) files can be imported. The downloaded compressed package provides the templates of the two versions.
    -  The file name can contain only spaces, letters, digits, hyphens (-), underscores (_), and parentheses.
-   -  The format of the object information in the template must meet the requirements. The value is case-sensitive and cannot include angle brackets (<>), periods (.), and double quotation marks ("). Objects that start or end with a space are not supported.
+   -  The format of the object information in the template must meet the Excel file requirements. The database object names (such as the database name, schema name, or table name) in the file is case-sensitive and cannot include angle brackets (<>), periods (.), double quotation marks ("), and cannot start or end with a space.
    -  The task in the configuration supports table-level synchronization, database-level synchronization, or file import mode. Each time you switch to a new mode, the selected or imported database objects are cleared, and you need to select or import them again.
    -  If you want to import a file for mapping, fill in the first and second columns of the file based on the template. If the first two columns of a row are left blank, the row will be ignored.
    -  For the task created using the file import mode, database-level and table-level synchronization are not supported after the task is started.

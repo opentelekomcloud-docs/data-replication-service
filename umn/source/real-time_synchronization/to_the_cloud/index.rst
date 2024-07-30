@@ -10,6 +10,7 @@ To the Cloud
 -  :ref:`From MySQL to GaussDB(for MySQL) Primary/Standby <drs_03_1124>`
 -  :ref:`From PostgreSQL to PostgreSQL <drs_04_0107>`
 -  :ref:`From Oracle to PostgreSQL <drs_04_0446>`
+-  :ref:`From DDM to DDM <drs_04_0465>`
 
 .. toctree::
    :maxdepth: 1
@@ -20,3 +21,4 @@ To the Cloud
    from_mysql_to_gaussdbfor_mysql_primary_standby
    from_postgresql_to_postgresql
    from_oracle_to_postgresql
+   from_ddm_to_ddm

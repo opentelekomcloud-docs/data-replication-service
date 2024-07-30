@@ -8,6 +8,16 @@ Change History
 +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Released On                       | Description                                                                                                                                                     |
 +===================================+=================================================================================================================================================================+
+| 2024-06-11                        | This issue is the seventeenth official release, which incorporates the following changes:                                                                       |
+|                                   |                                                                                                                                                                 |
+|                                   | -  Modified Processing Data contents.                                                                                                                           |
+|                                   | -  Modified Importing Synchronization Objects contents.                                                                                                         |
+|                                   | -  Supported real-time synchronization of PostgreSQL 15.                                                                                                        |
++-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2024-05-20                        | This issue is the sixteenth official release, which incorporates the following changes:                                                                         |
+|                                   |                                                                                                                                                                 |
+|                                   | -  Supported real-time synchronization from DDM to DDM.                                                                                                         |
++-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-04-15                        | This issue is the fifteenth official release, which incorporates the following changes:                                                                         |
 |                                   |                                                                                                                                                                 |
 |                                   | -  Supported :ref:`Importing Synchronization Objects <drs_10_0402>` and :ref:`Processing Data <drs_03_0035>` for real-time synchronization from MySQL to MySQL. |

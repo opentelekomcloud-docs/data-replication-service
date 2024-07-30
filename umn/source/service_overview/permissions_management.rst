@@ -5,7 +5,7 @@
 Permissions Management
 ======================
 
-If you need to assign different permissions to employees in your enterprise to access your DRS resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you secure access to cloud resources.
+If you need to assign different permissions to employees in your enterprise to access your DRS resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you to have a secure access to cloud resources.
 
 With IAM, you can use your cloud account to create IAM users for your employees, and assign permissions to the users to control their access to specific resources. For example, some software developers in your enterprise need to use DRS resources but must not delete DRS tasks or perform any high-risk operations. To achieve this result, you can create IAM users for the software developers and grant them only the permissions required for using DRS resources.
 
