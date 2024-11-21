@@ -54,4 +54,6 @@ Task Statuses
 .. note::
 
    -  If a task fails to be created, DRS retains the task for three days by default. After three days, the task automatically ends.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
    -  Deleted synchronization tasks are not displayed in the status list.
+   -  For a task whose source database is DDM or GaussDB Distributed,the statuses listed above mean statuses of its subtask.

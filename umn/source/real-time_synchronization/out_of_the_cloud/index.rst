@@ -7,6 +7,7 @@ Out of the Cloud
 
 -  :ref:`From MySQL to MySQL <drs_04_0117>`
 -  :ref:`From MySQL to Kafka <drs_04_0118>`
+-  :ref:`From DDM to MySQL <drs_04_0453>`
 -  :ref:`From GaussDB Distributed to MySQL <drs_04_0121>`
 
 .. toctree::
@@ -15,4 +16,5 @@ Out of the Cloud
 
    from_mysql_to_mysql
    from_mysql_to_kafka
+   from_ddm_to_mysql
    from_gaussdb_distributed_to_mysql

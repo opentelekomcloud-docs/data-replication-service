@@ -1,0 +1,99 @@
+:original_name: drs_04_0453.html
+
+.. _drs_04_0453:
+
+From DDM to MySQL
+=================
+
+Supported Source and Destination Databases
+------------------------------------------
+
+.. table:: **Table 1** Supported databases
+
+   +-----------------------------------+------------------------------------+
+   | Source DB                         | Destination DB                     |
+   +===================================+====================================+
+   | -  DDM instances                  | -  On-premises MySQL databases     |
+   |                                   | -  MySQL databases on an ECS       |
+   |                                   | -  MySQL databases on other clouds |
+   |                                   | -  RDS for MySQL                   |
+   +-----------------------------------+------------------------------------+
+
+Prerequisites
+-------------
+
+-  You have logged in to the DRS console.
+-  For details about the DB types and versions supported by real-time synchronization, see :ref:`Real-Time Synchronization <drs_01_0302>`.
+
+Suggestions
+-----------
+
+.. caution::
+
+   -  When a task is being started or in the full synchronization phase, do not perform DDL operations on the source database. Otherwise, the task may be abnormal.
+   -  To keep data consistency before and after the synchronization, ensure that no data is written to the destination database during the synchronization.
+
+-  The success of database synchronization depends on environment and manual operations. To ensure a smooth synchronization, perform a synchronization trial before you start the synchronization to help you detect and resolve problems in advance.
+
+-  Start your synchronization task during off-peak hours. A less active database is easier to synchronize successfully. If the data is fairly static, there is less likely to be any severe performance impacts during the synchronization.
+
+   -  If network bandwidth is not limited, the query rate of the source database increases by about 50 MB/s during full synchronization, and two to four CPUs are occupied.
+   -  To ensure data consistency, tables to be synchronized without a primary key may be locked for 3s.
+   -  The data being synchronized may be locked by other transactions for a long period of time, resulting in read timeout.
+   -  When DRS concurrently reads data from a database, it will use about 6 to 10 sessions. The impact of the connections on services must be considered.
+   -  If you read a table, especially a large table, during the full migration, the exclusive lock on that table may be blocked.
+
+-  Data-Level Comparison
+
+   To obtain accurate comparison results, start data comparison at a specified time point during off-peak hours. If it is needed, select **Start at a specified time** for **Comparison Time**. Due to slight time difference and continuous operations on data, data inconsistency may occur, reducing the reliability and validity of the comparison results.
+
+Precautions
+-----------
+
+Before creating a synchronization task, read the following notes:
+
+.. table:: **Table 2** Precautions
+
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Type                              | Restrictions                                                                                                                                                                                                                                                                                                                                               |
+   +===================================+============================================================================================================================================================================================================================================================================================================================================================+
+   | Database permissions              | -  The source database DDM account must have the SELECT permission. The physical sharded database account must have the following permissions: SELECT, SHOW VIEW, EVENT, LOCK TABLES, REPLICATION SLAVE and REPLICATION CLIENT.                                                                                                                            |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | -  The destination database user must have the following permissions: SELECT, CREATE, DROP, DELETE, INSERT, and UPDATE. The **root** account of the RDS MySQL DB instance has the preceding permissions by default.                                                                                                                                        |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Synchronization object            | -  Full synchronization supports the synchronization of data, table structures, and indexes.                                                                                                                                                                                                                                                               |
+   |                                   | -  The source database cannot contain tables whose sharding keys are timestamp.                                                                                                                                                                                                                                                                            |
+   |                                   | -  The sharding key of the source table must be added to the primary key and unique key of the destination table, which means that the primary key and unique key columns of the destination table must contain the sharded columns of the source table to avoid data conflict and inconsistency.                                                          |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Source database                   | -  During the incremental synchronization, the binlog of the source sharded database must be enabled and use the row-based format.                                                                                                                                                                                                                         |
+   |                                   | -  If the storage space is sufficient, store the source database binlog for as long as possible. The recommended retention period is three days.                                                                                                                                                                                                           |
+   |                                   | -  During an incremental synchronization, the **server_id** value of the MySQL source database must be set. If the source database version is MySQL 5.6 or earlier, the **server_id** value ranges from **2** to **4294967296**. If the source database is MySQL 5.7 or later, the **server_id** value ranges from **1** to **4294967296**.                |
+   |                                   | -  The database names and table names of the source sharding middleware cannot contain the following characters: '<>/\\ and non-ASCII characters.                                                                                                                                                                                                          |
+   |                                   | -  Enable **skip-name-resolve** for the MySQL source database to reduce the possibility of connection timeout.                                                                                                                                                                                                                                             |
+   |                                   | -  Enable GTID of the source database.                                                                                                                                                                                                                                                                                                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Destination database              | -  The destination database is an on-premises MySQL database.                                                                                                                                                                                                                                                                                              |
+   |                                   | -  The destination DB instance must have sufficient storage space.                                                                                                                                                                                                                                                                                         |
+   |                                   | -  If the destination database (excluding MySQL system database) has the same name as the source database, the table structures in the destination database must be consistent with those in the source database.                                                                                                                                          |
+   |                                   | -  The character set of the destination database must be the same as that of the source database.                                                                                                                                                                                                                                                          |
+   |                                   | -  The time zone of the destination database must be the same as that of the source database.                                                                                                                                                                                                                                                              |
+   |                                   | -  During a synchronization, a large amount of data is written to the destination database. If the value of the **max_allowed_packet** parameter of the destination database is too small, data cannot be written. You are advised to set the **max_allowed_packet** parameter to a value greater than 100 MB.                                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Precautions                       | -  If the data types are incompatible, the synchronization may fail.                                                                                                                                                                                                                                                                                       |
+   |                                   | -  If the source database contains a duplicate primary key or unique key, the data synchronized to the destination database will be less than that in the source database. Therefore, you must check and correct the data before starting the synchronization task.                                                                                        |
+   |                                   | -  If the destination DB instance is an RDS MySQL instance, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                                                               |
+   |                                   | -  If the destination MySQL database does not support TLS 1.2 or is a self-built database of an earlier version (earlier than 5.6.46 or between 5.7 and 5.7.28), you need to submit an O&M application for testing the SSL connection.                                                                                                                     |
+   |                                   | -  The destination table can contain more columns than the source table. However, the following failures must be avoided:                                                                                                                                                                                                                                  |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   |    -  Assume that extra columns on the destination cannot be null or have default values. If newly inserted data records are synchronized from the source to the destination, the extra columns will become null, which does not meet the requirements of the destination and will cause the task to fail.                                                 |
+   |                                   |    -  Assume that extra columns on the destination must be fixed at a default value and have a unique constraint. If newly inserted data records are synchronized from the source to the destination, the extra columns will contain multiple default values. That does not meet the unique constraint of the destination and will cause the task to fail. |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | -  Resumable upload is supported, but data may be repeatedly inserted into a table that does not have a primary key when the server system breaks down.                                                                                                                                                                                                    |
+   |                                   | -  When creating a synchronization task, do not set the destination database to read-only.                                                                                                                                                                                                                                                                 |
+   |                                   | -  After a synchronization task is created, you are not allowed to add a schema or modify the association between the old schema and a new RDS DB instance. Otherwise, the synchronization task will fail.                                                                                                                                                 |
+   |                                   | -  During synchronization, do not modify or delete the usernames, passwords, permissions, or ports of the source and destination databases.                                                                                                                                                                                                                |
+   |                                   | -  During the synchronization, do not change the sharding key of a table on the source DDM instance, or change an unsharded or broadcast table to a sharded table, or change a sharded table to an unsharded or broadcast table.                                                                                                                           |
+   |                                   | -  DDL operations are not supported during synchronization.                                                                                                                                                                                                                                                                                                |
+   |                                   | -  During an incremental synchronization, do not modify the table structure to be synchronized in the source database.                                                                                                                                                                                                                                     |
+   |                                   | -  During an incremental synchronization, do not perform the restoration operation on the source database.                                                                                                                                                                                                                                                 |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

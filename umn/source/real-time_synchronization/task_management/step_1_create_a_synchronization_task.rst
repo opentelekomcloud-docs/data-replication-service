@@ -240,7 +240,7 @@ Procedure
       |                                   |    -  To quickly select the desired database objects, you can use the search function.                                                                                                                                                                                                                                                                         |
       |                                   |    -  If there are changes made to the source databases or objects, click in the upper right corner to update the objects to be synchronized.                                                                                                                                                                                                                  |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                |
-      |                                   |    -  If the object name contains spaces, the spaces before and after the object name are not displayed. If there are multiple spaces between the object name and the object name, only one space is displayed.                                                                                                                                                |
+      |                                   |    -  If an object name contains spaces, the spaces before and after the object name are not displayed. If there are two or more consecutive spaces in the middle of the object name, only one space is displayed.                                                                                                                                             |
       |                                   |    -  The name of the selected synchronization object cannot contain spaces.                                                                                                                                                                                                                                                                                   |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -258,7 +258,7 @@ Procedure
 
          You can proceed to the next step only when all checks are successful. If there are any items that require confirmation, view and confirm the details first before proceeding to the next step.
 
-#. On the displayed page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
+#. On the **Confirm Task** page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
 
    .. table:: **Table 7** Task startup settings
 
