@@ -17,7 +17,7 @@ Procedure
 
 .. note::
 
-   In the task list, only tasks created by the current login user are displayed. Tasks created by different users of the same tenant are not displayed.
+   -  In the task list, only tasks created by the current login user are displayed. Tasks created by different users of the same tenant are not displayed.
 
 #. On the **Backup Migration Management** page, click the target migration task name in the **Task Name/ID** column.
 

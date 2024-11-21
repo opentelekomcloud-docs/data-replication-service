@@ -6,6 +6,7 @@ Task Life Cycle
 ===============
 
 -  :ref:`Editing Subscription Task Information <drs_03_1134>`
+-  :ref:`Modifying Connection Information <drs_03_1138>`
 -  :ref:`Modifying the Flow Control Mode <drs_03_0047>`
 -  :ref:`Editing a DR Task <drs_03_0026>`
 -  :ref:`Resuming a DR Task <drs_03_0027>`
@@ -20,6 +21,7 @@ Task Life Cycle
    :hidden: 
 
    editing_subscription_task_information
+   modifying_connection_information
    modifying_the_flow_control_mode
    editing_a_dr_task
    resuming_a_dr_task

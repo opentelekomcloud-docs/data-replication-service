@@ -220,7 +220,7 @@ Procedure
 
          You can proceed to the next step only when all checks are successful. If there are any items that require confirmation, view and confirm the details first before proceeding to the next step.
 
-#. On the displayed page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
+#. On the **Confirm Task** page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
 
    .. table:: **Table 8** Task startup settings
 

@@ -20,3 +20,7 @@ Procedure
 #. On the displayed page, click **Synchronization Logs** to view the logs generated during the synchronization.
 
    You can view time, levels, and descriptions of the logs.
+
+   .. note::
+
+      For a task whose source database is DDM, you can view the migration logs in each subtask.
