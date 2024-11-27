@@ -9,7 +9,7 @@ Process of Creating a Migration Task
 ------------------------------------
 
 
-.. figure:: /_static/images/en-us_image_0000001436366761.png
+.. figure:: /_static/images/en-us_image_0000002087555974.png
    :alt: **Figure 1** Process of creating a real-time migration task
 
    **Figure 1** Process of creating a real-time migration task
@@ -21,6 +21,7 @@ Process of Creating a Migration Task
 -  :ref:`Modifying Tasks in Batches <drs_03_0107>`.
 -  :ref:`Add information about the database tables to be migrated. <drs_03_0107>`
 -  :ref:`Performing a Batch Pre-Check <drs_03_0110>`.
+-  :ref:`Querying Pre-check Results in Batches <drs_03_0111>`
 -  :ref:`Obtaining Database Parameters in Batches <drs_03_0141>`.
 -  :ref:`Starting Tasks in Batches <drs_03_0112>`.
 
@@ -28,7 +29,7 @@ Process of Creating a Real-Time Synchronization Task
 ----------------------------------------------------
 
 
-.. figure:: /_static/images/en-us_image_0000001386246832.png
+.. figure:: /_static/images/en-us_image_0000002087715866.png
    :alt: **Figure 2** Process of creating a real-time synchronization task
 
    **Figure 2** Process of creating a real-time synchronization task
@@ -42,13 +43,14 @@ Process of Creating a Real-Time Synchronization Task
 -  :ref:`Selecting Database Objects in Batches <drs_03_0109>`.
 -  :ref:`Processing Data in Batches <drs_api_0103>`.
 -  :ref:`Performing a Batch Pre-Check <drs_03_0110>`.
+-  :ref:`Querying Pre-check Results in Batches <drs_03_0111>`
 -  :ref:`Starting Tasks in Batches <drs_03_0112>`.
 
 Process of Creating a Real-Time DR Task
 ---------------------------------------
 
 
-.. figure:: /_static/images/en-us_image_0000001385927688.png
+.. figure:: /_static/images/en-us_image_0000002087555982.png
    :alt: **Figure 3** Process of creating a real-time DR task
 
    **Figure 3** Process of creating a real-time DR task
@@ -60,5 +62,6 @@ Process of Creating a Real-Time DR Task
 -  :ref:`Modifying Tasks in Batches <drs_03_0107>`.
 -  :ref:`Setting Flow Control for Tasks <drs_03_0130>`.
 -  :ref:`Performing a Batch Pre-Check <drs_03_0110>`.
+-  :ref:`Querying Pre-check Results in Batches <drs_03_0111>`
 -  :ref:`Obtaining Database Parameters in Batches <drs_03_0141>`.
 -  :ref:`Starting Tasks in Batches <drs_03_0112>`.
