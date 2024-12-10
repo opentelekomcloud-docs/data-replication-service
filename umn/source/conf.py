@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'drs-umn.tex',
-     u'Data Replication Service - User Guide',
+    u'Data Replication Service - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 

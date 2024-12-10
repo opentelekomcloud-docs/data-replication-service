@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'drs-best-practice.tex',
-     u'Data Replication Service - Best Practice',
+    u'Data Replication Service - Best Practice',
      u'OpenTelekomCloud', 'manual'),
 ]
 
