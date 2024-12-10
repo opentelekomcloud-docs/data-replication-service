@@ -4,6 +4,11 @@
     default-branch: main
     templates:
       - helpcenter-base-jobs
+    vars:
+      sphinx_pdf_files:
+        - drs-umn.pdf
+        - drs-api-ref.pdf
+        - drs-best-practice.pdf
     check:
       jobs:
         - noop

@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'drs-api-ref.tex',
-     u'Data Replication Service - API Reference',
+    u'Data Replication Service - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
