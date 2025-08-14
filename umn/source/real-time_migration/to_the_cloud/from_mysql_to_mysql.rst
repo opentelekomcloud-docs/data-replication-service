@@ -54,6 +54,11 @@ Database Account Permission Requirements
 
 To start a migration task, the source and destination database users must have permissions listed in the following table. Different types of migration tasks require different permissions. For details, see :ref:`Table 3 <drs_04_0088__table68938710614>`. DRS automatically checks the database account permissions in the pre-check phase and provides handling suggestions.
 
+.. note::
+
+   -  You are advised to create an independent database account for DRS task connection to prevent task failures caused by account modification.
+   -  After changing the account passwords for the source and destination databases, :ref:`modify the connection information <drs_03_1135>` in the DRS task as soon as possible to prevent automatic retry after a task failure. Automatic retry will lock the database accounts.
+
 .. _drs_04_0088__table68938710614:
 
 .. table:: **Table 3** Database account permission
@@ -162,7 +167,7 @@ The full+incremental migration process consists of four phases: task startup, fu
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                             |
    |                                   |    -  The destination database cannot be restored to a point in time when a full migration was being performed.                                                                                                                                                                                                                                                                                                             |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                             |
-   |                                   |    -  If the source and destination sides are RDS MySQL instances, transparent data encryption (TDE) is not supported, and tables with the encryption function cannot be created.                                                                                                                                                                                                                                           |
+   |                                   |    -  If the source and destination DB instances are RDS for MySQL instances, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                                                                                                              |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                             |
    |                                   |    -  If the source MySQL database does not support TLS 1.2 or is a self-built database of an earlier version (earlier than 5.6.46 or between 5.7 and 5.7.28), you need to submit an O&M application for testing the SSL connection.                                                                                                                                                                                        |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -210,7 +215,7 @@ Prerequisites
 Procedure
 ---------
 
-This section uses the migration from MySQL to RDS MySQL in a VPC as an example to describe how to configure a migration task on the DRS console.
+This section uses the migration from MySQL to RDS for MySQL in a VPC as an example to describe how to configure a migration task on the DRS console.
 
 #. On the **Online Migration Management** page, click **Create Migration Task**.
 
@@ -331,7 +336,7 @@ This section uses the migration from MySQL to RDS MySQL in a VPC as an example t
          |                                   | .. note::                                                                                                                                                                                                                                         |
          |                                   |                                                                                                                                                                                                                                                   |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                               |
-         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                               |
+         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                               |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
       .. note::
@@ -502,6 +507,7 @@ This section uses the migration from MySQL to RDS MySQL in a VPC as an example t
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001710470728.png
 .. |image2| image:: /_static/images/en-us_image_0000001758429809.png

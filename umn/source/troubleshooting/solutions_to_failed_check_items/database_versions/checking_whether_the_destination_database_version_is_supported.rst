@@ -37,20 +37,20 @@ Migration from MongoDB to DDS
 
 .. table:: **Table 2** Checking whether the destination database version is supported
 
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | Check Item                            | Whether the destination database version is supported                                                 |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | Description                           | Check whether the destination database version is 3.4.x, 4.0.x, 4.2.x, or 4.4.x.                      |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | Failure Cause and Handling Suggestion | Failure cause: The destination database version is not supported.                                     |
-   |                                       |                                                                                                       |
-   |                                       | Handling suggestion: Check whether the destination database version is 3.4.x, 4.0.x, 4.2.x, or 4.4.x. |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   |                                       | Failure cause: This item cannot be checked because the destination database fails to be connected.    |
-   |                                       |                                                                                                       |
-   |                                       | Handling suggestion: Check whether the destination database is connected.                             |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   |                                       | Failure cause: An internal error occurs.                                                              |
-   |                                       |                                                                                                       |
-   |                                       | Handling suggestion: Contact technical support.                                                       |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | Check Item                            | Whether the destination database version is supported                                                         |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | Description                           | Check whether the destination database version is MongoDB 3.4.x, 4.0.x, 4.2.x, or 4.4.x.                      |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | Failure Cause and Handling Suggestion | Failure cause: The destination database version is not supported.                                             |
+   |                                       |                                                                                                               |
+   |                                       | Handling suggestion: Check whether the destination database version is MongoDB 3.4.x, 4.0.x, 4.2.x, or 4.4.x. |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: This item cannot be checked because the destination database fails to be connected.            |
+   |                                       |                                                                                                               |
+   |                                       | Handling suggestion: Check whether the destination database is connected.                                     |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+
+   |                                       | Failure cause: An internal error occurs.                                                                      |
+   |                                       |                                                                                                               |
+   |                                       | Handling suggestion: Contact technical support.                                                               |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------+

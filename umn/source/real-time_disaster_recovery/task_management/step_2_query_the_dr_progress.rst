@@ -19,7 +19,7 @@ Procedure
 #. On the **Disaster Recovery Management** page, click the target DR task in the **Task Name/ID** column.
 #. On the displayed page, click the **Disaster Recovery Progress** tab to view the DR progress. When the data initialization is complete, the initialization progress is displayed as 100%.
 
-   -  On the **Disaster Recovery Progress** tab, you can view the DR synchronization delay,
+   -  On the **Disaster Recovery Progress** tab, you can view the DR synchronization delay.
    -  You can also view the DR synchronization delay on the **Disaster Recovery Management** page. When the synchronization delay exceeds the preset or default threshold, the value of the synchronization delay is displayed in red in the task list.
    -  When the delay is 0, data is synchronized from the service database to the DR database in real-time.
 

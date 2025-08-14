@@ -143,14 +143,6 @@ Procedure
          |                                   |                                                                                                                                                                                                                                                                                                                        |
          |                                   | By default, the DRS instance and the destination DB instance are in the same subnet. You need to select the subnet where the DRS instance resides and ensure that there are available IP addresses. To ensure that the synchronization instance is successfully created, only subnets with DHCP enabled are displayed. |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-         | Synchronization Mode              | -  **Full+Incremental**                                                                                                                                                                                                                                                                                                |
-         |                                   |                                                                                                                                                                                                                                                                                                                        |
-         |                                   |    This synchronization mode allows you to synchronize data in real time. After a full synchronization initializes the destination database, an incremental synchronization parses logs to ensure data consistency between the source and destination databases.                                                       |
-         |                                   |                                                                                                                                                                                                                                                                                                                        |
-         |                                   | .. note::                                                                                                                                                                                                                                                                                                              |
-         |                                   |                                                                                                                                                                                                                                                                                                                        |
-         |                                   |    If you select **Full+Incremental**, data generated during the full synchronization will be continuously synchronized to the destination database, and the source remains accessible.                                                                                                                                |
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
          | Source DB Instance Quantity       | Specifies the number of DB instances bound to the source DDM database. The default value is **2**. The value ranges from **1** to **64**. Set this parameter based on the site requirements.                                                                                                                           |
          |                                   |                                                                                                                                                                                                                                                                                                                        |
          |                                   | .. note::                                                                                                                                                                                                                                                                                                              |
@@ -158,9 +150,19 @@ Procedure
          |                                   |    After a task is created, DRS creates subtasks, whose quantity is the same as the number of source DB instances. Each subtask migrates data from its source database to the destination database.                                                                                                                    |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+   -  DRS instance specifications
+
+      .. table:: **Table 5** Specifications
+
+         +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+         | Parameter      | Description                                                                                                                                                     |
+         +================+=================================================================================================================================================================+
+         | Specifications | DRS instance specifications. Different specifications have different performance upper limits. For details, see :ref:`Real-Time Synchronization <drs_01_0314>`. |
+         +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
    -  Tags
 
-      .. table:: **Table 5** Tags
+      .. table:: **Table 6** Tags
 
          +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
          | Parameter                         | Description                                                                                                                                     |
@@ -175,7 +177,7 @@ Procedure
 
 #. On the **Configure Source and Destination Databases** page, wait until the synchronization instance is created. Then, specify source and destination database information and click **Test Connection** for both the source and destination databases to check whether they have been connected to the synchronization instance. After the connection tests are successful, select the check box before the agreement and click **Next**.
 
-   .. table:: **Table 6** Source database settings
+   .. table:: **Table 7** Source database settings
 
       +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                            | Description                                                                                                                       |
@@ -202,7 +204,7 @@ Procedure
 
       The IP address, domain name, username, and password of the source database are encrypted and stored in DRS, and will be cleared after the task is deleted.
 
-   .. table:: **Table 7** Destination database settings
+   .. table:: **Table 8** Destination database settings
 
       +-------------------+--------------------------------------------------------------------------------------------------------------------------+
       | Parameter         | Description                                                                                                              |
@@ -216,25 +218,25 @@ Procedure
 
 #. On the **Set Synchronization Task** page, select the objects to be synchronized, and then click **Next**.
 
-   .. table:: **Table 8** Synchronization mode and object
+   .. table:: **Table 9** Synchronization mode and object
 
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                                                                                        |
-      +===================================+====================================================================================================================================================================================================================+
-      | Incremental Conflict Policy       | The conflict policy refers to the conflict handling policy during incremental synchronization. By default, conflicts in the full synchronization phase are ignored.                                                |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Synchronization Object            | Select **Tables**, **Databases**, or **Import object file** as required.                                                                                                                                           |
-      |                                   |                                                                                                                                                                                                                    |
-      |                                   | If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Mapping Object Names <drs_10_0015>`.    |
-      |                                   |                                                                                                                                                                                                                    |
-      |                                   | .. note::                                                                                                                                                                                                          |
-      |                                   |                                                                                                                                                                                                                    |
-      |                                   |    -  To quickly select the desired database objects, you can use the search function.                                                                                                                             |
-      |                                   |    -  If there are changes made to the source databases or objects, click in the upper right corner to update the objects to be synchronized.                                                                      |
-      |                                   |                                                                                                                                                                                                                    |
-      |                                   |    -  If an object name contains spaces, the spaces before and after the object name are not displayed. If there are two or more consecutive spaces in the middle of the object name, only one space is displayed. |
-      |                                   |    -  The name of the selected synchronization object cannot contain spaces.                                                                                                                                       |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                                             |
+      +===================================+=========================================================================================================================================================================================================================================+
+      | Incremental Conflict Policy       | The conflict policy refers to the conflict handling policy during incremental synchronization. By default, conflicts in the full synchronization phase are ignored.                                                                     |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Synchronization Object            | Select **Tables**, **Databases**, or **Import object file** as required.                                                                                                                                                                |
+      |                                   |                                                                                                                                                                                                                                         |
+      |                                   | If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Changing Object Names (Mapping Object Names) <drs_10_0015>`. |
+      |                                   |                                                                                                                                                                                                                                         |
+      |                                   | .. note::                                                                                                                                                                                                                               |
+      |                                   |                                                                                                                                                                                                                                         |
+      |                                   |    -  You can search for table names to quickly select the required database objects.                                                                                                                                                   |
+      |                                   |    -  If there are changes made to the source databases or objects, click in the upper right corner to update the objects to be synchronized.                                                                                           |
+      |                                   |                                                                                                                                                                                                                                         |
+      |                                   |    -  If an object name contains spaces, the spaces before and after the object name are not displayed. If there are two or more consecutive spaces in the middle of the object name, only one space is displayed.                      |
+      |                                   |    -  The name of the selected synchronization object cannot contain spaces.                                                                                                                                                            |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. On the **Check Task** page, check the synchronization task.
 
@@ -247,7 +249,7 @@ Procedure
 
 #. On the **Confirm Task** page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
 
-   .. table:: **Table 9** Task startup settings
+   .. table:: **Table 10** Task startup settings
 
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                 |
@@ -263,5 +265,6 @@ Procedure
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_06_0004>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001758549405.png

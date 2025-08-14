@@ -54,6 +54,7 @@ Method 1
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_02_0025>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 Method 2
 --------

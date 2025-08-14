@@ -32,6 +32,7 @@ Database Parameters
 -  :ref:`Checking Whether the Source Database Contains Trigger Names with Non-ASCII Characters <drs_11_0073>`
 -  :ref:`Checking Whether the Source Database Collections Contain More Than 10 Indexes <drs_11_0200>`
 -  :ref:`Checking Whether log_bin_trust_function_creators Is Set to On in Both the Source and Destination Databases <drs_11_0227>`
+-  :ref:`Checking Whether GTID Is Enabled for the Source Database <drs_11_0226>`
 -  :ref:`Checking Whether log_bin_trust_function_creators Is Set to On in the Destination Database <drs_11_0225>`
 -  :ref:`Checking Whether the max_allowed_packet Value of the Destination Database Is too Small <drs_15_0017>`
 -  :ref:`Checking Whether the Source Database Character Set Is Supported <drs_03_043>`
@@ -75,6 +76,7 @@ Database Parameters
    checking_whether_the_source_database_contains_trigger_names_with_non-ascii_characters
    checking_whether_the_source_database_collections_contain_more_than_10_indexes
    checking_whether_log_bin_trust_function_creators_is_set_to_on_in_both_the_source_and_destination_databases
+   checking_whether_gtid_is_enabled_for_the_source_database
    checking_whether_log_bin_trust_function_creators_is_set_to_on_in_the_destination_database
    checking_whether_the_max_allowed_packet_value_of_the_destination_database_is_too_small
    checking_whether_the_source_database_character_set_is_supported

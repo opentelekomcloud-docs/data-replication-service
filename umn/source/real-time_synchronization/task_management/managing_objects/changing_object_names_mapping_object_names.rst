@@ -2,10 +2,10 @@
 
 .. _drs_10_0015:
 
-Mapping Object Names
-====================
+Changing Object Names (Mapping Object Names)
+============================================
 
-Data synchronization allows you to synchronize objects (including databases, schemas and tables) in a sources database to the corresponding objects in a destination database. If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. The object types that can be mapped include database, schema, and table.
+Data synchronization allows you to synchronize objects (including databases, schemas and tables) in a sources database to the corresponding objects in a destination database. If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one by changing the object name. The objects that can be changed or mapped include databases, schemas, and tables.
 
 Object name mapping can be used only in the following scenarios:
 
@@ -17,6 +17,21 @@ Object name mapping can be used only in the following scenarios:
    -  If the destination DB is a type of PostgreSQL, the destination schema name cannot start with **pg\_**. Otherwise, the migration fails.
 
 This section describes how to map objects when configuring a data synchronization task. For details about the mapping relationship, see :ref:`Viewing Synchronization Mapping Information <drs_10_0100>`.
+
+Changing an Object Name
+-----------------------
+
+During real-time synchronization, if the names of source databases, schemas, or tables to be synchronized are different from those in the destination, you can map the source names to the destination ones.
+
+#. On the **Set Synchronization Task** page, select the database that needs to be mapped from the synchronization objects on the right area and click **Edit**.
+
+#. Change a name.
+
+   In the displayed dialog box, enter a new object name. The new name is the name of the object saved in the destination database.
+
+#. Check the result.
+
+   After the name is changed, the name before modification and the new name are displayed. The object name mapping is complete.
 
 Mapping Databases
 -----------------

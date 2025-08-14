@@ -10,6 +10,7 @@ Task Management
 -  :ref:`Step 3: View Synchronization Logs <drs_10_0008>`
 -  :ref:`Step 4: Compare Synchronization Items <drs_10_0012>`
 -  :ref:`Managing Objects <drs_05_0007>`
+-  :ref:`Managing Parameters <drs_10_0409>`
 -  :ref:`Task Life Cycle <drs_05_0006>`
 
 .. toctree::
@@ -21,4 +22,5 @@ Task Management
    step_3_view_synchronization_logs
    step_4_compare_synchronization_items
    managing_objects/index
+   managing_parameters/index
    task_life_cycle/index

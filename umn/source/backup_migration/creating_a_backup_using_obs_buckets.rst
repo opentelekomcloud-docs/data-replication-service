@@ -13,7 +13,7 @@ Supported Source and Destination Databases
    +--------------------------------------------------------------------------+-----------------------------------+
    | Backup File                                                              | Destination DB                    |
    +==========================================================================+===================================+
-   | On-premises and other cloud's Microsoft SQL Server backup file versions: | RDS for Microsoft SQL Server      |
+   | On-premises and other cloud's Microsoft SQL Server backup file versions: | RDS for SQL Server                |
    |                                                                          |                                   |
    | -  Microsoft SQL Server 2000                                             | -  Microsoft SQL Server 2008      |
    | -  Microsoft SQL Server 2005                                             | -  Microsoft SQL Server 2012      |

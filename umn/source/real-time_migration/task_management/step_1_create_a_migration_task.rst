@@ -159,7 +159,7 @@ Procedure
          |                                   | .. note::                                                                                                                                                                                                                                         |
          |                                   |                                                                                                                                                                                                                                                   |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                               |
-         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                               |
+         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                               |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
       .. note::
@@ -330,6 +330,7 @@ Procedure
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001710470728.png
 .. |image2| image:: /_static/images/en-us_image_0000001758429809.png

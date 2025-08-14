@@ -8,7 +8,7 @@ Modifying the Flow Control Mode
 DRS allows you to change the flow control mode for a task. Currently, only the following DR tasks support this function.
 
 -  MySQL->MySQL
--  MySQL -> GaussDB(for MySQL) primary/standby
+-  MySQL -> TaurusDB Cluster
 
 Prerequisites
 -------------

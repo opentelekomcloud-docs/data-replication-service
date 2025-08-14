@@ -29,12 +29,12 @@ Supported network types during migration from MongoDB databases to DDS:
 -  Direct Connect
 -  Public network
 
-GaussDB(for MySQL)
-------------------
+TaurusDB
+--------
 
-DRS can migrate data from your databases to GaussDB(for MySQL) on the current cloud. For more information about GaussDB(for MySQL), see GaussDB(for MySQL) User Guide.
+DRS can migrate data from your databases to TaurusDB on the current cloud. For more information about TaurusDB, see TaurusDB User Guide.
 
-Supported network types during migration to GaussDB(for MySQL) on the current cloud:
+Supported network types during migration to TaurusDB on the current cloud:
 
 -  VPC
 -  VPN

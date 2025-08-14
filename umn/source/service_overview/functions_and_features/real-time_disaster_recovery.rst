@@ -12,58 +12,58 @@ DRS supports disaster recovery (DR) management for the following types of databa
 
 .. table:: **Table 1** Database types
 
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
-   | DR Direction             | Data Flow                                   | Service Database                    | DR Database                                  | DR DB Instance Type            |
-   +==========================+=============================================+=====================================+==============================================+================================+
-   | Current cloud as standby | MySQL->MySQL                                | -  On-premises databases            | RDS MySQL instances                          | -  Single DB instance          |
-   |                          |                                             | -  Databases on an ECS              |                                              | -  Primary/Standby DB instance |
-   |                          |                                             | -  Databases on other clouds        |                                              |                                |
-   |                          |                                             | -  RDS MySQL instances              |                                              |                                |
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
-   | Current cloud as active  | MySQL->MySQL                                | RDS MySQL instances                 | -  On-premises databases                     | -  Single DB instance          |
-   |                          |                                             |                                     | -  ECS databases                             | -  Primary/Standby DB instance |
-   |                          |                                             |                                     | -  Databases on other clouds                 |                                |
-   |                          |                                             |                                     | -  RDS MySQL instances                       |                                |
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
-   | Current cloud as standby | MySQL -> GaussDB(for MySQL) primary/standby | -  On-premises databases            | GaussDB(for MySQL) primary/standby instances | -  Primary/Standby instance    |
-   |                          |                                             | -  ECS databases                    |                                              |                                |
-   |                          |                                             | -  Databases on other clouds        |                                              |                                |
-   |                          |                                             | -  RDS MySQL instances              |                                              |                                |
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
-   | Current cloud as standby | Cassandra->Cassandra                        | -  On-premises databases            | GaussDB(for Cassandra) instances             | -  Cluster                     |
-   |                          |                                             | -  ECS databases                    |                                              |                                |
-   |                          |                                             | -  Databases on other clouds        |                                              |                                |
-   |                          |                                             | -  GaussDB(for Cassandra) instances |                                              |                                |
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
-   | Current cloud as active  | Cassandra->Cassandra                        | -  GaussDB(for Cassandra)           | -  On-premises databases                     | -  Cluster                     |
-   |                          |                                             |                                     | -  ECS databases                             |                                |
-   |                          |                                             |                                     | -  Databases on other clouds                 |                                |
-   |                          |                                             |                                     | -  GaussDB(for Cassandra) instances          |                                |
-   +--------------------------+---------------------------------------------+-------------------------------------+----------------------------------------------+--------------------------------+
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
+   | DR Direction             | Data Flow                 | Service Database                    | DR Database                         | DR DB Instance Type            |
+   +==========================+===========================+=====================================+=====================================+================================+
+   | Current cloud as standby | MySQL->MySQL              | -  On-premises databases            | RDS MySQL instances                 | -  Single DB instance          |
+   |                          |                           | -  Databases on an ECS              |                                     | -  Primary/Standby DB instance |
+   |                          |                           | -  Databases on other clouds        |                                     |                                |
+   |                          |                           | -  RDS MySQL instances              |                                     |                                |
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
+   | Current cloud as active  | MySQL->MySQL              | RDS MySQL instances                 | -  On-premises databases            | -  Single DB instance          |
+   |                          |                           |                                     | -  ECS databases                    | -  Primary/Standby DB instance |
+   |                          |                           |                                     | -  Databases on other clouds        |                                |
+   |                          |                           |                                     | -  RDS MySQL instances              |                                |
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
+   | Current cloud as standby | MySQL -> TaurusDB Cluster | -  On-premises databases            | TaurusDB cluster instances          | -  Primary/Standby instance    |
+   |                          |                           | -  ECS databases                    |                                     |                                |
+   |                          |                           | -  Databases on other clouds        |                                     |                                |
+   |                          |                           | -  RDS MySQL instances              |                                     |                                |
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
+   | Current cloud as standby | Cassandra->Cassandra      | -  On-premises databases            | GaussDB(for Cassandra) instances    | -  Cluster                     |
+   |                          |                           | -  ECS databases                    |                                     |                                |
+   |                          |                           | -  Databases on other clouds        |                                     |                                |
+   |                          |                           | -  GaussDB(for Cassandra) instances |                                     |                                |
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
+   | Current cloud as active  | Cassandra->Cassandra      | -  GaussDB(for Cassandra)           | -  On-premises databases            | -  Cluster                     |
+   |                          |                           |                                     | -  ECS databases                    |                                |
+   |                          |                           |                                     | -  Databases on other clouds        |                                |
+   |                          |                           |                                     | -  GaussDB(for Cassandra) instances |                                |
+   +--------------------------+---------------------------+-------------------------------------+-------------------------------------+--------------------------------+
 
 Database Versions
 -----------------
 
 .. table:: **Table 2** Database versions
 
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
-   | DR Direction             | Data Flow                                   | Service Database Version   | DR Database Version          |
-   +==========================+=============================================+============================+==============================+
-   | Current cloud as standby | MySQL->MySQL                                | -  MySQL 5.6.x             | -  MySQL 5.6.x               |
-   |                          |                                             | -  MySQL 5.7.x             | -  MySQL 5.7.x               |
-   |                          |                                             | -  MySQL 8.0.x             | -  MySQL 8.0.x               |
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
-   | Current cloud as active  | MySQL->MySQL                                | -  MySQL 5.6.x             | -  MySQL 5.6.x               |
-   |                          |                                             | -  MySQL 5.7.x             | -  MySQL 5.7.x               |
-   |                          |                                             | -  MySQL 8.0.x             | -  MySQL 8.0.x               |
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
-   | Current cloud as standby | MySQL -> GaussDB(for MySQL) primary/standby | -  MySQL 5.6.x             | GaussDB(for MySQL)-MySQL 8.0 |
-   |                          |                                             | -  MySQL 5.7.x             |                              |
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
-   | Current cloud as standby | Cassandra-> Cassandra                       | Cassandra 2.x              | GaussDB(for Cassandra) 3.x   |
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
-   | Current cloud as active  | Cassandra->Cassandra                        | GaussDB(for Cassandra) 3.x | Cassandra 2.x                |
-   +--------------------------+---------------------------------------------+----------------------------+------------------------------+
+   +--------------------------+---------------------------+----------------------------+----------------------------+
+   | DR Direction             | Data Flow                 | Service Database Version   | DR Database Version        |
+   +==========================+===========================+============================+============================+
+   | Current cloud as standby | MySQL->MySQL              | -  MySQL 5.6.x             | -  MySQL 5.6.x             |
+   |                          |                           | -  MySQL 5.7.x             | -  MySQL 5.7.x             |
+   |                          |                           | -  MySQL 8.0.x             | -  MySQL 8.0.x             |
+   +--------------------------+---------------------------+----------------------------+----------------------------+
+   | Current cloud as active  | MySQL->MySQL              | -  MySQL 5.6.x             | -  MySQL 5.6.x             |
+   |                          |                           | -  MySQL 5.7.x             | -  MySQL 5.7.x             |
+   |                          |                           | -  MySQL 8.0.x             | -  MySQL 8.0.x             |
+   +--------------------------+---------------------------+----------------------------+----------------------------+
+   | Current cloud as standby | MySQL -> TaurusDB Cluster | -  MySQL 5.6.x             | TaurusDB-MySQL 8.0         |
+   |                          |                           | -  MySQL 5.7.x             |                            |
+   +--------------------------+---------------------------+----------------------------+----------------------------+
+   | Current cloud as standby | Cassandra-> Cassandra     | Cassandra 2.x              | GaussDB(for Cassandra) 3.x |
+   +--------------------------+---------------------------+----------------------------+----------------------------+
+   | Current cloud as active  | Cassandra->Cassandra      | GaussDB(for Cassandra) 3.x | Cassandra 2.x              |
+   +--------------------------+---------------------------+----------------------------+----------------------------+
 
 Network Preparations
 --------------------
@@ -100,16 +100,16 @@ DRS supports disaster recovery through a Virtual Private Network (VPN), Direct C
 
 .. table:: **Table 4** Supported network types
 
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | DR Direction             | Data Flow                                   | VPC           | Public Network | VPN or Direct Connect |
-   +==========================+=============================================+===============+================+=======================+
-   | Current cloud as standby | MySQL->MySQL                                | Not supported | Supported      | Supported             |
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | Current cloud as active  | MySQL->MySQL                                | Not supported | Supported      | Supported             |
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | Current cloud as standby | MySQL -> GaussDB(for MySQL) primary/standby | Not supported | Supported      | Supported             |
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | Current cloud as standby | Cassandra->Cassandra                        | Not supported | Supported      | Supported             |
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
-   | Current cloud as active  | Cassandra->Cassandra                        | Not supported | Supported      | Supported             |
-   +--------------------------+---------------------------------------------+---------------+----------------+-----------------------+
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+
+   | DR Direction             | Data Flow                 | VPC           | Public Network | VPN or Direct Connect |
+   +==========================+===========================+===============+================+=======================+
+   | Current cloud as standby | MySQL->MySQL              | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+
+   | Current cloud as active  | MySQL->MySQL              | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+
+   | Current cloud as standby | MySQL -> TaurusDB Cluster | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+
+   | Current cloud as standby | Cassandra->Cassandra      | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+
+   | Current cloud as active  | Cassandra->Cassandra      | Not supported | Supported      | Supported             |
+   +--------------------------+---------------------------+---------------+----------------+-----------------------+

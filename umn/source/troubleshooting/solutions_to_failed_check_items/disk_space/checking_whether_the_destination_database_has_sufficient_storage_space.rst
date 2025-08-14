@@ -69,8 +69,8 @@ PostgreSQL Synchronization
    |                                       | Handling suggestion: Contact technical support.                                                                                                                        |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Migration from MongoDB to DDS
------------------------------
+MongoDB Migration
+-----------------
 
 .. table:: **Table 3** Checking whether the destination database has sufficient storage space
 

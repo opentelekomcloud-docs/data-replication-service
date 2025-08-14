@@ -21,3 +21,7 @@ Procedure
 #. On the **Migration Logs** tab, view logs of the migration task by level.
 
    You can view time, levels, and descriptions of the logs.
+
+   .. note::
+
+      For a task whose source database is DDM, you can view the migration logs in each subtask.

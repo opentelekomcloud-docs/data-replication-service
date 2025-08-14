@@ -5,8 +5,6 @@
 From MySQL to Kafka
 ===================
 
-DMS for Kafka
-
 Supported Source and Destination Databases
 ------------------------------------------
 
@@ -16,7 +14,6 @@ Supported Source and Destination Databases
    | Source DB                         | Destination DB                    |
    +===================================+===================================+
    | -  RDS for MySQL                  | -  Kafka                          |
-   |                                   | -  DMS for Kafka                  |
    +-----------------------------------+-----------------------------------+
 
 Prerequisites
@@ -35,6 +32,11 @@ Precautions
 -----------
 
 Before creating a synchronization task, read the following notes:
+
+.. note::
+
+   -  You are advised to create an independent database account for DRS task connection to prevent task failures caused by account modification.
+   -  After changing the account passwords for the source or destination databases, :ref:`modify the connection information <drs_10_0016>` in the DRS task as soon as possible to prevent automatic retry after a task failure. Automatic retry will lock the database accounts.
 
 .. table:: **Table 2** Precautions
 
@@ -57,7 +59,7 @@ Before creating a synchronization task, read the following notes:
    | Destination database              | -  The destination database is a Kafka database.                                                                                                                                                                                                                                                                                            |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Precautions                       | -  If the data types are incompatible, the synchronization may fail.                                                                                                                                                                                                                                                                        |
-   |                                   | -  If the source DB instance is an RDS MySQL instance, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                                                     |
+   |                                   | -  If the source DB instance is an RDS for MySQL instance, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                                                 |
    |                                   | -  A real-time synchronization task may fail due to the change of the username and password of the source database. You need to rectify the information and then retry the synchronization task on the DRS console. Generally, you are advised not to modify the preceding information during synchronization.                              |
    |                                   | -  If the source database port is changed during data synchronization, the synchronization task fails. If the destination database port is wrong, DRS automatically changes the port to the correct one, and then you need to retry the synchronization task. Generally, do not modify the port number during synchronization.              |
    |                                   | -  If a real-time synchronization task fails as the IP address is changed, the system automatically changes the IP address to the correct one. Then, you need to retry the task to continue the synchronization. Therefore, changing the IP address is not recommended.                                                                     |
@@ -104,7 +106,7 @@ Procedure
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Network Type                      | The **Public network** is used as an example. Available options: **Public network**, **VPC**, **VPN or Direct Connect**                                                                                                                                                                                                |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Source DB Instance                | The RDS MySQL instance you created.                                                                                                                                                                                                                                                                                    |
+      | Source DB Instance                | The RDS for MySQL instance you created.                                                                                                                                                                                                                                                                                |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Synchronization Instance Subnet   | Select the subnet where the synchronization instance is located. You can also click **View Subnet** to go to the network console to view the subnet where the instance resides.                                                                                                                                        |
       |                                   |                                                                                                                                                                                                                                                                                                                        |
@@ -115,6 +117,8 @@ Procedure
       |                                   |    Through log parsing, incremental data generated on the source database is synchronized to the destination database.                                                                                                                                                                                                 |
       |                                   |                                                                                                                                                                                                                                                                                                                        |
       |                                   |    During synchronization, the source database continues to provide services for external systems with zero downtime.                                                                                                                                                                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Specifications                    | DRS instance specifications. Different specifications have different performance upper limits. For details, see :ref:`Real-Time Synchronization <drs_01_0314>`.                                                                                                                                                        |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Tags                              | -  This setting is optional. Adding tags helps you better identify and manage your tasks. Each task can have up to 20 tags.                                                                                                                                                                                            |
       |                                   | -  After a task is created, you can view its tag details on the **Tags** tab. For details, see :ref:`Tag Management <drs_synchronization_tag>`.                                                                                                                                                                        |
@@ -194,11 +198,11 @@ Procedure
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Synchronization Object            | Available options: **Tables** or **Databases** as required.                                                                                                                                                                                                   |
       |                                   |                                                                                                                                                                                                                                                               |
-      |                                   | -  If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Mapping Object Names <drs_10_0015>`.                                            |
+      |                                   | -  If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Changing Object Names (Mapping Object Names) <drs_10_0015>`.                    |
       |                                   |                                                                                                                                                                                                                                                               |
       |                                   | .. note::                                                                                                                                                                                                                                                     |
       |                                   |                                                                                                                                                                                                                                                               |
-      |                                   |    -  To quickly select the desired database objects, you can use the search function.                                                                                                                                                                        |
+      |                                   |    -  You can search for table names to quickly select the required database objects.                                                                                                                                                                         |
       |                                   |    -  If there are changes made to the source databases or objects, click in the upper right corner to update the objects to be synchronized.                                                                                                                 |
       |                                   |                                                                                                                                                                                                                                                               |
       |                                   |    -  If an object name contains spaces, the spaces before and after the object name are not displayed. If there are two or more consecutive spaces in the middle of the object name, only one space is displayed.                                            |
@@ -237,5 +241,6 @@ Procedure
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_06_0004>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001758549405.png

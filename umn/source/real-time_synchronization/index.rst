@@ -11,6 +11,7 @@ Real-Time Synchronization
 -  :ref:`Between Self-built Databases <drs_04_0452>`
 -  :ref:`Task Management <drs_taskmangement>`
 -  :ref:`Tag Management <drs_synchronization_tag>`
+-  :ref:`Interconnecting with Cloud Eye <drs_05_0011>`
 -  :ref:`Operation Reference in Synchronization Scenarios <drs_03_1113>`
 
 .. toctree::
@@ -23,4 +24,5 @@ Real-Time Synchronization
    between_self-built_databases/index
    task_management/index
    tag_management
+   interconnecting_with_cloud_eye/index
    operation_reference_in_synchronization_scenarios/index

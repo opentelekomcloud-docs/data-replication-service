@@ -28,6 +28,11 @@ Database Account Permission Requirements
 
 To start a migration task, the source and destination database users must have permissions listed in the following table. Different types of migration tasks require different permissions. For details, see :ref:`Table 2 <drs_04_0100__table68938710614>`. DRS automatically checks the database account permissions in the pre-check phase and provides handling suggestions.
 
+.. note::
+
+   -  You are advised to create an independent database account for DRS task connection to prevent task failures caused by account modification.
+   -  After changing the account passwords for the source and destination databases, :ref:`modify the connection information <drs_03_1135>` in the DRS task as soon as possible to prevent automatic retry after a task failure. Automatic retry will lock the database accounts.
+
 .. _drs_04_0100__table68938710614:
 
 .. table:: **Table 2** Database account permission
@@ -171,7 +176,7 @@ Prerequisites
 Procedure
 ---------
 
-This section uses the migration from an RDS MySQL database to a MySQL database on an ECS as an example to describe how to configure a migration task in a VPC network on the DRS management console.
+This section uses the migration from an RDS for MySQL database to a MySQL database on an ECS as an example to describe how to configure a migration task in a VPC network on the DRS management console.
 
 #. On the **Online Migration Management** page, click **Create Migration Task**.
 #. On the **Create Replication Instance** page, configure task details, description, and the replication instance, and click **Next**.
@@ -280,7 +285,7 @@ This section uses the migration from an RDS MySQL database to a MySQL database o
       |                                   | .. note::                                                                                                                                                                                                                                                                                                                                                                                        |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                                                  |
       |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                                                                                                                                                                                                                                                                                              |
-      |                                   |    -  If SSL is disabled, your data may be at risk.                                                                                                                                                                                                                                                                                                                                              |
+      |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                                                                                                                                                                                                                                                                                              |
       +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Migrate Definer to User           | -  **Yes**                                                                                                                                                                                                                                                                                                                                                                                       |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -330,7 +335,7 @@ This section uses the migration from an RDS MySQL database to a MySQL database o
       |                                   |                                                                                                                                                                                                                                                                                                                                                                |
       |                                   |    .. note::                                                                                                                                                                                                                                                                                                                                                   |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                |
-      |                                   |       Currently, only the full plus incremental migrations from RDS MySQL to MySQL are supported.                                                                                                                                                                                                                                                              |
+      |                                   |       Currently, only the full plus incremental migrations from RDS for MySQL to MySQL are supported.                                                                                                                                                                                                                                                          |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Migrate Account                   | During a database migration, accounts need to be migrated separately.                                                                                                                                                                                                                                                                                          |
       |                                   |                                                                                                                                                                                                                                                                                                                                                                |
@@ -390,6 +395,7 @@ This section uses the migration from an RDS MySQL database to a MySQL database o
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001710630464.png
 .. |image2| image:: /_static/images/en-us_image_0000001758429809.png

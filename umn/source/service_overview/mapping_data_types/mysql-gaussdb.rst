@@ -75,7 +75,7 @@ MySQL->GaussDB
 
       For GaussDB, 0000-00-00 is an invalid date and will be converted to 1970-01-01 by DRS. For example, '0000-00-00' of the DATE type in MySQL is converted to '1970-01-01' by DRS, and '1000-00-31 23:59:59' of the DATETIME or TIMESTAMP type in MySQL is converted to '1970-01-01 00:00:00' by DRS.
 
-   -  TIME values supported by MySQL range from '-838:59:59' to '838:59:59'. For details, see the `official MySQL documentation <https://dev.mysql.com/doc/refman/5.7/en/time.html>`__. For GaussDB, the minimum value of the TIME type is 00:00:00 and the maximum value is 24:00:00. In MySQL, if a value of the TIME type is less than 00:00:00 or greater than 24:00:00, DRS will convert it to 00:00:00.
+   -  TIME values supported by MySQL range from '-838:59:59' to '838:59:59'. For details, see the `official MySQL documentation <https://dev.mysql.com/doc/refman/5.7/en/time.html>`__. For GaussDB, the minimum value of the TIME type is 00:00:00, and the maximum value is 24:00:00. In MySQL, if a value of the TIME type is less than 00:00:00 or greater than 24:00:00, DRS will convert it to 00:00:00.
 
    -  YEAR value ranges supported by MySQL are 1901 to 2155 and 0000. For details, see `official MySQL documentation <https://dev.mysql.com/doc/refman/5.7/en/year.html>`__. GaussDB does not have the YEAR type, so DRS will convert the YEAR type of MySQL to the SMALLINT type.
 
