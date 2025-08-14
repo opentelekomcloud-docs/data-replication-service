@@ -87,8 +87,8 @@ PostgreSQL Synchronization
    |                                       | Handling suggestion: Check whether the versions of the destination database and source database meet the migration mode requirements.                                                                   |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Migration from MongoDB to DDS
------------------------------
+MongoDB Migration
+-----------------
 
 .. table:: **Table 3** Checking Whether the Source Database Version Is Supported
 

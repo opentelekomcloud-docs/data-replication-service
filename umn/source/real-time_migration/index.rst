@@ -10,6 +10,7 @@ Real-Time Migration
 -  :ref:`Between Self-built Databases <drs_02_0490>`
 -  :ref:`Task Management <drs_04_0010>`
 -  :ref:`Tag Management <drs_online_tag>`
+-  :ref:`Interconnecting with Cloud Eye <drs_03_0105>`
 
 .. toctree::
    :maxdepth: 1
@@ -20,3 +21,4 @@ Real-Time Migration
    between_self-built_databases/index
    task_management/index
    tag_management
+   interconnecting_with_cloud_eye/index

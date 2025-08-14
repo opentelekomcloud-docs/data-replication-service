@@ -14,7 +14,7 @@ Supported Source and Destination Databases
    | Source DB                         | Destination DB                    |
    +===================================+===================================+
    | -  On-premises MySQL databases    | -  Kafka                          |
-   | -  MySQL databases on an ECS      | -  DMS for Kafka                  |
+   | -  MySQL databases on an ECS      |                                   |
    +-----------------------------------+-----------------------------------+
 
 Prerequisites
@@ -33,6 +33,11 @@ Precautions
 -----------
 
 Before creating a synchronization task, read the following notes:
+
+.. note::
+
+   -  You are advised to create an independent database account for DRS task connection to prevent task failures caused by account modification.
+   -  After changing the account passwords for the source or destination databases, :ref:`modify the connection information <drs_10_0016>` in the DRS task as soon as possible to prevent automatic retry after a task failure. Automatic retry will lock the database accounts.
 
 .. table:: **Table 2** Precautions
 
@@ -114,6 +119,8 @@ Procedure
       |                                   |    Through log parsing, incremental data generated on the source database is synchronized to the destination database.                                                                                                                                                                                                 |
       |                                   |                                                                                                                                                                                                                                                                                                                        |
       |                                   |    During synchronization, the source database continues to provide services for external systems with zero downtime.                                                                                                                                                                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Specifications                    | DRS instance specifications. Different specifications have different performance upper limits. For details, see :ref:`Real-Time Synchronization <drs_01_0314>`.                                                                                                                                                        |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Tags                              | -  This setting is optional. Adding tags helps you better identify and manage your tasks. Each task can have up to 20 tags.                                                                                                                                                                                            |
       |                                   | -  After a task is created, you can view its tag details on the **Tags** tab. For details, see :ref:`Tag Management <drs_synchronization_tag>`.                                                                                                                                                                        |
@@ -203,7 +210,7 @@ Procedure
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Synchronization Object            | Available options: **Tables** and **Databases**.                                                                                                                                                                                                               |
       |                                   |                                                                                                                                                                                                                                                                |
-      |                                   | -  If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Mapping Object Names <drs_10_0015>`.                                             |
+      |                                   | -  If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one. For details, see :ref:`Changing Object Names (Mapping Object Names) <drs_10_0015>`.                     |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. On the **Process Data** page, select the columns to be processed.
@@ -238,5 +245,6 @@ Procedure
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_06_0004>`.
    -  You can click |image1| in the upper-right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001758549405.png

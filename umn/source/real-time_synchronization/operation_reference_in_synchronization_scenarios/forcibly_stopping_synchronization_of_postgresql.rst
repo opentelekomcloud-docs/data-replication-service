@@ -45,7 +45,7 @@ Clearing the Logical Replication Slot of the Source Database
 Synchronizing Sequence Values
 -----------------------------
 
-If sequence objects are not synchronized or the destination database is GaussDB, skip this section.
+If sequence objects are not synchronized or the destination database type is GaussDB, skip the following steps.
 
 #. Use a high-privilege account (with the USAGE permission for all sequences) to connect to the source database and run the following statement:
 

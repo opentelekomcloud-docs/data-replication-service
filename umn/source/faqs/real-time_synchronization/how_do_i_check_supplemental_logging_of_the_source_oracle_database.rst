@@ -39,10 +39,6 @@ Check whether supplemental logging of the table-level objects to be synchronized
       alter database add supplemental log data;
       alter table Schema_name.Table_name add supplemental log data(primary key,unique) columns;
 
-   .. important::
-
-      In the preceding command, *Schema_name*.\ *Table_name* should replace with some existing schema names and table names.
-
 All Table-Level Supplemental Log Check
 --------------------------------------
 
@@ -52,7 +48,7 @@ Check whether supplemental logging of the table-level objects to be synchronized
 
    .. code-block::
 
-      select * from ALL_LOG_GROUPS where LOG_GROUP_TYPE='ALL COLUMN LOGGING' and OWNER='Schema_name in uppercase' and TABLE_NAME='Table name in uppercase';
+      select * from ALL_LOG_GROUPS where LOG_GROUP_TYPE='ALL COLUMN LOGGING' and OWNER='Schema_name in uppercase' and TABLE_NAME='Table_name in uppercase';
 
    If the table name is recorded in the query result, the DRS incremental synchronization requirements can be met.
 
@@ -62,10 +58,6 @@ Check whether supplemental logging of the table-level objects to be synchronized
 
       alter database add supplemental log data;
       alter table Schema_name.Table_name add supplemental log data(all) columns;
-
-   .. important::
-
-      In the preceding command, *Schema_name*.\ *Table_name* should replace with some existing schema names and table names.
 
 Database-level Supplemental Log Check
 -------------------------------------

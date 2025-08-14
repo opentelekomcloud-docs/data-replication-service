@@ -7,7 +7,7 @@ To the Cloud
 
 -  :ref:`From MySQL to MySQL <drs_04_0102>`
 -  :ref:`From MySQL to GaussDB Distributed <drs_04_0104>`
--  :ref:`From MySQL to GaussDB(for MySQL) Primary/Standby <drs_03_1124>`
+-  :ref:`From MySQL to TaurusDB Cluster <drs_03_1124>`
 -  :ref:`From PostgreSQL to PostgreSQL <drs_04_0107>`
 -  :ref:`From Oracle to PostgreSQL <drs_04_0446>`
 -  :ref:`From DDM to MySQL <drs_04_0115>`
@@ -19,7 +19,7 @@ To the Cloud
 
    from_mysql_to_mysql
    from_mysql_to_gaussdb_distributed
-   from_mysql_to_gaussdbfor_mysql_primary_standby
+   from_mysql_to_taurusdb_cluster
    from_postgresql_to_postgresql
    from_oracle_to_postgresql
    from_ddm_to_mysql

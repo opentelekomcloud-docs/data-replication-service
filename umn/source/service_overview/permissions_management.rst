@@ -5,9 +5,9 @@
 Permissions Management
 ======================
 
-If you need to assign different permissions to employees in your enterprise to access your DRS resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you to have a secure access to cloud resources.
+If you need to assign different permissions to employees in your enterprise to access your DRS resources, IAM is a good choice for fine-grained permissions management. IAM provides identity authentication, permissions management, and access control, helping you to securely access your cloud resources.
 
-With IAM, you can use your cloud account to create IAM users for your employees, and assign permissions to the users to control their access to specific resources. For example, some software developers in your enterprise need to use DRS resources but must not delete DRS tasks or perform any high-risk operations. To achieve this result, you can create IAM users for the software developers and grant them only the permissions required for using DRS resources.
+With IAM, you can use your cloud account to create IAM users for your employees, and assign permissions to the users to control their access to specific resources. For example, some software developers in your enterprise need to use DRS but must not delete DRS resources or perform any high-risk operations. To achieve this result, you can create IAM users for the software developers and grant them only the permissions required for using DRS resources.
 
 If your account does not need individual IAM users for permissions management, you may skip over this topic.
 
@@ -18,11 +18,11 @@ DRS Permissions
 
 By default, new IAM users do not have permissions assigned. You need to add a user to one or more groups, and attach permissions policies or roles to these groups. Users inherit permissions from the groups to which they are added and can perform specified operations on cloud services based on the permissions.
 
-DRS is a project-level service deployed and accessed in specific physical regions. To assign DRS permissions to a user group, specify the scope as region-specific projects and select projects for the permissions to take effect. If All projects is selected, the permissions will take effect for the user group in all region-specific projects. When accessing DRS, users need to switch to a region where they have been authorized to use DRS.
+DRS is a project-level service deployed and accessed in specific physical regions. To assign DRS permissions to a user group, specify the scope as region-specific projects and select projects for the permissions to take effect. If you select **All projects**, the permissions will take effect for user groups in all region-specific projects. When accessing DRS, users need to switch to a region where they have been authorized to use DRS.
 
 You can grant users permissions by using roles and policies.
 
--  Roles: A type of coarse-grained authorization mechanism that defines permissions related to user responsibilities. This mechanism provides only a limited number of service-level roles for authorization. When using roles to grant permissions, you need to also assign other roles on which the permissions depend to take effect. However, roles are not an ideal choice for fine-grained authorization and secure access control.
+-  Roles: A type of coarse-grained authorization mechanism that defines permissions related to user responsibilities. This mechanism provides only a limited number of service-level roles for authorization. When using roles to grant permissions, you need to also assign other roles which the permissions depend on to take effect. However, roles are not an ideal choice for fine-grained authorization and secure access control.
 -  Policies: A type of fine-grained authorization mechanism that defines permissions required to perform operations on specific cloud resources under certain conditions. This mechanism allows for more flexible policy-based authorization, meeting requirements for secure access control. For example, you can grant ECS users only the permissions for managing a certain type of ECSs. Most fine-grained policies are API-based.
 
 :ref:`Table 1 <drs_01_0201__en-us_topic_0000001229069051_en-us_topic_0000001160467836_table122641315719>` lists all the system policies supported by DRS.

@@ -10,18 +10,18 @@ Supported Source and Destination Databases
 
 .. table:: **Table 1** Supported databases
 
-   +-----------------------------------------------------+-----------------------------------+
-   | Backup File                                         | Destination DB                    |
-   +=====================================================+===================================+
-   | RDS Microsoft SQL Server full backup file versions: | RDS for Microsoft SQL Server      |
-   |                                                     |                                   |
-   | -  Microsoft SQL Server 2008                        | -  Microsoft SQL Server 2008      |
-   | -  Microsoft SQL Server 2012                        | -  Microsoft SQL Server 2012      |
-   | -  Microsoft SQL Server 2014                        | -  Microsoft SQL Server 2014      |
-   | -  Microsoft SQL Server 2016                        | -  Microsoft SQL Server 2016      |
-   | -  Microsoft SQL Server 2017                        | -  Microsoft SQL Server 2017      |
-   | -  Microsoft SQL Server 2019                        | -  Microsoft SQL Server 2019      |
-   +-----------------------------------------------------+-----------------------------------+
+   +-----------------------------------------------+-----------------------------------+
+   | Backup File                                   | Destination DB                    |
+   +===============================================+===================================+
+   | RDS for SQL Server full backup file versions: | RDS for SQL Server                |
+   |                                               |                                   |
+   | -  Microsoft SQL Server 2008                  | -  Microsoft SQL Server 2008      |
+   | -  Microsoft SQL Server 2012                  | -  Microsoft SQL Server 2012      |
+   | -  Microsoft SQL Server 2014                  | -  Microsoft SQL Server 2014      |
+   | -  Microsoft SQL Server 2016                  | -  Microsoft SQL Server 2016      |
+   | -  Microsoft SQL Server 2017                  | -  Microsoft SQL Server 2017      |
+   | -  Microsoft SQL Server 2019                  | -  Microsoft SQL Server 2019      |
+   +-----------------------------------------------+-----------------------------------+
 
 Prerequisites
 -------------

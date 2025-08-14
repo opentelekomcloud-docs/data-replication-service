@@ -17,7 +17,7 @@ Procedure
 
 .. note::
 
-   -  In the task list, only tasks created by the current login user are displayed. Tasks created by different users of the same tenant are not displayed.
+   -  The task list displays all tasks under the tenant to which the current login user belongs and for which the login user has the query permission. Tasks created by different users of the same tenant are displayed.
    -  For a task whose source database is MySQL Schema and Logic Table or DDM, the task details of each subtask contain the information about the source and destination databases corresponding to the subtask.
 
 #. On the **Data Synchronization Management** page, click the target synchronization task name in the **Task Name/ID** column.

@@ -10,7 +10,7 @@ You can choose whether to control the flow. DRS allows you to change the flow co
 -  To the cloud
 
    -  MySQL->MySQL
-   -  MySQL -> GaussDB(for MySQL) primary/standby
+   -  MySQL -> TaurusDB Cluster
    -  Oracle->PostgreSQL
    -  PostgreSQL->PostgreSQL
 

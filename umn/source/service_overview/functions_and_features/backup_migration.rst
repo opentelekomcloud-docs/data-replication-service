@@ -12,53 +12,53 @@ Supported Database Types
 
 .. table:: **Table 1** Database types
 
-   +--------------------------------------------------+------------------------------------------------------+---------------------------------------+
-   | Data Flow                                        | Backup File Source                                   | Destination DB Type                   |
-   +==================================================+======================================================+=======================================+
-   | Microsoft SQL Server -> RDS Microsoft SQL Server | -  On-premises Microsoft SQL Server backup files     | RDS Microsoft SQL Server DB instances |
-   |                                                  | -  RDS Microsoft SQL Server full backup files        |                                       |
-   |                                                  | -  Microsoft SQL Server backup files on other clouds |                                       |
-   +--------------------------------------------------+------------------------------------------------------+---------------------------------------+
+   +--------------------------------------------+------------------------------------------------------+---------------------------------+
+   | Data Flow                                  | Backup File Source                                   | Destination DB Type             |
+   +============================================+======================================================+=================================+
+   | Microsoft SQL Server -> RDS for SQL Server | -  On-premises Microsoft SQL Server backup files     | RDS for SQL Server DB instances |
+   |                                            | -  RDS for SQL Server full backup files              |                                 |
+   |                                            | -  Microsoft SQL Server backup files on other clouds |                                 |
+   +--------------------------------------------+------------------------------------------------------+---------------------------------+
 
 Migration Methods
 -----------------
 
 .. table:: **Table 2** Migration methods
 
-   +--------------------------------------------------+----------------+-----------------------+
-   | Data Flow                                        | Full Migration | Incremental Migration |
-   +==================================================+================+=======================+
-   | Microsoft SQL Server -> RDS Microsoft SQL Server | Supported      | Supported             |
-   +--------------------------------------------------+----------------+-----------------------+
+   +--------------------------------------------+----------------+-----------------------+
+   | Data Flow                                  | Full Migration | Incremental Migration |
+   +============================================+================+=======================+
+   | Microsoft SQL Server -> RDS for SQL Server | Supported      | Supported             |
+   +--------------------------------------------+----------------+-----------------------+
 
 Supported Database Versions
 ---------------------------
 
 .. table:: **Table 3** Database versions
 
-   +--------------------------------------------------+--------------------------------------------------------------------------+------------------------------+
-   | Data Flow                                        | Backup File Version                                                      | Destination DB Version       |
-   +==================================================+==========================================================================+==============================+
-   | Microsoft SQL Server -> RDS Microsoft SQL Server | On-premises and other cloud's Microsoft SQL Server backup file versions: | -  Microsoft SQL Server 2008 |
-   |                                                  |                                                                          | -  Microsoft SQL Server 2012 |
-   |                                                  | -  Microsoft SQL Server 2000                                             | -  Microsoft SQL Server 2014 |
-   |                                                  | -  Microsoft SQL Server 2005                                             | -  Microsoft SQL Server 2016 |
-   |                                                  | -  Microsoft SQL Server 2008                                             | -  Microsoft SQL Server 2017 |
-   |                                                  | -  Microsoft SQL Server 2012                                             | -  Microsoft SQL Server 2019 |
-   |                                                  | -  Microsoft SQL Server 2014                                             |                              |
-   |                                                  | -  Microsoft SQL Server 2016                                             |                              |
-   |                                                  | -  Microsoft SQL Server 2017                                             |                              |
-   |                                                  | -  Microsoft SQL Server 2019                                             |                              |
-   +--------------------------------------------------+--------------------------------------------------------------------------+------------------------------+
-   |                                                  | RDS Microsoft SQL Server full backup file versions:                      | -  Microsoft SQL Server 2008 |
-   |                                                  |                                                                          | -  Microsoft SQL Server 2012 |
-   |                                                  | -  Microsoft SQL Server 2008                                             | -  Microsoft SQL Server 2014 |
-   |                                                  | -  Microsoft SQL Server 2012                                             | -  Microsoft SQL Server 2016 |
-   |                                                  | -  Microsoft SQL Server 2014                                             | -  Microsoft SQL Server 2017 |
-   |                                                  | -  Microsoft SQL Server 2016                                             | -  Microsoft SQL Server 2019 |
-   |                                                  | -  Microsoft SQL Server 2017                                             |                              |
-   |                                                  | -  Microsoft SQL Server 2019                                             |                              |
-   +--------------------------------------------------+--------------------------------------------------------------------------+------------------------------+
+   +--------------------------------------------+--------------------------------------------------------------------------+------------------------------+
+   | Data Flow                                  | Backup File Version                                                      | Destination DB Version       |
+   +============================================+==========================================================================+==============================+
+   | Microsoft SQL Server -> RDS for SQL Server | On-premises and other cloud's Microsoft SQL Server backup file versions: | -  Microsoft SQL Server 2008 |
+   |                                            |                                                                          | -  Microsoft SQL Server 2012 |
+   |                                            | -  Microsoft SQL Server 2000                                             | -  Microsoft SQL Server 2014 |
+   |                                            | -  Microsoft SQL Server 2005                                             | -  Microsoft SQL Server 2016 |
+   |                                            | -  Microsoft SQL Server 2008                                             | -  Microsoft SQL Server 2017 |
+   |                                            | -  Microsoft SQL Server 2012                                             | -  Microsoft SQL Server 2019 |
+   |                                            | -  Microsoft SQL Server 2014                                             |                              |
+   |                                            | -  Microsoft SQL Server 2016                                             |                              |
+   |                                            | -  Microsoft SQL Server 2017                                             |                              |
+   |                                            | -  Microsoft SQL Server 2019                                             |                              |
+   +--------------------------------------------+--------------------------------------------------------------------------+------------------------------+
+   |                                            | RDS for SQL Server full backup file versions:                            | -  Microsoft SQL Server 2008 |
+   |                                            |                                                                          | -  Microsoft SQL Server 2012 |
+   |                                            | -  Microsoft SQL Server 2008                                             | -  Microsoft SQL Server 2014 |
+   |                                            | -  Microsoft SQL Server 2012                                             | -  Microsoft SQL Server 2016 |
+   |                                            | -  Microsoft SQL Server 2014                                             | -  Microsoft SQL Server 2017 |
+   |                                            | -  Microsoft SQL Server 2016                                             | -  Microsoft SQL Server 2019 |
+   |                                            | -  Microsoft SQL Server 2017                                             |                              |
+   |                                            | -  Microsoft SQL Server 2019                                             |                              |
+   +--------------------------------------------+--------------------------------------------------------------------------+------------------------------+
 
 Backup Migration Scenarios
 --------------------------

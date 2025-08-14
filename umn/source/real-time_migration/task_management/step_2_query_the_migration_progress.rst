@@ -9,7 +9,7 @@ The migration progress of a real-time migration task helps you keep track of the
 
 DRS shows the migration progress using a progress bar, helping you learn the migration progress in real time. During full migration, you can check migration details.
 
--  With the progress bar, you can view the migration progress of structures, data, and indexes. When the progress reaches 100%, the migration is complete. The migration of data and indexes is relatively slow.
+-  With the progress bar, you can view the migration progress of structures, data, and indexes. When the progress reaches 100%, the migration is complete. The migration of data and indexes is relatively slow during the migration.
 -  In the migration details, you can view the migration progress of a specific object. If the number of objects is the same as that of migrated objects, the migration is complete. You can view the migration progress of each object in detail. During incremental migration, the progress details are not displayed. You can view the consistency status on the **Migration Comparison** tab.
 
 Prerequisites

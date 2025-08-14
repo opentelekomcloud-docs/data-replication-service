@@ -25,7 +25,7 @@ You can compare migration objects with different dimensions:
    -  Value comparison: It helps you check whether data in the migrated table is consistent. The comparison process is relatively slow.
 
 -  Account comparison: It compares usernames and permissions of the source and destination databases.
--  Periodic comparison: DRS periodically compares the number of rows or objects in the source database table with those in the destination database table and displays the comparison results. To compare rows or objects periodically, enable :ref:`comparison policy <drs_02_0007__section1841019111454>`.
+-  Periodic comparison: DRS periodically compares the number of rows or objects in the source database table with those in the destination database table and displays the comparison results. To compare rows or objects periodically, enable :ref:`comparison policy <drs_02_0007__section1964682921119>`.
 
 When you check data consistency, compare the number of rows first. If the number of rows are inconsistent, you can then compare the data in the table to determine the inconsistent data.
 
@@ -104,7 +104,7 @@ You can follow the comparison process or select a comparison method based on you
 
       Generally, stopping a task can ensure the integrity of special objects because triggers and events are migrated when a task is being stopped. Only in some cases, such as network disconnections, a task may fail to be stopped. If a task fails to be stopped multiple times, you can select **Forcibly stop task** to reduce the waiting time. If you forcibly stop a task, triggers and events may not be completely migrated and you need to manually migrate them.
 
-.. _drs_02_0007__section1841019111454:
+.. _drs_02_0007__section1964682921119:
 
 Periodic Comparison
 -------------------
@@ -113,8 +113,8 @@ Periodic comparison indicates that DRS periodically compares the number of rows 
 
 #. On the **Online Migration Management** page, click the target migration task name in the **Task Name/ID** column.
 #. Choose **Migration Comparison**.
-#. Click the **Periodic Comparison** tab and click **Modify Comparison Policy**.
-#. In the **Modify Comparison Policy** dialog box, enable periodic comparison, specify the comparison frequency, time interval, effective time and comparison type, and click **Yes**.
+#. Click the **Periodic Comparison** tab and click **Modify Comparison Policy** to modify the comparison policy.
+#. In the **Modify Comparison Policy** dialog box, enable periodic comparison, configure the comparison frequency and time, and click **Yes**.
 
    .. note::
 

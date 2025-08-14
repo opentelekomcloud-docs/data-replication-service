@@ -28,30 +28,35 @@ Different types of migration tasks support different migration objects. For deta
 
 .. table:: **Table 2** Migration objects
 
-   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Type                              | Precautions                                                                                                                                     |
-   +===================================+=================================================================================================================================================+
-   | Migration objects                 | -  Migration object level: table level                                                                                                          |
-   |                                   | -  Supported migration objects:                                                                                                                 |
-   |                                   |                                                                                                                                                 |
-   |                                   |    -  Only the source database data can be migrated. The table structure and other database objects of the source database cannot be migrated.  |
-   |                                   |    -  The system database and event statuses cannot be migrated.                                                                                |
-   |                                   |    -  Tables with storage engine different to MyISAM and InnoDB tables cannot be migrated.                                                      |
-   |                                   |    -  Tables without primary keys cannot be migrated.                                                                                           |
-   |                                   |    -  Cascade operations cannot be performed on tables with foreign keys.                                                                       |
-   |                                   |                                                                                                                                                 |
-   |                                   |    .. note::                                                                                                                                    |
-   |                                   |                                                                                                                                                 |
-   |                                   |       The objects that can be migrated have the following constraints:                                                                          |
-   |                                   |                                                                                                                                                 |
-   |                                   |       -  The names of the source databases and tables cannot contain non-ASCII characters, or special characters <'>`/\\"                       |
-   |                                   |       -  The source database name cannot start with **ib_logfile** and cannot be **ib_buffer_pool**, **ib_doublewrite**, **ibdata1 or ibtmp1**. |
-   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Type                              | Precautions                                                                                                                                                                                                         |
+   +===================================+=====================================================================================================================================================================================================================+
+   | Migration objects                 | -  Migration object level: table level                                                                                                                                                                              |
+   |                                   | -  Supported migration objects:                                                                                                                                                                                     |
+   |                                   |                                                                                                                                                                                                                     |
+   |                                   |    -  Only the source database data can be migrated. The table structure and other database objects of the source database cannot be migrated.                                                                      |
+   |                                   |    -  The system database and event statuses cannot be migrated.                                                                                                                                                    |
+   |                                   |    -  Tables with storage engine different to MyISAM and InnoDB tables cannot be migrated.                                                                                                                          |
+   |                                   |    -  Tables without primary keys cannot be migrated.                                                                                                                                                               |
+   |                                   |    -  Cascade operations cannot be performed on tables with foreign keys. If the foreign key index of a table is a common index, the table structure may fail to be created. You are advised to use a unique index. |
+   |                                   |                                                                                                                                                                                                                     |
+   |                                   |    .. note::                                                                                                                                                                                                        |
+   |                                   |                                                                                                                                                                                                                     |
+   |                                   |       The objects that can be migrated have the following constraints:                                                                                                                                              |
+   |                                   |                                                                                                                                                                                                                     |
+   |                                   |       -  The names of the source databases and tables cannot contain non-ASCII characters, or special characters <'>`/\\"                                                                                           |
+   |                                   |       -  The source database name cannot start with **ib_logfile** and cannot be **ib_buffer_pool**, **ib_doublewrite**, **ibdata1 or ibtmp1**.                                                                     |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Database Account Permission Requirements
 ----------------------------------------
 
 To start a migration task, the source and destination database users must have permissions listed in the following table. Different types of migration tasks require different permissions. For details, see :ref:`Table 3 <drs_04_0089__table68938710614>`. DRS automatically checks the database account permissions in the pre-check phase and provides handling suggestions.
+
+.. note::
+
+   -  You are advised to create an independent database account for DRS task connection to prevent task failures caused by account modification.
+   -  After changing the account passwords for the source and destination databases, :ref:`modify the connection information <drs_03_1135>` in the DRS task as soon as possible to prevent automatic retry after a task failure. Automatic retry will lock the database accounts.
 
 .. _drs_04_0089__table68938710614:
 
@@ -67,6 +72,8 @@ To start a migration task, the source and destination database users must have p
    | Destination database user | -  The DDM destination database user must have the following permissions: CREATE, DROP, ALTER, INDEX, INSERT, DELETE, UPDATE, and SELECT. In addition, grant the SELECT permission on all tables. |                                                                                  |
    |                           | -  The DDM destination database user must have the permission on the database to be migrated.                                                                                                     |                                                                                  |
    +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. _drs_04_0089__section14377146105411:
 
 Suggestions
 -----------
@@ -90,6 +97,8 @@ Suggestions
 -  Data-Level Comparison
 
    To obtain accurate comparison results, start data comparison at a specified time point during off-peak hours. If it is needed, select **Start at a specified time** for **Comparison Time**. Due to slight time difference and continuous operations on data, data inconsistency may occur, reducing the reliability and validity of the comparison results.
+
+.. _drs_04_0089__section182303625619:
 
 Precautions
 -----------
@@ -115,6 +124,7 @@ The full+incremental migration process consists of four phases: task startup, fu
    |                                   | -  **Source database object requirements:**                                                                                                                                                                                                                                                                                              |
    |                                   |                                                                                                                                                                                                                                                                                                                                          |
    |                                   |    -  If the source database is an on-premises database and has Percona Server for MySQL 5.6.x or Percona Server for MySQL 5.7.x installed, the memory manager must use Jemalloc to prevent Out of Memory errors caused by frequent queries on system tables.                                                                            |
+   |                                   |    -  The source database does not support the **mysql binlog dump** command.                                                                                                                                                                                                                                                            |
    |                                   |    -  The source database does not support the **reset master** or **reset master to** command, which may cause DRS task failures or data inconsistency.                                                                                                                                                                                 |
    |                                   |                                                                                                                                                                                                                                                                                                                                          |
    |                                   | -  **Destination database parameter requirements:**                                                                                                                                                                                                                                                                                      |
@@ -134,7 +144,7 @@ The full+incremental migration process consists of four phases: task startup, fu
    |                                   | -  Other notes:                                                                                                                                                                                                                                                                                                                          |
    |                                   |                                                                                                                                                                                                                                                                                                                                          |
    |                                   |    -  If the data types are incompatible, the migration may fail.                                                                                                                                                                                                                                                                        |
-   |                                   |    -  If the source DB instance is an RDS MySQL instance, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                                               |
+   |                                   |    -  If the source and destination DB instances are RDS for MySQL instances, tables encrypted using Transparent Data Encryption (TDE) cannot be synchronized.                                                                                                                                                                           |
    |                                   |    -  If the source MySQL database does not support TLS 1.2 or is a self-built database of an earlier version (earlier than 5.6.46 or between 5.7 and 5.7.28), you need to submit an O&M application for testing the SSL connection.                                                                                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Full migration                    | -  During task startup and full migration, do not perform DDL operations on the source database. Otherwise, the task may be abnormal.                                                                                                                                                                                                    |
@@ -146,7 +156,7 @@ The full+incremental migration process consists of four phases: task startup, fu
    | Incremental migration             | -  During migration, do not modify or delete the usernames, passwords, permissions, or ports of the source and destination databases.                                                                                                                                                                                                    |
    |                                   | -  During migration, do not modify the destination database (including but not limited to DDL and DML operations) that is being migrated.                                                                                                                                                                                                |
    |                                   | -  During migration, do not clear the binlog in the source database.                                                                                                                                                                                                                                                                     |
-   |                                   | -  During migration, do not create a database named **ib_logfile** in the source database.                                                                                                                                                                                                                                               |
+   |                                   | -  During migration, do not create a database named **ib_logfile** on the source side.                                                                                                                                                                                                                                                   |
    |                                   | -  During an incremental migration of table-level objects, renaming tables is not supported.                                                                                                                                                                                                                                             |
    |                                   | -  During an incremental migration, do not perform the point-in-time recovery (PITR) operation on the source database.                                                                                                                                                                                                                   |
    |                                   | -  During an incremental migration, resumable upload is supported. However, data may be repeatedly inserted into a non-transactional table that does not have a primary key when the server system breaks down.                                                                                                                          |
@@ -160,7 +170,7 @@ Prerequisites
 -  You have logged in to the DRS console.
 -  For details about the DB types and versions supported by real-time migration, see :ref:`Real-Time Migration <drs_01_0301>`.
 
--  You have read :ref:`Suggestions <drs_04_0088__section1891412810322>` and :ref:`Precautions <drs_04_0088__section182303625619>`.
+-  You have read :ref:`Suggestions <drs_04_0089__section14377146105411>` and :ref:`Precautions <drs_04_0089__section182303625619>`.
 
 Procedure
 ---------
@@ -234,6 +244,10 @@ Procedure
          |                                   | -  After a task is created, you can view its tag details on the **Tags** tab. For details, see :ref:`Tag Management <drs_online_tag>`.         |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
+   .. note::
+
+      If a task fails to be created, DRS retains the task for three days by default. After three days, the task automatically ends.
+
 #. On the **Configure Source and Destination Databases** page, wait until the replication instance is created. Then, specify source and destination database information and click **Test Connection** for both the source and destination databases to check whether they have been connected to the replication instance. After the connection tests are successful, select the check box before the agreement and click **Next**.
 
    -  Source database configuration
@@ -256,7 +270,7 @@ Procedure
          |                                   | .. note::                                                                                                                         |
          |                                   |                                                                                                                                   |
          |                                   |    -  The maximum size of a single certificate file that can be uploaded is 500 KB.                                               |
-         |                                   |    -  If SSL is disabled, your data may be at risk.                                                                               |
+         |                                   |    -  If the SSL certificate is not used, your data may be at risk.                                                               |
          +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
       .. note::
@@ -329,6 +343,7 @@ Procedure
 
    -  You can view the task status. For more information about task status, see :ref:`Task Statuses <drs_03_0001>`.
    -  You can click |image2| in the upper right corner to view the latest task status.
+   -  By default, DRS retains a task in the **Configuration** state for three days. After three days, DRS automatically deletes background resources, but the task status remains unchanged. When you reconfigure the task, DRS applies for resources for the task again.
 
 .. |image1| image:: /_static/images/en-us_image_0000001758429473.png
 .. |image2| image:: /_static/images/en-us_image_0000001758429809.png
