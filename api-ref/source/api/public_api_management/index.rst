@@ -27,6 +27,7 @@ Public API Management
 -  :ref:`Querying Task Details in Batches <drs_api_0151>`
 -  :ref:`Querying Tasks of a Tenant <drs_03_0138>`
 -  :ref:`Querying Task Statuses in Batches <drs_api_0150>`
+-  :ref:`Querying Available Node Specifications <drs_03_0239>`
 
 .. toctree::
    :maxdepth: 1
@@ -54,3 +55,4 @@ Public API Management
    querying_task_details_in_batches
    querying_tasks_of_a_tenant
    querying_task_statuses_in_batches
+   querying_available_node_specifications
