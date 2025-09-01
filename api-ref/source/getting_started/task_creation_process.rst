@@ -19,7 +19,7 @@ Process of Creating a Migration Task
 -  :ref:`Querying Task Statuses in Batches <drs_api_0150>`.
 -  :ref:`Testing Connections in Batches <drs_03_0105>`.
 -  :ref:`Modifying Tasks in Batches <drs_03_0107>`.
--  :ref:`Add information about the database tables to be migrated. <drs_03_0107>`
+-  :ref:`Add information about the database tables to be migrated. <drs_03_0109>`
 -  :ref:`Performing a Batch Pre-Check <drs_03_0110>`.
 -  :ref:`Querying Pre-check Results in Batches <drs_03_0111>`
 -  :ref:`Obtaining Database Parameters in Batches <drs_03_0141>`.
