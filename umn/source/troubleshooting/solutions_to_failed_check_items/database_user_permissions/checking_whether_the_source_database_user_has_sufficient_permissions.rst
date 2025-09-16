@@ -172,24 +172,3 @@ MongoDB Migration
    |                                       |                                                                                                                                                                                                                                                                                                          |
    |                                       | Handling suggestion: Contact technical support.                                                                                                                                                                                                                                                          |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-MySQL -> PostgreSQL Synchronization
------------------------------------
-
-.. table:: **Table 4** Checking whether the source database user has sufficient permissions
-
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Check Item                            | Whether the source database user has sufficient permissions                                                                                                                    |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Description                           | Check whether the source database user permissions meet the migration requirements. If the permissions are insufficient, the migration will fail.                              |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Failure Cause and Handling Suggestion | Failure cause: The source database user does not have sufficient permissions. During the incremental synchronization, the SELECT permission on INFORMATION_SCHEMA is required. |
-   |                                       |                                                                                                                                                                                |
-   |                                       | Handling suggestions: Grant the source database user the corresponding permissions.                                                                                            |
-   |                                       |                                                                                                                                                                                |
-   |                                       | Run the following command:                                                                                                                                                     |
-   |                                       |                                                                                                                                                                                |
-   |                                       | .. code:: text                                                                                                                                                                 |
-   |                                       |                                                                                                                                                                                |
-   |                                       |    grant select on [dbname];                                                                                                                                                   |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
