@@ -14,7 +14,6 @@ Task Life Cycle
 -  :ref:`Pausing a Synchronization Task <drs_03_0110>`
 -  :ref:`Resetting a Synchronization Task <drs_10_0300>`
 -  :ref:`Restarting a Synchronization Task <drs_10_0412>`
--  :ref:`Changing a Single-AZ Task to a Dual-AZ Task <drs_06_0010>`
 -  :ref:`Cloning a Synchronization Task <drs_11_0462>`
 -  :ref:`Stopping a Synchronization Task <drs_10_0013>`
 -  :ref:`Deleting a Synchronization Task <drs_10_0014>`
@@ -33,7 +32,6 @@ Task Life Cycle
    pausing_a_synchronization_task
    resetting_a_synchronization_task
    restarting_a_synchronization_task
-   changing_a_single-az_task_to_a_dual-az_task
    cloning_a_synchronization_task
    stopping_a_synchronization_task
    deleting_a_synchronization_task

@@ -14,13 +14,9 @@ Constraints
 -  Only the synchronization tasks of the following engines can be restarted:
 
    -  MySQL->MySQL
-   -  MySQL->PostgreSQL
    -  MySQL -> GaussDB Distributed
-   -  MySQL -> GaussDB Centralized
    -  MySQL->TaurusDB
    -  MySQL->Kafka
-   -  MySQL->CSS/ES
-   -  MySQL->Oracle
 
 Method 1
 --------
