@@ -130,7 +130,7 @@ Response Parameters
    +============+=========+===================================================================================================+
    | job_id     | String  | Task ID.                                                                                          |
    +------------+---------+---------------------------------------------------------------------------------------------------+
-   | status     | Boolean | The status that indicates that objects are selected.                                              |
+   | status     | Boolean | The status that indicates objects are selected.                                                   |
    +------------+---------+---------------------------------------------------------------------------------------------------+
    | error_code | String  | Error code, which is optional and indicates the returned information about the failure status.    |
    +------------+---------+---------------------------------------------------------------------------------------------------+

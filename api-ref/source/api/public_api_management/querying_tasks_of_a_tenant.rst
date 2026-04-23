@@ -62,7 +62,7 @@ Request Parameters
    |                       |                 |                                                                        | -  Minimum value: **0**                                                                                                                                                              |
    |                       |                 |                                                                        | -  Maximum value: **100**                                                                                                                                                            |
    +-----------------------+-----------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | db_use_type           | Yes             | String                                                                 | The migration scenario. The value can be **migration** (real-time migration), **sync** (real-time synchronization), or **cloudDataGuard** (real-time disaster recovery).             |
+   | db_use_type           | Yes             | String                                                                 | Scenario. The value can be **migration** (real-time migration), **sync** (real-time synchronization), or **cloudDataGuard** (real-time disaster recovery).                           |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | Values:                                                                                                                                                                              |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
@@ -79,7 +79,7 @@ Request Parameters
    |                       |                 |                                                                        | -  **mysql**: used for migration and synchronization from MySQL to MySQL                                                                                                             |
    |                       |                 |                                                                        | -  **mongodb**: used for migration from MongoDB to DDS                                                                                                                               |
    |                       |                 |                                                                        | -  **cloudDataGuard-mysql**: used for DR from MySQL to MySQL                                                                                                                         |
-   |                       |                 |                                                                        | -  **mysql-to-taurus**: used for synchronization from MySQL to GaussDB(for MySQL) primary/standby                                                                                    |
+   |                       |                 |                                                                        | -  **mysql-to-taurus**: used for synchronization from MySQL to TaurusDB Cluster                                                                                                      |
    |                       |                 |                                                                        | -  **postgresql**: used for synchronization from PostgreSQL to PostgreSQL                                                                                                            |
    +-----------------------+-----------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | enterprise_project_id | No              | String                                                                 | Enterprise project. If no value is specified, this parameter is set to **null**. This parameter cannot be left blank. When enterprise project is enabled, this parameter can be set. |
@@ -94,13 +94,19 @@ Request Parameters
    +-----------------------+-----------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | service_name          | No              | String                                                                 | Service name.                                                                                                                                                                        |
    +-----------------------+-----------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | status                | No              | String                                                                 | Status. The value can be **CREATING**, **CREATE_FAILED**, or **CONFIGURATION**.                                                                                                      |
+   | status                | No              | String                                                                 | Status. Values:                                                                                                                                                                      |
+   |                       |                 |                                                                        |                                                                                                                                                                                      |
+   |                       |                 |                                                                        | **CREATING**: The task is being created.                                                                                                                                             |
+   |                       |                 |                                                                        |                                                                                                                                                                                      |
+   |                       |                 |                                                                        | **CREATE_FAILED**: The task fails to be created.                                                                                                                                     |
+   |                       |                 |                                                                        |                                                                                                                                                                                      |
+   |                       |                 |                                                                        | **CONFIGURATION**: The task is being configured.                                                                                                                                     |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **STARTJOBING**: The task is being started.                                                                                                                                          |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **WAITING_FOR_START**: The task is waiting to be started.                                                                                                                            |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
-   |                       |                 |                                                                        | **START_JOB_FAILED**: The task fails to be started.                                                                                                                                  |
+   |                       |                 |                                                                        | **START_JOB_FAILED**: The task failed to be started.                                                                                                                                 |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **FULL_TRANSFER_STARTED**: Full migration is in progress, and the DR scenario is initialized.                                                                                        |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
@@ -114,13 +120,13 @@ Request Parameters
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **RELEASE_RESOURCE_STARTED**: The task is being stopped.                                                                                                                             |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
-   |                       |                 |                                                                        | **RELEASE_RESOURCE_FAILED**: Stop task failed.                                                                                                                                       |
+   |                       |                 |                                                                        | **RELEASE_RESOURCE_FAILED**: The task failed to be stopped.                                                                                                                          |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **RELEASE_RESOURCE_COMPLETE**: The task is stopped.                                                                                                                                  |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **CHANGE_JOB_STARTED**: The task is being changed.                                                                                                                                   |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
-   |                       |                 |                                                                        | **CHANGE_JOB_FAILED**: Change task failed.                                                                                                                                           |
+   |                       |                 |                                                                        | **CHANGE_JOB_FAILED**: The task failed to be changed.                                                                                                                                |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **CHILD_TRANSFER_STARTING**: The subtask is being started.                                                                                                                           |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
@@ -128,7 +134,7 @@ Request Parameters
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **CHILD_TRANSFER_COMPLETE**: The subtask migration is complete.                                                                                                                      |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
-   |                       |                 |                                                                        | **CHILD_TRANSFER_FAILED**: Migrate subtask failed.                                                                                                                                   |
+   |                       |                 |                                                                        | **CHILD_TRANSFER_FAILED**: The subtask failed to be migrated.                                                                                                                        |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
    |                       |                 |                                                                        | **RELEASE_CHILD_TRANSFER_STARTED**: The subtask is being stopped.                                                                                                                    |
    |                       |                 |                                                                        |                                                                                                                                                                                      |
@@ -222,7 +228,7 @@ Response Parameters
    |                       |                                                                                 | -  **mysql**: used for migration and synchronization from MySQL to MySQL                                          |
    |                       |                                                                                 | -  **mongodb**: used for migration from MongoDB to DDS                                                            |
    |                       |                                                                                 | -  **cloudDataGuard-mysql**: used for DR from MySQL to MySQL                                                      |
-   |                       |                                                                                 | -  **mysql-to-taurus**: used for synchronization from MySQL to GaussDB(for MySQL) primary/standby                 |
+   |                       |                                                                                 | -  **mysql-to-taurus**: used for synchronization from MySQL to TaurusDB Cluster                                   |
    |                       |                                                                                 | -  **postgresql**: used for synchronization from PostgreSQL to PostgreSQL                                         |
    +-----------------------+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
    | net_type              | String                                                                          | Network type. Values:                                                                                             |
@@ -259,57 +265,57 @@ Response Parameters
 
 .. table:: **Table 6** ChildrenJobInfo
 
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | Parameter             | Type                  | Description                                                                                       |
-   +=======================+=======================+===================================================================================================+
-   | billing_tag           | Boolean               | Billing tag.                                                                                      |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | create_time           | String                | Time when a task is created                                                                       |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | db_use_type           | String                | Replication scenario. Values:                                                                     |
-   |                       |                       |                                                                                                   |
-   |                       |                       | -  **migration**: real-time migration.                                                            |
-   |                       |                       | -  **sync**: real-time synchronization.                                                           |
-   |                       |                       | -  **cloudDataGuard**: real-time disaster recovery.                                               |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | description           | String                | Task description.                                                                                 |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | engine_type           | String                | Engine type of a DRS task. Values:                                                                |
-   |                       |                       |                                                                                                   |
-   |                       |                       | -  **mysql**: used for migration and synchronization from MySQL to MySQL                          |
-   |                       |                       | -  **mongodb**: used for migration from MongoDB to DDS                                            |
-   |                       |                       | -  **cloudDataGuard-mysql**: used for DR from MySQL to MySQL                                      |
-   |                       |                       | -  **mysql-to-taurus**: used for synchronization from MySQL to GaussDB(for MySQL) primary/standby |
-   |                       |                       | -  **postgresql**: used for synchronization from PostgreSQL to PostgreSQL                         |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | error_msg             | String                | Task failure cause.                                                                               |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | id                    | String                | Task ID.                                                                                          |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | job_direction         | String                | Migration direction. Values:                                                                      |
-   |                       |                       |                                                                                                   |
-   |                       |                       | -  **up**: The current cloud is the standby cloud in the DR and to-the-cloud scenarios.           |
-   |                       |                       | -  **down**: The current cloud is the active cloud in the DR and out-of-cloud scenarios.          |
-   |                       |                       | -  **non-dbs**: self-built databases.                                                             |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | name                  | String                | Task name.                                                                                        |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | net_type              | String                | Network type. Values:                                                                             |
-   |                       |                       |                                                                                                   |
-   |                       |                       | -  **vpc**                                                                                        |
-   |                       |                       | -  **vpn**                                                                                        |
-   |                       |                       | -  **eip**                                                                                        |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | node_newFramework     | Boolean               | New framework                                                                                     |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | status                | String                | Task status.                                                                                      |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
-   | task_type             | String                | Task mode. Values:                                                                                |
-   |                       |                       |                                                                                                   |
-   |                       |                       | -  **FULL_TRANS**: full migration                                                                 |
-   |                       |                       | -  **FULL_INCR_TRANS**: full+incremental migration                                                |
-   |                       |                       | -  **INCR_TRANS**: incremental migration                                                          |
-   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                              |
+   +=======================+=======================+==========================================================================================+
+   | billing_tag           | Boolean               | Billing tag.                                                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | create_time           | String                | Time when a task is created                                                              |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | db_use_type           | String                | Replication scenario. Values:                                                            |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **migration**: real-time migration.                                                   |
+   |                       |                       | -  **sync**: real-time synchronization.                                                  |
+   |                       |                       | -  **cloudDataGuard**: real-time disaster recovery.                                      |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | description           | String                | Task description.                                                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | engine_type           | String                | Engine type of a DRS task. Values:                                                       |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **mysql**: used for migration and synchronization from MySQL to MySQL                 |
+   |                       |                       | -  **mongodb**: used for migration from MongoDB to DDS                                   |
+   |                       |                       | -  **cloudDataGuard-mysql**: used for DR from MySQL to MySQL                             |
+   |                       |                       | -  **mysql-to-taurus**: used for synchronization from MySQL to TaurusDB Cluster          |
+   |                       |                       | -  **postgresql**: used for synchronization from PostgreSQL to PostgreSQL                |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | error_msg             | String                | Task failure cause.                                                                      |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | id                    | String                | Task ID.                                                                                 |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | job_direction         | String                | Migration direction. Values:                                                             |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **up**: The current cloud is the standby cloud in the DR and to-the-cloud scenarios.  |
+   |                       |                       | -  **down**: The current cloud is the active cloud in the DR and out-of-cloud scenarios. |
+   |                       |                       | -  **non-dbs**: self-built databases.                                                    |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | name                  | String                | Task name.                                                                               |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | net_type              | String                | Network type. Values:                                                                    |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **vpc**                                                                               |
+   |                       |                       | -  **vpn**                                                                               |
+   |                       |                       | -  **eip**                                                                               |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | node_newFramework     | Boolean               | New framework                                                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | status                | String                | Task status.                                                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | task_type             | String                | Task mode. Values:                                                                       |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **FULL_TRANS**: full migration                                                        |
+   |                       |                       | -  **FULL_INCR_TRANS**: full+incremental migration                                       |
+   |                       |                       | -  **INCR_TRANS**: incremental migration                                                 |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
 
 Example Request
 ---------------

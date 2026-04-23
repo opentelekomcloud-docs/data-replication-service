@@ -8,7 +8,7 @@ Querying Comparison Results
 Function
 --------
 
-This API is used to query the comparion result after creating a comparison task.
+This API is used to query the comparison result after a comparison task is created.
 
 URI
 ---
