@@ -12,6 +12,7 @@ Real-Time Synchronization
 -  :ref:`Task Management <drs_taskmangement>`
 -  :ref:`Tag Management <drs_synchronization_tag>`
 -  :ref:`Interconnecting with Cloud Eye <drs_05_0011>`
+-  :ref:`Interconnecting with LTS <en-us_topic_0000002671561170>`
 -  :ref:`Operation Reference in Synchronization Scenarios <drs_03_1113>`
 
 .. toctree::
@@ -25,4 +26,5 @@ Real-Time Synchronization
    task_management/index
    tag_management
    interconnecting_with_cloud_eye/index
+   interconnecting_with_lts/index
    operation_reference_in_synchronization_scenarios/index
