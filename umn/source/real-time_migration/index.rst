@@ -11,6 +11,7 @@ Real-Time Migration
 -  :ref:`Task Management <drs_04_0010>`
 -  :ref:`Tag Management <drs_online_tag>`
 -  :ref:`Interconnecting with Cloud Eye <drs_03_0105>`
+-  :ref:`Interconnecting with LTS <en-us_topic_0000002671721032>`
 
 .. toctree::
    :maxdepth: 1
@@ -22,3 +23,4 @@ Real-Time Migration
    task_management/index
    tag_management
    interconnecting_with_cloud_eye/index
+   interconnecting_with_lts/index

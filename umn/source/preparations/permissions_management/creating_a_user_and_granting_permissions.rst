@@ -9,9 +9,9 @@ This section describes IAM's fine-grained permissions management for DRS.
 
 -  With IAM, you can:
 
-   -  Create IAM users for employees based on the organizational structure of your enterprise. Each IAM user has their own security credentials, providing access to DRS resources.
+   -  Create IAM users for employees using your account based on the organizational structure of your enterprise. Each IAM user has their own security credentials, providing access to DRS resources.
    -  Grant only the permissions required for users to perform a specific task.
-   -  Entrust an account or cloud service to perform professional and efficient O&M on your DRS resources.
+   -  Entrust another account or cloud service to perform professional and efficient O&M on your DRS resources.
 
 If your account does not require individual IAM users, skip this chapter.
 
@@ -46,4 +46,4 @@ Process Flow
 
    Log in to the management console using the newly created user, and verify that the user only has read permissions for DRS.
 
-   Go to the DRS console, click **Create Migration Task** in the upper right corner to create a migration task. If a migration task (assume that there is only the **DRS Administrator** permission) is created, the **DRS Administrator** policy has taken effect.
+   Choose **Service List** > **Data Replication Service**. On the DRS console, try to create a task of any type, such as real-time synchronization, real-time migration, or real-time DR. If you can proceed to the task creation process normally (assuming that your only permission is **DRS Administrator**), the **DRS Administrator** permission has taken effect.
