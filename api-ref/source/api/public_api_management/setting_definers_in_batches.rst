@@ -16,7 +16,7 @@ The API is used to set whether to migrate Definers to the user in batches.
 Constraints
 -----------
 
--  Only tasks that are being configured can call the API.
+Only tasks that are being configured can call the API.
 
 URI
 ---
