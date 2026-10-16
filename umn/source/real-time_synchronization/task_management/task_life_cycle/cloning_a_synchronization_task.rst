@@ -16,13 +16,9 @@ DRS allows you to clone the configuration of existing synchronization tasks. How
 
 You can clone the following data flow types:
 
--  To the cloud
+-  Out of the cloud
 
-   -  MySQL->MySQL
-
--  From the cloud
-
-   -  MySQL->MySQL
+   -  DDS -> MongoDB
 
 .. note::
 

@@ -13,6 +13,7 @@ Task Life Cycle
 -  :ref:`Resuming a Migration Task <drs_09_0100>`
 -  :ref:`Resetting a Migration Task <drs_03_0100>`
 -  :ref:`Pausing a Migration Task <drs_03_0109>`
+-  :ref:`Cloning a Migration Task <drs_03_1136>`
 -  :ref:`Stopping a Migration Task <drs_03_0004>`
 -  :ref:`Deleting a Migration Task <drs_03_0005>`
 -  :ref:`Task Statuses <drs_03_0001>`
@@ -29,6 +30,7 @@ Task Life Cycle
    resuming_a_migration_task
    resetting_a_migration_task
    pausing_a_migration_task
+   cloning_a_migration_task
    stopping_a_migration_task
    deleting_a_migration_task
    task_statuses

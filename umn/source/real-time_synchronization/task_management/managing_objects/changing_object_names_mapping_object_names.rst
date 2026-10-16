@@ -5,7 +5,7 @@
 Changing Object Names (Mapping Object Names)
 ============================================
 
-Data synchronization allows you to synchronize objects (including databases, schemas and tables) in a sources database to the corresponding objects in a destination database. If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one by changing the object name. The objects that can be changed or mapped include databases, schemas, and tables.
+Data synchronization allows you to synchronize objects (including databases, schemas and tables) in a source database to the corresponding objects in a destination database. If the synchronization objects in source and destination databases have different names, you can map the source object name to the destination one by changing the object name. The objects that can be changed or mapped include databases, schemas, and tables.
 
 Object name mapping can be used only in the following scenarios:
 
