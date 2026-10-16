@@ -211,6 +211,11 @@ Procedure
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Source DB Instance                | The distributed GaussDB instance you created.                                                                                                                                                                                                                    |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | IP Address Type                   | The IP address type of the synchronization instance. **IPv4** and **IPv4/IPv6 dual stack** are available.                                                                                                                                                        |
+      |                                   |                                                                                                                                                                                                                                                                  |
+      |                                   | -  **IP Address Type** can be set to **IPv4/IPv6 dual stack** only when IPv4/IPv6 dual stack is enabled for the selected VPC and subnet.                                                                                                                         |
+      |                                   | -  If you select **IPv4/IPv6 dual stack** and the source or destination database is connected by selecting an instance, DRS preferentially uses an IPv4 address to access the database.                                                                          |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Synchronization Mode              | Available options: **Full+Incremental**, **Full**, and **Incremental**. Full+Incremental is used as an example.                                                                                                                                                  |
       |                                   |                                                                                                                                                                                                                                                                  |
       |                                   | -  **Full+Incremental**                                                                                                                                                                                                                                          |
@@ -372,18 +377,20 @@ Procedure
 
          You can proceed to the next step only when all checks are successful. If there are any items that require confirmation, view and confirm the details first before proceeding to the next step.
 
-#. On the **Confirm Task** page, specify **Start Time**, confirm that the configured information is correct, and click **Submit** to submit the task.
+#. On the **Confirm Task** page, specify **Start Time**, specify whether to automatically create a comparison task after the task is complete, confirm that the configured information is correct, and click **Next**.
 
    .. table:: **Table 12** Task startup settings
 
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                 |
       +===================================+=============================================================================================================================================================================================+
-      | Started Time                      | Set **Start Time** to **Start upon task creation** or **Start at a specified time** based on site requirements.                                                                             |
+      | Start Time                        | Set **Start Time** to **Start upon task creation** or **Start at a specified time** based on site requirements.                                                                             |
       |                                   |                                                                                                                                                                                             |
       |                                   | .. note::                                                                                                                                                                                   |
       |                                   |                                                                                                                                                                                             |
       |                                   |    After a synchronization task is started, the performance of the source and destination databases may be affected. You are advised to start a synchronization task during off-peak hours. |
+      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Run Post-Migration Comparison     | In a full synchronization task, you can choose whether to enable **Run Post-Migration Comparison**.                                                                                         |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. After the task is submitted, you can view and manage it on the **Data Synchronization Management** page.
