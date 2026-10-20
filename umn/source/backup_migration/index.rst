@@ -10,6 +10,7 @@ Backup Migration
 -  :ref:`Creating a Backup Using OBS Buckets <drs_02_0009>`
 -  :ref:`Task Management <drs_04_0007>`
 -  :ref:`Tag Management <drs_backup_tag>`
+-  :ref:`Interconnecting with LTS <drs_03_1139>`
 
 .. toctree::
    :maxdepth: 1
@@ -20,3 +21,4 @@ Backup Migration
    creating_a_backup_using_obs_buckets
    task_management/index
    tag_management
+   interconnecting_with_lts/index
