@@ -15,6 +15,7 @@ Task Life Cycle
 -  :ref:`Resetting a Synchronization Task <drs_10_0300>`
 -  :ref:`Restarting a Synchronization Task <drs_10_0412>`
 -  :ref:`Cloning a Synchronization Task <drs_11_0462>`
+-  :ref:`Changing Specifications <drs_11_0490>`
 -  :ref:`Stopping a Synchronization Task <drs_10_0013>`
 -  :ref:`Deleting a Synchronization Task <drs_10_0014>`
 -  :ref:`Task Statuses <drs_06_0004>`
@@ -33,6 +34,7 @@ Task Life Cycle
    resetting_a_synchronization_task
    restarting_a_synchronization_task
    cloning_a_synchronization_task
+   changing_specifications
    stopping_a_synchronization_task
    deleting_a_synchronization_task
    task_statuses
