@@ -23,7 +23,7 @@ DRS is a project-level service deployed and accessed in specific physical region
 You can grant users permissions by using roles and policies.
 
 -  Roles: A type of coarse-grained authorization mechanism that defines permissions related to user responsibilities. This mechanism provides only a limited number of service-level roles for authorization. When using roles to grant permissions, you need to also assign other roles which the permissions depend on to take effect. However, roles are not an ideal choice for fine-grained authorization and secure access control.
--  Policies: A type of fine-grained authorization mechanism that defines permissions required to perform operations on specific cloud resources under certain conditions. This mechanism allows for more flexible policy-based authorization, meeting requirements for secure access control. For example, you can grant ECS users only the permissions for managing a certain type of ECSs. Most fine-grained policies are API-based.
+-  Policies: A type of fine-grained authorization mechanism that defines permissions required to perform operations on specific cloud resources under certain conditions. This type of authorization is more flexible and is ideal for least privilege access. For example, you can grant ECS users only the permissions for managing a certain type of ECSs. Most fine-grained policies are API-based.
 
 :ref:`Table 1 <drs_01_0201__en-us_topic_0000001229069051_en-us_topic_0000001160467836_table122641315719>` lists all the system policies supported by DRS.
 

@@ -62,7 +62,8 @@ DRS supports migration between different DB engines. The following table lists t
    |                          |                           | -  MongoDB 3.6.x  | -  DDS 4.0.x           |
    |                          |                           | -  MongoDB 4.0.x  | -  DDS 4.2.x           |
    |                          |                           | -  MongoDB 4.2.x  | -  DDS 4.4.x           |
-   |                          |                           | -  MongoDB 4.4.x  |                        |
+   |                          |                           | -  MongoDB 4.4.x  | -  DDS 5.0.x           |
+   |                          |                           | -  MongoDB 5.0.x  |                        |
    +--------------------------+---------------------------+-------------------+------------------------+
    | To the cloud             | MySQL -> TaurusDB Cluster | -  MySQL 5.6.x    | TaurusDB-MySQL 8.0     |
    |                          |                           | -  MySQL 5.7.x    |                        |
@@ -77,7 +78,8 @@ DRS supports migration between different DB engines. The following table lists t
    |                          |                           | -  DDS 4.0.x      | -  MongoDB 3.6.x       |
    |                          |                           | -  DDS 4.2.x      | -  MongoDB 4.0.x       |
    |                          |                           | -  DDS 4.4.x      | -  MongoDB 4.2.x       |
-   |                          |                           |                   | -  MongoDB 4.4.x       |
+   |                          |                           | -  DDS 5.0.x      | -  MongoDB 4.4.x       |
+   |                          |                           |                   | -  MongoDB 5.0.x       |
    +--------------------------+---------------------------+-------------------+------------------------+
    | Self-built -> Self-built | MySQL->MySQL              | -  MySQL 5.5.x    | -  MySQL 5.6.x         |
    |                          |                           | -  MySQL 5.6.x    | -  MySQL 5.7.x         |
